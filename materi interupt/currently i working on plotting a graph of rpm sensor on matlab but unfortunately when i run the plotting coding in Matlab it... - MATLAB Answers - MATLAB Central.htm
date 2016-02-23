@@ -1,0 +1,1029 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html class="js" lang="en"><head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      
+      <!-- START OF GLOBAL NAV -->
+  <link rel="stylesheet" href="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/sitewide.css" type="text/css">
+  <link rel="stylesheet" href="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/mlc.css" type="text/css">
+  <!--[if lt IE 7]>
+  <link href="/matlabcentral/css/ie6down.css" type="text/css" rel="stylesheet">
+  <![endif]-->
+
+      
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="file exchange, matlab answers, newsgroup access, link exchange, matlab blog, matlab central, simulink blog, matlab community, matlab and simulink community">
+<link rel="stylesheet" type="text/css" media="print" href="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/print.css">
+<title>currently i working on plotting a graph of rpm sensor on matlab 
+but unfortunately when i run the plotting coding in Matlab it... - 
+MATLAB Answers - MATLAB Central</title>
+<meta content="You may have unsaved changes to a question, answer, or comment." name="confirm-close">
+<meta content="authenticity_token" name="csrf-param">
+<meta content="XwLFYVKDxI8hfVLq2A+KhlkFXJxG3RhMPJocGqz62Ww=" name="csrf-token">
+<link rel="canonical" href="http://www.mathworks.com/matlabcentral/answers/162277-currently-i-working-on-plotting-a-graph-of-rpm-sensor-on-matlab-but-unfortunately-when-i-run-the-plo">
+
+<link href="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/application_002.css" media="screen" rel="stylesheet" type="text/css">
+
+
+<script src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/ahy.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/quant.js"></script><script type="text/javascript">
+  // CSS hook -- add class="js" to the <html> element
+  document.documentElement.className = document.documentElement.className === '' ? 'js' : document.documentElement.className + ' js';
+</script>
+<script src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/application.js" type="text/javascript"></script>
+  <script src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/antlr3-all.js" type="text/javascript"></script>
+  <script src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/jquery_002.js" type="text/javascript"></script>
+  <script src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/jquery_003.js" type="text/javascript"></script>
+  <script src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/jquery.js" type="text/javascript"></script>
+  <script src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/matlabmarkup.js" type="text/javascript"></script>
+
+
+<link href="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/application.css" media="all" rel="stylesheet" type="text/css">
+<link href="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/mw_font.css" media="all" rel="stylesheet" type="text/css">
+<script src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/application_002.js" type="text/javascript"></script>
+
+
+
+
+<script type="text/javascript">
+    	$(document).ready(function() {
+				
+				
+				$(".random_callout").each(function() {
+					var callouts = $(this).find(".callout_container");
+					callouts.hide().eq(Math.floor((Math.random()*callouts.length))).show();
+				});
+				
+			});
+    
+</script>
+
+
+  <style id="ki-xwx-xq" type="text/css"></style><style id="ki-xwx-xg" type="text/css"></style></head>
+    <body>
+      <div id="header">
+  <div class="wrapper">
+  <!--put nothing in left div - only 11px wide shadow --> 
+    <div class="main">
+        	<div id="logo"><a href="http://www.mathworks.com/matlabcentral/?s_tid=gn_mlc_logo" title="MATLAB Central Home"><img src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/mlclogo-whitebgd.gif" alt="MATLAB Central"></a></div>
+      
+        <div id="headertools">      
+
+
+<script language="JavaScript1.3" type="text/javascript">
+
+function submitForm(query){
+
+	choice = document.forms['searchForm'].elements['search_submit'].value;
+	
+	if (choice == "entire1" || choice == "contest" || choice == "matlabcentral" || choice == "blogs"){
+	
+	   var newElem = document.createElement("input");
+	   newElem.type = "hidden";
+	   newElem.name = "q";
+	   newElem.value = query.value;
+	   document.forms['searchForm'].appendChild(newElem);
+	      
+	   submit_action = '/searchresults/';
+	}
+	
+	switch(choice){
+	   case "matlabcentral":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "c[]";
+	      newElem.value = "matlabcentral";
+	      document.forms['searchForm'].appendChild(newElem);
+	
+	      selected_index = 0;
+	      break
+	   case "fileexchange":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "term";
+	      newElem.value = query.value;
+	      newElem.classname = "formelem";
+	      document.forms['searchForm'].appendChild(newElem);
+	
+	      submit_action = "/matlabcentral/fileexchange/";
+	      selected_index = 1;
+	      break
+	   case "answers":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "term";
+	      newElem.value = query.value;
+	      newElem.classname = "formelem";
+	      document.forms['searchForm'].appendChild(newElem);
+	
+	      submit_action = "/matlabcentral/answers/";
+	      selected_index = 2;
+	      break
+	   case "cssm":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "search_string";
+	      newElem.value = query.value;
+	      newElem.classname = "formelem";
+	      document.forms['searchForm'].appendChild(newElem);
+	
+		  submit_action = "/matlabcentral/newsreader/search_results";
+	      selected_index = 3;
+	      break
+	   case "linkexchange":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "term";
+	      newElem.value = query.value;
+	      newElem.classname = "formelem";
+	      document.forms['searchForm'].appendChild(newElem);
+	
+	      submit_action = "/matlabcentral/linkexchange/";
+	      selected_index = 4;
+	      break
+	   case "blogs":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "c[]";
+	      newElem.value = "blogs_en";
+	      document.forms['searchForm'].appendChild(newElem);
+	
+	      selected_index = 5;
+	      break
+	   case "trendy":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "search";
+	      newElem.value = query.value;
+	      newElem.classname = "formelem";
+	      document.forms['searchForm'].appendChild(newElem);
+	
+	      submit_action = "/matlabcentral/trendy";
+	      selected_index = 6;
+	      break
+	   case "cody":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "term";
+	      newElem.value = query.value;
+	      newElem.classname = "formelem";
+	      document.forms['searchForm'].appendChild(newElem);
+	
+	      submit_action = "/matlabcentral/cody/";
+	      selected_index = 7;
+	      break
+	   case "contest":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "c[]";
+	      newElem.value = "contest_en";
+	      document.forms['searchForm'].appendChild(newElem);
+	
+	      selected_index = 8;
+	      break
+	   case "entire1":
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "c[]";
+			newElem.value = "entire_site_en";
+	      document.forms['searchForm'].appendChild(newElem);
+	      
+	      selected_index = 9;
+	      break
+	   default:
+	      var newElem = document.createElement("input");
+	      newElem.type = "hidden";
+	      newElem.name = "c[]";
+			newElem.value = "entire_site_en";
+	      document.forms['searchForm'].appendChild(newElem);
+	   
+	      selected_index = 9;
+	      break
+	}
+
+	document.forms['searchForm'].elements['search_submit'].selectedIndex = selected_index;
+	document.forms['searchForm'].elements['query'].value = query.value;
+	document.forms['searchForm'].action = submit_action;
+}
+
+</script>
+
+
+  <form name="searchForm" method="GET" action="" style="margin:0px; margin-top:5px; font-size:90%" onsubmit="submitForm(query)">
+          <label for="search">Search: </label>
+        <select name="search_submit" style="font-size:9px ">
+         	 <option value="matlabcentral">MATLAB Central</option>
+          	<option value="fileexchange">&nbsp;&nbsp;&nbsp;File Exchange</option>
+          	<option value="answers" selected="selected">&nbsp;&nbsp;&nbsp;Answers</option>
+            <option value="cssm">&nbsp;&nbsp;&nbsp;Newsgroup</option>
+          	<option value="linkexchange">&nbsp;&nbsp;&nbsp;Link Exchange</option>
+          	<option value="blogs">&nbsp;&nbsp;&nbsp;Blogs</option>
+          	<option value="trendy">&nbsp;&nbsp;&nbsp;Trendy</option>
+          	<option value="cody">&nbsp;&nbsp;&nbsp;Cody</option>
+          	<option value="contest">&nbsp;&nbsp;&nbsp;Contest</option>
+          <option value="entire1">MathWorks.com</option>
+        </select>
+<input name="query" size="10" class="formelem" type="text">
+<input value="Go" class="formelem gobutton" type="submit">
+</form>
+
+		  <ol id="access2">
+  <li class="first">
+    <a href="https://www.mathworks.com/accesslogin/createProfile.do?uri=http%3A%2F%2Fwww.mathworks.com%2Fmatlabcentral%2Fanswers%2F162277-currently-i-working-on-plotting-a-graph-of-rpm-sensor-on-matlab-but-unfortunately-when-i-run-the-plo">Create Account</a>
+  </li>
+  <li>
+    <a href="https://www.mathworks.com/accesslogin/index_fe.do?uri=http%3A%2F%2Fwww.mathworks.com%2Fmatlabcentral%2Fanswers%2F162277-currently-i-working-on-plotting-a-graph-of-rpm-sensor-on-matlab-but-unfortunately-when-i-run-the-plo">Log In</a>
+  </li>
+</ol>
+
+      </div>
+	  
+        <div id="globalnav">
+        <!-- from includes/global_nav.html -->
+        <ol>
+                <li class=";">
+                        <a href="http://www.mathworks.com/matlabcentral/fileexchange/?s_tid=gn_mlc_fx">File Exchange</a> 
+                </li>
+                <li class=";">
+                        <a href="http://www.mathworks.com/matlabcentral/answers/?s_tid=gn_mlc_an">Answers</a> 
+                </li>
+                <li class=";">
+                        <a href="http://www.mathworks.com/matlabcentral/newsreader/?s_tid=gn_mlc_ng">Newsgroup</a> 
+                </li>
+                <li class=";">
+                        <a href="http://www.mathworks.com/matlabcentral/linkexchange/?s_tid=gn_mlc_lx">Link Exchange</a> 
+                </li>
+                <li class=";">
+                        <a href="http://blogs.mathworks.com/?s_tid=gn_mlc_blg">Blogs</a> 
+                </li>
+                <li class=";">
+                        <a href="http://www.mathworks.com/matlabcentral/trendy/?s_tid=gn_mlc_tnd">Trendy</a> 
+                </li>
+                <li class=";">
+                        <a href="http://www.mathworks.com/matlabcentral/cody/?s_tid=gn_mlc_cody">Cody</a> 
+                </li>
+                <li class=";">
+                        <a href="http://www.mathworks.com/matlabcentral/contest/?s_tid=gn_mlc_cn">Contest</a> 
+                </li>
+                <li class="icon mathworks">
+                        <a href="http://www.mathworks.com/?s_tid=gn_mlc_main">MathWorks.com</a> 
+                </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div id="middle">
+  <div class="wrapper">
+    <div id="colleft">
+  <ul id="localnav">
+    <li><a href="http://www.mathworks.com/matlabcentral/answers/">Home</a></li>
+    <li><a href="http://www.mathworks.com/matlabcentral/answers/" rel="nofollow">Search</a></li>
+    <li><a href="http://www.mathworks.com/matlabcentral/answers/contributors">Contributors</a></li>
+    <li><a href="http://www.mathworks.com/matlabcentral/answers/activities" rel="nofollow">Recent Activity</a></li>
+    <li><a href="http://www.mathworks.com/matlabcentral/answers/flagged" rel="nofollow">Flagged Content</a></li>
+
+      <li class="logincta">
+        <a href="https://www.mathworks.com/accesslogin/index_fe.do?uri=http%3A%2F%2Fwww.mathworks.com%2Fmatlabcentral%2Fanswers%2F162277-currently-i-working-on-plotting-a-graph-of-rpm-sensor-on-matlab-but-unfortunately-when-i-run-the-plo">Log in</a> to ask and answer questions.
+      </li>
+
+    <li class="maincta"><a href="http://www.mathworks.com/matlabcentral/answers/questions/new" rel="nofollow">Ask a Question</a></li>
+
+    <li class="about">
+      <a href="http://www.mathworks.com/matlabcentral/about/answers/" class="hintanchor">About MATLAB Answers</a>
+    </li>
+  </ul>
+
+  
+
+  
+
+  <div class="random_callout">
+        
+  
+  
+  
+  
+  
+  
+  
+
+
+	
+
+
+  
+  
+  
+  
+      <div class="callout_container rounded shadow solid margined_20  " style="cursor: pointer; display: block;" onclick="javascript:$(window.location).attr('href', 'http://makerzone.mathworks.com/?utm_source=Acad&amp;utm_medium=spotlight&amp;utm_campaign=MZ');">
+        <div class="callout_content  bg_center_center">   <img src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/discover-makerzone-logo.png" alt="Discover MakerZone">
+  <p>MATLAB and Simulink resources for Arduino, LEGO, and Raspberry Pi</p>
+  
+
+
+
+
+
+
+
+ 
+ <a href="http://makerzone.mathworks.com/?utm_source=Acad&amp;utm_medium=spotlight&amp;utm_campaign=MZ" class="cta">Learn more</a> 
+   
+
+ </div>
+      </div>
+
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+      <div style="display: none;" class="callout_container rounded shadow gradient margined_20  ">
+        <div class="callout_content  bg_center_center">    <h3>Discover what MATLAB<sup>®</sup> can do for your career.</h3>
+   <p>Opportunities for recent engineering grads.</p>
+
+
+
+
+
+
+
+
+ 
+ <a href="http://www.mathworks.com/company/jobs/opportunities/students/infographic.html?source=7677" class="cta">Apply Today</a> 
+   
+
+ </div>
+      </div>
+
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+      <div style="display: none;" class="callout_container rounded  solid margined_20  ">
+        	<div class="card_image" style="background-image:url(/images/nextgen/callouts/matlab-academy.jpg)"></div>
+        <div class="callout_content card_color  ">   <p><strong>New to MATLAB?</strong> </p>
+    <ul class="cta_list">
+    <li><strong><a href="https://matlabacademy.mathworks.com/R2014b?s_tid=mlc_mlac_ans_sl">Learn MATLAB today!</a></strong></li>
+  </ul>
+ </div>
+      </div>
+
+  
+</div>
+</div>
+
+<div id="mainbody" class="columns2">
+
+
+
+
+
+
+<div class="question-wrapper clearfix">
+<div class="question" id="question_162277">
+    <h1 id="title_question_162277">currently i working on plotting a 
+graph of rpm sensor on matlab but unfortunately when i run the plotting 
+coding in Matlab it was failed.It said 'Warning: Unsuccessful read: 
+Matching failure in format.' please help me,i dont know what is the 
+problem</h1>
+
+    <div id="asked_question_162277" class="contribution">
+      Asked by <a href="http://www.mathworks.com/matlabcentral/profile/authors/5676344-nazrin-zaini" class="author_inline" data-cp-link-id="1">Nazrin Zaini</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="1" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="http://www.mathworks.com/matlabcentral/profile/authors/5676344-nazrin-zaini">Nazrin Zaini <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="http://www.mathworks.com/matlabcentral/profile/authors/5676344-nazrin-zaini"><img src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A120442"><span property="question_count">1 question</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A120442"><span property="answer_count">0 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">0 accepted answers</span> 
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">Reputation: 0</span> 
+    </li>
+  </ul>
+
+  </div>
+</div>
+ on 11 Nov 2014
+    </div>
+
+    <div class="contribution latest-activity">
+  <strong>Latest activity</strong> <a href="http://www.mathworks.com/matlabcentral/answers/162277#comment_249160">Commented on</a> by <a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst" class="author_inline" data-cp-link-id="2">Image Analyst</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="2" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst">Image Analyst <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst"><img src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/1343420.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A3071"><span property="question_count">0 questions</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A3071"><span property="answer_count">14,523 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">4,667 accepted answers</span> 
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">Reputation: 23,440</span> 
+    </li>
+  </ul>
+
+  </div>
+</div>
+ on 12 Nov 2014
+</div>
+
+
+    
+
+    
+
+
+    <div id="body_question_162277" class="question-body">
+
+      <p>volatile int rpmcount = 0;
+int rpm = 0;
+unsigned long lastmillis = 0;</p><p>void setup(){
+ Serial.begin(9600); 
+ attachInterrupt(0, rpm_car, FALLING);//interrupt cero (0) is on pin two(2).
+}</p><p>void loop(){</p><pre> if (millis() - lastmillis == 1000){  //Uptade every one second, this will be equal to reading frecuency (Hz).</pre><pre> detachInterrupt(0);    //Disable interrupt when calculating</pre><pre> rpm = rpmcount * 60;  // Convert frecuency to RPM, note: this works for one interruption per full rotation. For two interrups per full rotation use rpmcount * 30.</pre><pre> Serial.print("RPM =\t"); //print the word "RPM" and tab.
+ Serial.print(rpm); // print the rpm value.
+ Serial.print("\t Hz=\t"); //print the word "Hz".
+ Serial.println(rpmcount); //print revolutions per second or Hz. And print new line or enter.</pre><pre> rpmcount = 0; // Restart the RPM counter
+ lastmillis = millis(); // Uptade lasmillis
+ attachInterrupt(0, rpm_car, FALLING); //enable interrupt
+  }
+}</pre><p>void rpm_car(){ // this code will be executed every time the interrupt 0 (pin2) gets low.
+  rpmcount++;
+}</p>
+    </div>
+
+
+    
+
+    <div class="comments" id="comments_question_162277" data-state="closed">
+  <h2 class="comments-count">0 Comments</h2>
+
+  <div class="toggle-comments hidden"><span>Show</span> <a href="#toggle-comments" class="hidden-comments-count">all comments</a></div>
+
+
+</div>
+
+
+</div>
+  <div class="avatar">
+    <a href="http://www.mathworks.com/matlabcentral/profile/authors/5676344-nazrin-zaini" class="author_inline" data-cp-link-id="3"><img alt="Nazrin Zaini" src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="3" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="http://www.mathworks.com/matlabcentral/profile/authors/5676344-nazrin-zaini">Nazrin Zaini <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="http://www.mathworks.com/matlabcentral/profile/authors/5676344-nazrin-zaini"><img src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A120442"><span property="question_count">1 question</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A120442"><span property="answer_count">0 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">0 accepted answers</span> 
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">Reputation: 0</span> 
+    </li>
+  </ul>
+
+  </div>
+</div>
+
+  </div>
+  <div class="question-tools">
+    <div id="votes_question_162277" class="vote">
+      <form accept-charset="UTF-8" action="/matlabcentral/answers/votes" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="XwLFYVKDxI8hfVLq2A+KhlkFXJxG3RhMPJocGqz62Ww=" type="hidden"></div>
+        <input name="vote[votable_type]" value="Question" type="hidden"><input name="vote[votable_id]" value="162277" type="hidden">
+        <button class="login" data-disable-with="Saving…" disabled="disabled" title="Log in to vote for questions and answers" type="submit">0 votes</button>
+</form>    </div>
+
+    
+
+
+
+
+  </div>
+</div>
+
+<div class="tags">
+  <h2>
+    Tags
+  </h2>
+  <div id="tags_question_162277" class="tag-list">
+    <ul><li><a href="http://www.mathworks.com/matlabcentral/answers/?term=tag%3A%22real+time+plot+matlab+arduino%22" rel="nofollow">real time plot matlab arduino</a></li></ul>
+
+  </div>
+</div>
+
+
+<div class="products">
+  <h2>
+    Products
+  </h2>
+  <div id="products_question_162277" class="product-list">
+    <p><em>No products are associated with this question.</em></p>
+
+  </div>
+</div>
+
+
+<div class="answers clearfix">
+  <h2 id="answer_count_question_162277">1 Answer</h2>
+
+<div class="answer-wrapper clearfix">
+  <div class="answer" id="answer_158549">
+    <div id="created_answer_158549" class="contribution">
+  Answer by <a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst" class="author_inline" data-cp-link-id="4">Image Analyst</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="4" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst">Image Analyst <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst"><img src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/1343420.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A3071"><span property="question_count">0 questions</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A3071"><span property="answer_count">14,523 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">4,667 accepted answers</span> 
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">Reputation: 23,440</span> 
+    </li>
+  </ul>
+
+  </div>
+</div>
+ on 11 Nov 2014
+</div>
+
+
+
+
+    
+
+    <div id="body_answer_158549" class="answer-body">
+  <p>This is C or Java code, not MATLAB code.  Use MATLAB instead.</p>
+</div>
+
+
+
+    
+
+    <div class="comments" id="comments_answer_158549" data-state="closed">
+  <h2 class="comments-count">2 Comments</h2>
+
+  <div class="toggle-comments hidden"><span>Show</span> <a href="#toggle-comments" class="hidden-comments-count">all comments</a></div>
+
+  
+<div class="comment clearfix" id="comment_249093">
+  <div class="contribution">
+  <a href="http://www.mathworks.com/matlabcentral/profile/authors/5676344-nazrin-zaini" class="author_inline" data-cp-link-id="5">Nazrin Zaini</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="5" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="http://www.mathworks.com/matlabcentral/profile/authors/5676344-nazrin-zaini">Nazrin Zaini <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="http://www.mathworks.com/matlabcentral/profile/authors/5676344-nazrin-zaini"><img src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/profilepic_default.gif"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A120442"><span property="question_count">1 question</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A120442"><span property="answer_count">0 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">0 accepted answers</span> 
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">Reputation: 0</span> 
+    </li>
+  </ul>
+
+  </div>
+</div>
+ on 12 Nov 2014
+</div>
+
+
+  <div class="comment-tools">
+  <a href="#comment_249093" class="permalink" data-toggle="#permalink_comment_249093" rel="nofollow" title="Direct link to this comment">Link</a>
+  <div data-dialog="compact" class="permalink-dialog hidden" id="permalink_comment_249093">
+    <p><strong>Direct link to this comment:</strong></p>
+    <p class="link-wrapper"><a href="http://www.mathworks.com/matlabcentral/answers/162277#comment_249093">http://www.mathworks.com/matlabcentral/answers/162277#comment_249093</a></p>
+  </div>
+
+  
+
+
+</div>
+
+
+  
+
+  <div id="body_comment_249093" class="comment-body">
+  <p>i run this code above in arduino and it work well with no 
+error.below is my matlab code.previously i use ldr sensor(run ldr coding
+ in arduino) and use this plotting coding in matlab.and its working 
+well.but when i working on rpm sensor and run the coding above in 
+arduino and use this plotting coding in matlab below.its said 'Warning: 
+Unsuccessful read: Matching failure in format.' please help me,i dont 
+know what is the problem'</p><p>delete(instrfindall);</p><p>clear all; clc; close all;</p><p>% Try-catch is to prevent Matlab from crashing when the program is finished
+try
+% Initialize serial port
+s = serial('COM8');
+%set(s, ‘ Terminator’, ‘LF’); % Default terminator is \n
+set(s,'BaudRate', 9600);
+set(s,'DataBits', 8);
+set(s,'StopBits', 1);
+fopen(s);
+s.ReadAsyncMode = 'continuous';</p><p>% Various variables
+numberOfDatas = 100;
+data = zeros(1, numberOfDatas);
+i = 1;</p><p>% Main graph figure
+figure(1);
+hold on;
+title('Incoming Data from External Device');
+xlabel('Data Number');
+ylabel('Analog Voltage (0-1023)');</p><p>% Start asynchronous reading
+readasync(s);</p><p>while(i&lt;=numberOfDatas)</p><pre>    % Get the data from the serial object
+    data(i) = fscanf(s, '%d');</pre><pre>    % Plot the data
+    figure(1);
+    plot(i, data(i), 'm*');</pre><pre>    % Ensure there are always 10 tick marks on the graph
+    if(i&gt;10)
+       xlim([i-10 i]);
+       set(gca,'xtick',[i-10 i-9 i-8 i-7 i-6 i-5 i-4 i-3 i-2 i-1 i])
+    end</pre><pre>    % Draw and flush
+    drawnow;</pre><pre>    %Increment the counter
+    i=i+1;</pre><p>end</p><p>% Give the external device some time…
+pause(3);</p><p>return;</p><p>catch</p><p>% Some of these crash the program – it depends. The serial port is left
+% open, which is not good.                                              
+stopasync(s);
+fclose(s); % bad
+%delete(s);
+%clear s;</p><p>fprintf(1, 'Sorry, you"re going to have to close out of Matlab to close the serial port\n');</p><p>return</p><p>end</p>
+</div>
+
+
+
+  
+</div>
+  
+<div class="comment clearfix" id="comment_249160">
+  <div class="contribution">
+  <a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst" class="author_inline" data-cp-link-id="6">Image Analyst</a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="6" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst">Image Analyst <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst"><img src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/1343420.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A3071"><span property="question_count">0 questions</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A3071"><span property="answer_count">14,523 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">4,667 accepted answers</span> 
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">Reputation: 23,440</span> 
+    </li>
+  </ul>
+
+  </div>
+</div>
+ on 12 Nov 2014
+</div>
+
+
+  <div class="comment-tools">
+  <a href="#comment_249160" class="permalink" data-toggle="#permalink_comment_249160" rel="nofollow" title="Direct link to this comment">Link</a>
+  <div data-dialog="compact" class="permalink-dialog hidden" id="permalink_comment_249160">
+    <p><strong>Direct link to this comment:</strong></p>
+    <p class="link-wrapper"><a href="http://www.mathworks.com/matlabcentral/answers/162277#comment_249160">http://www.mathworks.com/matlabcentral/answers/162277#comment_249160</a></p>
+  </div>
+
+  
+
+
+</div>
+
+
+  
+
+  <div id="body_comment_249160" class="comment-body">
+  <p>Sorry, but I don't have an arduino so I can't help.</p>
+</div>
+
+
+
+  
+</div>
+
+</div>
+
+</div>  <div class="avatar">
+    <a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst" class="author_inline" data-cp-link-id="7"><img alt="Image Analyst" src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/1343420.jpg"></a>
+
+<div class="profile mlc_author_popover" data-cp-popup-id="7" vocab="http://schema.org/" typeof="Person">
+  <h3 class="profile__name" property="name"><a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst">Image Analyst <span>(view profile)</span></a></h3>
+
+    <div class="profile__image">
+      <a href="http://www.mathworks.com/matlabcentral/profile/authors/1343420-image-analyst"><img src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/1343420.png"></a>
+    </div>
+  <div class="profile__stats" typeof="CreativeWork">
+    
+  <ul>
+    <li property="question">
+      <span class="icon-contactus" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=asked_by_id%3A3071"><span property="question_count">0 questions</span> </a>
+    </li>
+    <li property="answer">
+      <span class="icon-answers" aria-hidden="true"></span>
+      <a href="http://www.mathworks.com/matlabcentral/answers/?term=answered_by_id%3A3071"><span property="answer_count">14,523 answers</span> </a>
+    </li>
+    <li property="answers_accepted">
+      <span class="icon-check" aria-hidden="true"></span>
+      <span property="answers_accepted_count">4,667 accepted answers</span> 
+    </li>
+    <li property="answers_reputation">
+      <span class="icon-rating" aria-hidden="true"></span>
+      <span property="answers_accepted_count">Reputation: 23,440</span> 
+    </li>
+  </ul>
+
+  </div>
+</div>
+
+  </div>
+  <div class="answer-tools" id="tools_answer_158549">
+    <div id="votes_answer_158549" class="vote">
+  <form accept-charset="UTF-8" action="/matlabcentral/answers/votes" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="XwLFYVKDxI8hfVLq2A+KhlkFXJxG3RhMPJocGqz62Ww=" type="hidden"></div>
+    <input name="vote[votable_type]" value="Answer" type="hidden"><input name="vote[votable_id]" value="158549" type="hidden">
+    <button class="login" data-disable-with="Saving…" disabled="disabled" title="Log in to vote for questions and answers" type="submit">0 votes</button>
+</form></div>
+
+
+
+
+
+<a href="#answer_158549" class="permalink" data-toggle="#permalink_answer_158549" rel="nofollow" title="Direct link to this answer">Link</a>
+<div data-dialog="compact" class="permalink-dialog hidden" id="permalink_answer_158549">
+  <p><strong>Direct link to this answer:</strong></p>
+  <p class="link-wrapper"><a href="http://www.mathworks.com/matlabcentral/answers/162277#answer_158549">http://www.mathworks.com/matlabcentral/answers/162277#answer_158549</a></p>
+</div>
+
+  </div>
+</div>
+
+
+
+</div>
+<p id="contactus"><a href="http://www.mathworks.com/support/contact_us/">Contact us</a></p>
+<!-- Quantcast Tag -->
+<script type="text/javascript">
+var _qevents = _qevents || [];
+(function() {
+var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+elem.async = true;
+elem.type = "text/javascript";
+var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem, scpt);
+})();
+function p2l(pathname,query,hash){
+pathname = pathname.replace(/\//gi,"__")
+if(pathname === "__") {
+pathname = "homepage";
+}
+pathname = pathname.replace(/\./gi,"_");
+query = query.replace(/\?/gi,'-');
+params = query.split('&');
+args = []
+for(arg = 0; arg < params.length; arg++){
+args.push(params[arg].split('=')[0]);
+}
+pathname += args.join('-');
+pathname += hash.replace(/#/gi,"-");
+return pathname;
+};
+_qevents.push({
+qacct:"p-zfNtLVVEHXE-1",
+labels: "_fp.event." + p2l(document.location.pathname,
+document.location.search, document.location.hash)
+});
+</script>
+<noscript>
+<div style="display:none;">
+<img src="//pixel.quantserve.com/pixel/p-zfNtLVVEHXE-1.gif" border="0" height="1" width="1" alt="Quantcast"/>
+</div>
+</noscript>
+<!-- End Quantcast tag -->
+
+<!-- BEGIN Google Code for UK and .COM Domains-->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1023777138;
+var google_conversion_label = "SVIBCMq3xwIQ8rKW6AM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/conversion.js">
+</script><iframe name="google_conversion_frame" title="Google conversion frame" src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/a.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" frameborder="0" height="13" width="300">&lt;img
+ height="1" width="1" border="0" alt="" 
+src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1023777138/?frame=0&amp;random=1427637614204&amp;cv=7&amp;fst=1427637614204&amp;num=1&amp;fmt=1&amp;label=SVIBCMq3xwIQ8rKW6AM&amp;guid=ON&amp;u_h=800&amp;u_w=1280&amp;u_ah=760&amp;u_aw=1280&amp;u_cd=24&amp;u_his=1&amp;u_tz=420&amp;u_java=false&amp;u_nplug=9&amp;u_nmime=67&amp;frm=0&amp;url=http%3A//www.mathworks.com/matlabcentral/answers/162277-currently-i-working-on-plotting-a-graph-of-rpm-sensor-on-matlab-but-unfortunately-when-i-run-the-plo&amp;ref=http%3A//www.google.com/url%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D5%26cad%3Drja%26uact%3D8%26ved%3D0CEMQFjAE%26url%3Dhttp%253A%252F%252Fwww.mathworks.com%252Fmatlabcentral%252Fanswers%252F162277-currently-i-working-on-plotting-a-graph-of-rpm-sensor-on-matlab-but-unfortunately-when-i-run-the-plo%26ei%3DAQQYVcbfJsOIuASk8oLIDg%26usg%3DAFQjCNEIcR_6D5PPlETdzN_3TenVnk3SQQ%26sig2%3DhgrwpNvlVHlBPlDkMJAzoQ%26bvm%3Dbv.89381419%2Cd.c2E&amp;vis=1"
+ /&gt;</iframe>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1023777138/?value=0&label=SVIBCMq3xwIQ8rKW6AM&guid=ON&script=0"/>
+</div>
+</noscript>
+<!-- END Google Code for UK and .COM Domains-->
+
+      	
+      
+</div>
+<div class="clearboth">&nbsp;</div>
+</div>
+</div>
+<!-- footer.html -->
+<!-- START OF FOOTER -->
+
+<div id="mlc-footer">
+  <script type="text/javascript">
+function clickDynamic(obj, target_url, tracking_code) {
+	var pos=target_url.indexOf("?");
+	if (pos<=0) { 
+		var linkComponents = target_url + tracking_code;
+		obj.href=linkComponents;
+	} 
+}
+</script>
+  <div class="wrapper">
+    <div>
+      <ul id="matlabcentral">
+        <li class="copyright first">© 1994-2015 The MathWorks, Inc.</li>
+        <li class="first"><a href="http://www.mathworks.com/help.html" title="Site Help">Site Help</a></li>
+        <li><a href="http://www.mathworks.com/company/aboutus/policies_statements/patents.html" title="patents" rel="nofollow">Patents</a></li>
+        <li><a href="http://www.mathworks.com/company/aboutus/policies_statements/trademarks.html" title="trademarks" rel="nofollow">Trademarks</a></li>
+        <li><a href="http://www.mathworks.com/company/aboutus/policies_statements/" title="privacy policy" rel="nofollow">Privacy Policy</a></li>
+        <li><a href="http://www.mathworks.com/company/aboutus/policies_statements/piracy.html" title="preventing piracy" rel="nofollow">Preventing Piracy</a></li>
+        <li class="last"><a href="http://www.mathworks.com/matlabcentral/termsofuse.html" title="Terms of Use" rel="nofollow">Terms of Use</a></li>
+        <li class="icon"><a href="http://www.mathworks.com/company/rss/" title="RSS" class="rssfeed" rel="nofollow"><span class="text">RSS</span></a></li>
+        <li class="icon"><a href="http://www.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_lkd&amp;url=http://www.linkedin.com/company/the-mathworks_2" title="LinkedIn" class="linkedin" rel="nofollow" target="_blank"></a></li>
+        <li class="icon"><a href="http://www.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_fbk&amp;url=https://plus.google.com/117177960465154322866?prsrc=3" title="Google+" class="google" rel="nofollow" target="_blank"><span class="text">Google+</span></a></li>
+        <li class="icon"><a href="http://www.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_fbk&amp;url=http://www.facebook.com/MATLAB" title="Facebook" class="facebook" rel="nofollow" target="_blank"><span class="text">Facebook</span></a></li>
+        		<li class="last icon"><a href="http://www.mathworks.com/programs/bounce_hub_generic.html?s_tid=mlc_twt&amp;url=http://www.twitter.com/MATLAB" title="Twitter" class="twitter" rel="nofollow" target="_blank"><span class="text">Twitter</span></a></li>        
+        
+      </ul>
+      <ul id="mathworks">
+        <li class="first sectionhead">Featured MathWorks.com Topics:</li>
+        <li class="first"><a href="http://www.mathworks.com/products/new_products/latest_features.html" onclick="clickDynamic(this, this.href, '?s_cid=MLC_new')">New Products</a></li>
+        <li><a href="http://www.mathworks.com/support/" title="support" onclick="clickDynamic(this, this.href, '?s_cid=MLC_support')">Support</a></li>
+        <li><a href="http://www.mathworks.com/help" title="documentation" onclick="clickDynamic(this, this.href, '?s_cid=MLC_doc')">Documentation</a></li>
+        <li><a href="http://www.mathworks.com/services/training/" title="training" onclick="clickDynamic(this, this.href, '?s_cid=MLC_training')">Training</a></li>
+        <li><a href="http://www.mathworks.com/company/events/webinars/" title="Webinars" onclick="clickDynamic(this, this.href, '?s_cid=MLC_webinars')">Webinars</a></li>
+        <li><a href="http://www.mathworks.com/company/newsletters/" title="newsletters" onclick="clickDynamic(this, this.href, '?s_cid=MLC_newsletters')">Newsletters</a></li>
+        <li><a href="http://www.mathworks.com/programs/trials/trial_request.html?prodcode=ML&amp;s_cid=MLC_trials" title="MATLAB Trials">MATLAB Trials</a></li>
+        
+        		<li class="last"><a href="http://www.mathworks.com/company/jobs/opportunities/index_en_US.html" title="Careers" onclick="clickDynamic(this, this.href, '?s_cid=MLC_careers')">Careers</a></li>
+                 
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- END OF FOOTER -->
+
+
+      
+      
+<!-- SiteCatalyst code version: H.24.4.
+Copyright 1996-2012 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="currently%20i%20working%20on%20plotting%20a%20graph%20of%20rpm%20sensor%20on%20matlab%20but%20unfortunately%20when%20i%20run%20the%20plotting%20coding%20in%20Matlab%20it...%20-%20MATLAB%20Answers%20-%20MATLAB%20Central_files/s_code.js"></script>
+
+
+<script language="JavaScript" type="text/javascript">
+
+
+
+<!--
+if (typeof mboxLoadSCPlugin == 'function') {
+	mboxLoadSCPlugin(s); 
+}
+/************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+var s_code=s.t();if(s_code)document.write(s_code)//--></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script>
+<!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.24.4. -->
+
+
+  
+
+     
+<!-- BEGIN Qualaroo --> 
+<script type="text/javascript">
+  var _kiq = _kiq || [];
+  (function(){
+    setTimeout(function(){
+			var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
+			s.async = true; s.src = '//s3.amazonaws.com/ki.js/49559/ahy.js'; f.parentNode.insertBefore(s, f);
+    }, 1);
+  })();
+</script>
+<!-- END Qualaroo --> 
+
+    
+
+</body></html>

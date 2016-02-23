@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/QAPage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>arduino - How do I measure the RPM of a wheel? - Electrical Engineering Stack Exchange</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/electronics/img/favicon.ico?v=50081ffa1a60">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/electronics/img/apple-touch-icon.png?v=8d02167028de">
+    <link rel="search" type="application/opensearchdescription+xml" title="Electrical Engineering Stack Exchange" href="http://electronics.stackexchange.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@StackElectronix">
+    <meta name="twitter:domain" content="electronics.stackexchange.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/electronics/img/apple-touch-icon@2.png?v=9f23bff8b9e4">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How do I measure the RPM of a wheel?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="I'm trying to make an onboard system for my bike using an Arduino or maybe the Lilypad boards.
+
+I think I should use a Hall effect sensor, but any alternative is good as well.
+
+I want to output my ...">
+    <meta property="og:url" content="http://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel">
+    <link rel="canonical" href="http://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel">
+
+    
+    
+    <script src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/quant.js" async=""></script><script src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/beacon.js" async=""></script><script src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/analytics.js" async=""></script><script src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/jquery.js"></script>
+    <script src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'How do I measure the RPM of a wheel?'" href="http://electronics.stackexchange.com/feeds/question/89">
+    <meta name="twitter:app:country" content="US">
+    <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:iphone" content="871299723">
+    <meta name="twitter:app:url:iphone" content="se-zaphod://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel">
+    <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+    <meta name="twitter:app:id:ipad" content="871299723">
+    <meta name="twitter:app:url:ipad" content="se-zaphod://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel">
+    <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+    <meta name="twitter:app:url:googleplay" content="http://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel">
+    <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+    <script>
+        
+        StackExchange.ready(function () {
+
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:89});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('135', '89');
+                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+        });
+    </script>
+
+                <script type="text/x-mathjax-config;executed=true">
+                    MathJax.Hub.Config({"HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"], linebreaks: { automatic:true }, EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) },
+                                        tex2jax: { inlineMath: [ ["\\$", "\\$"] ], displayMath: [ ["$$","$$"], ["\\[", "\\]"] ], processEscapes: true, ignoreClass: "tex2jax_ignore|dno" },
+                                        TeX: {  noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, Macros: { href: "{}" } },
+                                        messageStyle: "none"
+                });
+                </script>        
+            <script src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/MathJax.js"></script>  
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com,ws://qa.sockets.stackexchange.com');
+            StackExchange.realtime.subscribeToInboxNotifications();
+                    StackExchange.realtime.subscribeToReputationNotifications('135');
+                StackExchange.realtime.subscribeToTopBarNotifications('135');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1427558144,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":false,"domain":"stacksnippets.net"},"site":{"name":"Electrical Engineering Stack Exchange","description":"Q&A for electronics and electrical engineering professionals, students, and enthusiasts","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdsB7sSAAAAAAzjgEF_Hd8vXv-C42sa_KyofaGR","recaptchaAudioLang":"en","enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"enableSocialMediaInSharePopup":true},"user":{"fkey":"ac3aec986ed025eb121709e38d3c57dd","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"e32ca4e1c47f","js/moderator.en.js":"75eea197c7d8","js/full-anon.en.js":"792d078cb922","js/full.en.js":"b0f8fe7e5cef","js/wmd.en.js":"a72b9e114ea9","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"1a12cb33590d","js/help.en.js":"b5f40fd81205","js/tageditor.en.js":"9c54855bf167","js/tageditornew.en.js":"b7bb928d4150","js/inline-tag-editing.en.js":"48f13b102998","js/revisions.en.js":"6c7265ea9fa1","js/review.en.js":"26701c9a873e","js/tagsuggestions.en.js":"d1ff9b84abe5","js/post-validation.en.js":"dcaeda0fb61f","js/explore-qlist.en.js":"ce6dbe2ac3f4","js/events.en.js":"2fc0b8d217c5","js/keyboard-shortcuts.en.js":"d8f58fac8a21","js/external-editor.en.js":"9fb0b5fa4138","js/mathjax-editing.en.js":"f4495a4289d3","js/external-editor.en.js":"9fb0b5fa4138"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<script src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/full-anon.js" async=""></script><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1px; bottom: 2px; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/post-validation.js" async=""></script><script src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/prettify-full.js" async=""></script><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?rev=2.5.1') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?rev=2.5.1') format('opentype')}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?rev=2.5.1') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?rev=2.5.1') format('opentype'); font-weight: bold}
+@font-face {font-family: MathJax_Main; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?rev=2.5.1') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?rev=2.5.1') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Math; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?rev=2.5.1') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?rev=2.5.1') format('opentype'); font-style: italic}
+@font-face {font-family: MathJax_Caligraphic; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?rev=2.5.1') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?rev=2.5.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?rev=2.5.1') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?rev=2.5.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?rev=2.5.1') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?rev=2.5.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?rev=2.5.1') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?rev=2.5.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?rev=2.5.1') format('woff'), url('http://cdn.mathjax.org/mathjax/latest/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?rev=2.5.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+<body class="question-page new-topbar"><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px none; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div style="display: none;" id="MathJax_Message"></div>
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://electronics.stackexchange.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackexchange.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://electronics.stackexchange.com/" class="current-site-link site-link js-gps-track" data-id="135" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-electronics" title="Electrical Engineering"></div>
+        Electrical Engineering
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.electronics.stackexchange.com/" class="site-link js-gps-track" data-id="137" data-gps-track="
+            site.switch({ target_site:137, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-electronicsmeta" title="Electrical Engineering Meta"></div>
+        Electrical Engineering Meta
+    </a>
+
+                </li>
+                    </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://electronics.stackexchange.com/users/signup?returnurl=http%3a%2f%2felectronics.stackexchange.com%2fquestions%2f89%2fhow-do-i-measure-the-rpm-of-a-wheel" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://electronics.stackexchange.com/users/login?returnurl=http%3a%2f%2felectronics.stackexchange.com%2fquestions%2f89%2fhow-do-i-measure-the-rpm-of-a-wheel" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 138 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                <a href="https://electronics.stackexchange.com/users/signup?returnurl=http%3a%2f%2felectronics.stackexchange.com%2fquestions%2f89%2fhow-do-i-measure-the-rpm-of-a-wheel" class="login-link">sign up</a>
+                                <a href="https://electronics.stackexchange.com/users/login?returnurl=http%3a%2f%2felectronics.stackexchange.com%2fquestions%2f89%2fhow-do-i-measure-the-rpm-of-a-wheel" class="login-link">log in</a>
+
+                        <a href="http://electronics.stackexchange.com/tour">tour</a>
+                            <a href="#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://electronics.stackexchange.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://electronics.stackexchange.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.electronics.stackexchange.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="/search" method="get" autocomplete="off">
+                    <input name="q" placeholder="search" tabindex="1" autocomplete="off" maxlength="240" type="text">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://electronics.stackexchange.com/">
+                    Electrical Engineering
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://electronics.stackexchange.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://electronics.stackexchange.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://electronics.stackexchange.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://electronics.stackexchange.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://electronics.stackexchange.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://electronics.stackexchange.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/electronics/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://electronics.stackexchange.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Electrical Engineering Stack Exchange is a question and 
+answer site for electronics and electrical engineering professionals, 
+students, and enthusiasts. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="http://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel" class="question-hyperlink">How do I measure the RPM of a wheel?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="89" id="question">
+
+        <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="89" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">10</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>1</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I'm trying to make an onboard system for my bike using an Arduino or maybe the Lilypad boards.</p>
+
+<p>I think I should use a Hall effect sensor, but any alternative is good as well.</p>
+
+<p>I want to output my speed to an LCD display and I'm wondering the best way to go about this.</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://electronics.stackexchange.com/questions/tagged/arduino" class="post-tag js-gps-track" title="show questions tagged 'arduino'" rel="tag">arduino</a> <a href="http://electronics.stackexchange.com/questions/tagged/sensor" class="post-tag js-gps-track" title="show questions tagged 'sensor'" rel="tag">sensor</a> <a href="http://electronics.stackexchange.com/questions/tagged/hall-effect" class="post-tag js-gps-track" title="show questions tagged 'hall-effect'" rel="tag">hall-effect</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://electronics.stackexchange.com/q/89" title="short permalink to this question" class="short-link" id="link-post-89">share</a><span class="lsep">|</span><a href="http://electronics.stackexchange.com/posts/89/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://electronics.stackexchange.com/posts/89/revisions" title="show all edits to this post">edited <span title="2012-08-22 10:18:48Z" class="relativetime">Aug 22 '12 at 10:18</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/7348/clabacchio"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/MCAPX.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/7348/clabacchio">clabacchio</a><span class="mod-flair" title="moderator">♦</span><br>
+        <span class="reputation-score" title="reputation score 10201" dir="ltr">10.2k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="49 bronze badges"><span class="badge3"></span><span class="badgecount">49</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        asked <span title="2009-11-01 04:02:41Z" class="relativetime">Nov 1 '09 at 4:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/21/mad-z"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/93ef53a001b5cf21dee8734864419ab2.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/21/mad-z">mad_z</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">2,370</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="28 silver badges"><span class="badge2"></span><span class="badgecount">28</span></span><span title="50 bronze badges"><span class="badge3"></span><span class="badgecount">50</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-89" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-89" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								7 Answers
+                                <span style="display:none;" itemprop="answerCount">7</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="104"></a>
+<div id="answer-104" class="answer accepted-answer" data-answerid="104" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="104" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Using a hall effect sensor as Starliner suggested will be one way to 
+interface with the wheel. Achim and Shutterdrone's suggestion to use a 
+reed switch makes more sense though, given the supporting hardware a 
+hall effect sensor requires to get a clean digital signal.</p>
+
+<p>You might be able to pickup a magnet and sensor from a broken bicycle
+ computer but if you can't, a local component store should have one of 
+each in stock. The advantage of a recycled sensor and magnet is the you 
+will already have the mounting hardware.</p>
+
+<p>There is a page on the arduino wiki on <a href="http://www.arduino.cc/playground/Main/ReadingRPM" rel="nofollow">ReadingRPM</a>
+ signals. To calculate the speed multiply the RPM value by the 
+circumference of the wheel (2 * pi * radius [in meters]). The result 
+will be in meters per minute.</p>
+
+<p>Edit: I've notice that the linked code is for systems with two pulses
+ per revolution. One magnet is sufficient for your task. Additionally, 
+for a bicycle computer you'll probably want the result to be in KPH (or 
+MPH if you live somewhere that still thinks that's civilised). I've made
+ some (untested) mods to the code on the wiki to print out KPH and 
+pasted them bellow.</p>
+
+<pre style="" class="lang-c prettyprint prettyprinted"><code><span class="kwd">volatile</span><span class="pln"> byte revolutions</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">unsigned</span><span class="pln"> </span><span class="typ">int</span><span class="pln"> rpmilli</span><span class="pun">;</span><span class="pln">
+</span><span class="typ">float</span><span class="pln"> speed</span><span class="pun">;</span><span class="pln">
+
+
+</span><span class="kwd">unsigned</span><span class="pln"> </span><span class="kwd">long</span><span class="pln"> timeold</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> setup</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">begin</span><span class="pun">(</span><span class="lit">9600</span><span class="pun">);</span><span class="pln">
+  attachInterrupt</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> rpm_fun</span><span class="pun">,</span><span class="pln"> RISING</span><span class="pun">);</span><span class="pln">
+
+  revolutions </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  rpmilli </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+  timeold </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> loop</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">revolutions </span><span class="pun">&gt;=</span><span class="pln"> </span><span class="lit">20</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+    </span><span class="com">//Update RPM every 20 counts, increase this for better RPM resolution,</span><span class="pln">
+    </span><span class="com">//decrease for faster update</span><span class="pln">
+
+    </span><span class="com">// calculate the revolutions per milli(second)</span><span class="pln">
+    </span><span class="pun">**</span><span class="pln">rpmilli </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="pln">millis</span><span class="pun">()</span><span class="pln"> </span><span class="pun">-</span><span class="pln"> timeold</span><span class="pun">)/</span><span class="pln">revolutions</span><span class="pun">;**</span><span class="pln"> EDIT</span><span class="pun">:</span><span class="pln"> it should be revolutions</span><span class="pun">/(</span><span class="pln">millis</span><span class="pun">()-</span><span class="pln">timeold</span><span class="pun">)</span><span class="pln">
+
+    timeold </span><span class="pun">=</span><span class="pln"> millis</span><span class="pun">();</span><span class="pln">
+    </span><span class="pun">**</span><span class="pln">rpmcount </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;**</span><span class="pln"> </span><span class="pun">(</span><span class="pln">EDIT</span><span class="pun">:</span><span class="pln"> revolutions </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;)</span><span class="pln">
+
+    </span><span class="com">// WHEELCIRC = 2 * PI * radius (in meters)</span><span class="pln">
+    </span><span class="com">// speed = rpmilli * WHEELCIRC * "milliseconds per hour" / "meters per kilometer"</span><span class="pln">
+
+    </span><span class="com">// simplify the equation to reduce the number of floating point operations</span><span class="pln">
+    </span><span class="com">// speed = rpmilli * WHEELCIRC * 3600000 / 1000</span><span class="pln">
+    </span><span class="com">// speed = rpmilli * WHEELCIRC * 3600</span><span class="pln">
+
+    speed </span><span class="pun">=</span><span class="pln"> rpmilli </span><span class="pun">*</span><span class="pln"> WHEELCIRC </span><span class="pun">*</span><span class="pln"> </span><span class="lit">3600</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">print</span><span class="pun">(</span><span class="str">"RPM:"</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">print</span><span class="pun">(</span><span class="pln">rpmilli </span><span class="pun">*</span><span class="pln"> </span><span class="lit">60000</span><span class="pun">,</span><span class="pln">DEC</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">print</span><span class="pun">(</span><span class="str">" Speed:"</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">print</span><span class="pun">(</span><span class="pln">speed</span><span class="pun">,</span><span class="pln">DEC</span><span class="pun">);</span><span class="pln">
+    </span><span class="typ">Serial</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">" kph"</span><span class="pun">);</span><span class="pln">
+  </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+</span><span class="kwd">void</span><span class="pln"> rpm_fun</span><span class="pun">()</span><span class="pln">
+</span><span class="pun">{</span><span class="pln">
+  revolutions</span><span class="pun">++;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Also, I've enabled 'community wiki' on this, which I think means 
+other users can edit it. If my maths is wrong (and you can prove it!) 
+jump in and fix it for me. :)</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://electronics.stackexchange.com/a/104" title="short permalink to this answer" class="short-link" id="link-post-104">share</a><span class="lsep">|</span><a href="http://electronics.stackexchange.com/posts/104/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://electronics.stackexchange.com/posts/104/revisions" title="show all edits to this post">edited <span title="2012-01-22 07:35:47Z" class="relativetime">Jan 22 '12 at 7:35</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Nov 1 '09 at 23:13. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-104" href="http://electronics.stackexchange.com/posts/104/revisions" title="show revision history for this post">
+        4 revs<br></a><a href="http://electronics.stackexchange.com/users/15">Adam</a>
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-104" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-104" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="180"></a>
+<div id="answer-180" class="answer" data-answerid="180" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="180" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">9</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Actually, Achim has made a very good point here. </p>
+
+<p>There is a big difference between a Reed (magnetic) relay (switch), and a Hall effect sensor.</p>
+
+<p>Primarily, a Reed relay will connect a switch whenever enough 
+magnetic force is acting upon it, giving you an on/off signal.  A Hall 
+effect sensor provides a voltage level indicating how much magnetic 
+force is being applied to it.</p>
+
+<p>The code shown above would only 'directly' work with a Reed relay, 
+which is not to say that it won't work at all for a hall effect sensor, 
+but that it would provide additional challenges using a hall-effect 
+sensor.</p>
+
+<p>The primary challenge will be that you're treating an analog device 
+as a digital one - expecting to trigger on rise of a pulse.  Now, the 
+signal won't be pulsed - it will be generally like a bell-curve, with 
+all sorts of fluctuations.  You might trip past the minimal voltage for a
+ high signal (around 3.5v, IIRC?) several times as the magnet passes the
+ hall-effect sensor.</p>
+
+<p>Of course, our first instinct when using something like a hall effect
+ sensor is to use the ADC and read the voltage level on an analog pin.  
+However, you're limited to 10,000 reads, roughly, per second on an 
+analog pin (each read takes 100uS). That assumes also that all you do is
+ loop and read values - doesn't leave you much other time to update a 
+display, calculate, etc. Not to mention, if you read at the wrong time, 
+you missed your signal!</p>
+
+<p>I'm sure it's possible to use interrupts somehow linked to the ADC, but I don't have such knowledge handy.</p>
+
+<p>Instead, if you wish to use an <em>actual</em> Hall Effect sensor, 
+I'd suggest feeding it into a Schmitt trigger to convert it to a digital
+ (on/off) signal at a calibrated level that indicates "directly under 
+the magnet."  Additionally, depending on the level of hysteresis 
+implemented in the Schmitt trigger, you may need to do some de-bouncing 
+that would change the rate of de-bounce based on current speed.  Then 
+you could treat it like a normal Reed relay.</p>
+
+<p>!c</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://electronics.stackexchange.com/a/180" title="short permalink to this answer" class="short-link" id="link-post-180">share</a><span class="lsep">|</span><a href="http://electronics.stackexchange.com/posts/180/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://electronics.stackexchange.com/posts/180/revisions" title="show all edits to this post">edited <span title="2009-11-03 17:37:47Z" class="relativetime">Nov 3 '09 at 17:37</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-11-03 17:22:12Z" class="relativetime">Nov 3 '09 at 17:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/36/shutterdrone"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/f626c98c568a807c7f17e1bb77c076bd.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/36/shutterdrone">shutterdrone</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">609</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="6 bronze badges"><span class="badge3"></span><span class="badgecount">6</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-180" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-4544" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You can get the best of both 
+worlds.  ATMega8 components can be configured to provide access to the 
+internal comparator.  With a suitable voltage reference (adjustable with
+ say, a trimpot), you can have interrupts on rising (or falling or both)
+ edge of the analog signal.  link to forum topic explaining just that :<a href="http://www.arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1163394545" rel="nofollow">arduino.cc/cgi-bin/yabb2/YaBB.pl?num=1163394545</a></span>
+                –&nbsp;
+                    <a href="http://electronics.stackexchange.com/users/1325/singlenegationelimination" title="681 reputation" class="comment-user">SingleNegationElimination</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4544_180"><span title="2010-09-07 23:42:47Z" class="relativetime-clean">Sep 7 '10 at 23:42</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-4550" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">There are hall-effect devices
+ with a schmitt-trigger thresholded output. They're quite common. Also, 
+with a reed switch, you're going to have to debounce the output anyways.</span>
+                –&nbsp;
+                    <a href="http://electronics.stackexchange.com/users/1374/connor-wolf" title="21616 reputation" class="comment-user">Connor Wolf</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4550_180"><span title="2010-09-08 04:26:32Z" class="relativetime-clean">Sep 8 '10 at 4:26</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-180" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="41928"></a>
+<div id="answer-41928" class="answer" data-answerid="41928" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="41928" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">6</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Hall effect sensors and reed switches are the most mentioned here, and they're the best solution. </p>
+
+<p>The <strong>reed switch</strong> will be cheaper, but may give you 
+false pulses when the bike gets a shock. If that's just one from riding 
+of the curb the software may easily filter it out, but it's different 
+when you're riding over cobblestones, which may give you false pulses 
+all the time. More shock resistant reed switches will require a stronger
+ magnetic field to activate, but a Neodymium magnet will fix that.</p>
+
+<p><strong>edit</strong> in answer to m.Alin's questions<br>
+Reed switches are fast. That's because the reed has a low mass (= low 
+inertia) and a low travel, often only a few tenths of a mm. <a href="http://www.meder.com/fileadmin/meder/pdf/en/Products/Reed_Switches/Reed_Switch_1A80.pdf" rel="nofollow">This reed switch</a>
+ has an operate time of &lt; 0.6 ms, and a release time of &lt; 0.1 ms. 
+At 36 km/h the switch travels 5 mm in 1 ms when mounted halfway the 
+wheel's diameter. So it's fast enough to be activated when it passes the
+ magnet.<br>
+<a href="http://www.meder.com/fileadmin/meder/pdf/en/Reed-switch_Life_Test_Data.pdf" rel="nofollow">This document</a> about the same switch gives a life expectancy of &gt; 10<span style="color: inherit;" class="MathJax_Preview"></span><span style="" id="MathJax-Element-1-Frame" class="MathJax"><nobr><span style="width: 0.483em; display: inline-block;" role="math" id="MathJax-Span-1" class="math"><span style="display: inline-block; position: relative; width: 0.429em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(2.986em, 1000em, 4.198em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-2" class="mrow"><span id="MathJax-Span-3" class="msubsup"><span style="display: inline-block; position: relative; width: 0.429em; height: 0px;"><span style="position: absolute; clip: rect(3.827em, 1000em, 4.198em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-4" class="mi"></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -4.375em; left: 0em;"><span style="font-size: 70.7%; font-family: MathJax_Main;" id="MathJax-Span-5" class="mn">7</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.042em; vertical-align: -0.067em;"></span></span></nobr></span><script id="MathJax-Element-1" type="math/tex">^7</script> operations, and that's not as much as it seems. If you would do 25 km a day you reach that 10<span style="color: inherit;" class="MathJax_Preview"></span><span style="" id="MathJax-Element-2-Frame" class="MathJax"><nobr><span style="width: 0.483em; display: inline-block;" role="math" id="MathJax-Span-6" class="math"><span style="display: inline-block; position: relative; width: 0.429em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(2.986em, 1000em, 4.198em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-7" class="mrow"><span id="MathJax-Span-8" class="msubsup"><span style="display: inline-block; position: relative; width: 0.429em; height: 0px;"><span style="position: absolute; clip: rect(3.827em, 1000em, 4.198em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-9" class="mi"></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; top: -4.375em; left: 0em;"><span style="font-size: 70.7%; font-family: MathJax_Main;" id="MathJax-Span-10" class="mn">7</span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.042em; vertical-align: -0.067em;"></span></span></nobr></span><script id="MathJax-Element-2" type="math/tex">^7</script> switch events in 2 years.<br>
+<em>end of edit</em>  </p>
+
+<p>The <strong>Hall effect switch</strong> doesn't have these disadvantages, but is somewhat more expensive.</p>
+
+<p><br></p>
+
+<p>You get time <span style="color: inherit;" class="MathJax_Preview"></span><span style="" id="MathJax-Element-3-Frame" class="MathJax"><nobr><span style="width: 0.75em; display: inline-block;" role="math" id="MathJax-Span-11" class="math"><span style="display: inline-block; position: relative; width: 0.704em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(3.15em, 1000em, 4.198em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-12" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-13" class="mi">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.864em; vertical-align: -0.067em;"></span></span></nobr></span><script id="MathJax-Element-3" type="math/tex">T</script> between 2 pulses as information from the sensor. Then</p>
+
+<blockquote>
+  <p>speed <span style="color: inherit;" class="MathJax_Preview"></span><span style="" id="MathJax-Element-4-Frame" class="MathJax"><nobr><span style="width: 3.883em; display: inline-block;" role="math" id="MathJax-Span-14" class="math"><span style="display: inline-block; position: relative; width: 3.58em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(2.468em, 1000em, 4.883em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-15" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-16" class="mi">v</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-17" class="mo">=</span><span style="padding-left: 0.278em;" id="MathJax-Span-18" class="mstyle"><span id="MathJax-Span-19" class="mrow"><span id="MathJax-Span-20" class="mfrac"><span style="display: inline-block; position: relative; width: 1.521em; height: 0px; margin-right: 0.12em; margin-left: 0.12em;"><span style="position: absolute; clip: rect(3.144em, 1000em, 4.209em, -1000em); top: -4.689em; left: 50%; margin-left: -0.7em;"><span id="MathJax-Span-21" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-22" class="mi">π<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-23" class="mi">D</span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; clip: rect(3.15em, 1000em, 4.198em, -1000em); top: -3.326em; left: 50%; margin-left: -0.352em;"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-24" class="mi">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span><span style="position: absolute; clip: rect(0.787em, 1000em, 1.235em, -1000em); top: -1.269em; left: 0em;"><span style="border-left: 1.521em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.25px; vertical-align: 0em;"></span><span style="display: inline-block; width: 0px; height: 1.049em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 2.342em; vertical-align: -0.807em;"></span></span></nobr></span><script id="MathJax-Element-4" type="math/tex"> v = \dfrac{\pi D}{T} </script></p>
+</blockquote>
+
+<p>in m/s if wheel diameter <span style="color: inherit;" class="MathJax_Preview"></span><span style="" id="MathJax-Element-5-Frame" class="MathJax"><nobr><span style="width: 0.883em; display: inline-block;" role="math" id="MathJax-Span-25" class="math"><span style="display: inline-block; position: relative; width: 0.828em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(3.144em, 1000em, 4.198em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-26" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-27" class="mi">D</span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.871em; vertical-align: -0.067em;"></span></span></nobr></span><script id="MathJax-Element-5" type="math/tex">D</script> is expressed in meters, and <span style="color: inherit;" class="MathJax_Preview"></span><span style="" id="MathJax-Element-6-Frame" class="MathJax"><nobr><span style="width: 0.75em; display: inline-block;" role="math" id="MathJax-Span-28" class="math"><span style="display: inline-block; position: relative; width: 0.704em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(3.15em, 1000em, 4.198em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-29" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-30" class="mi">T<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.12em;"></span></span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.864em; vertical-align: -0.067em;"></span></span></nobr></span><script id="MathJax-Element-6" type="math/tex">T</script> in seconds. Convert to km/h by dividing by 3.6, divide by 5.79 for mph.</p>
+
+<blockquote>
+  <p>distance <span style="color: inherit;" class="MathJax_Preview"></span><span style="" id="MathJax-Element-7-Frame" class="MathJax"><nobr><span style="width: 11.417em; display: inline-block;" role="math" id="MathJax-Span-31" class="math"><span style="display: inline-block; position: relative; width: 10.571em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(3.133em, 1000em, 4.392em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-32" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-33" class="mi">s</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-34" class="mo">=</span><span style="font-family: MathJax_Main; padding-left: 0.278em;" id="MathJax-Span-35" class="mtext">pulse count</span><span style="font-family: MathJax_Main; padding-left: 0.222em;" id="MathJax-Span-36" class="mo">×</span><span style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;" id="MathJax-Span-37" class="mi">π<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span style="font-family: MathJax_Main; padding-left: 0.222em;" id="MathJax-Span-38" class="mo">×</span><span style="font-family: MathJax_Math; font-style: italic; padding-left: 0.222em;" id="MathJax-Span-39" class="mi">D</span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 1.092em; vertical-align: -0.276em;"></span></span></nobr></span><script id="MathJax-Element-7" type="math/tex"> s = \text{pulse count} \times \pi \times D </script></p>
+</blockquote>
+
+<p>in meters if wheel diameter <span style="color: inherit;" class="MathJax_Preview"></span><span style="" id="MathJax-Element-8-Frame" class="MathJax"><nobr><span style="width: 0.883em; display: inline-block;" role="math" id="MathJax-Span-40" class="math"><span style="display: inline-block; position: relative; width: 0.828em; height: 0px; font-size: 108%;"><span style="position: absolute; clip: rect(3.144em, 1000em, 4.198em, -1000em); top: -4.012em; left: 0em;"><span id="MathJax-Span-41" class="mrow"><span style="font-family: MathJax_Math; font-style: italic;" id="MathJax-Span-42" class="mi">D</span></span><span style="display: inline-block; width: 0px; height: 4.012em;"></span></span></span><span style="border-left: 0em solid; display: inline-block; overflow: hidden; width: 0px; height: 0.871em; vertical-align: -0.067em;"></span></span></nobr></span><script id="MathJax-Element-8" type="math/tex">D</script> is expressed in meters. Divide by 1000 for distance in km, by 1609 for miles.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://electronics.stackexchange.com/a/41928" title="short permalink to this answer" class="short-link" id="link-post-41928">share</a><span class="lsep">|</span><a href="http://electronics.stackexchange.com/posts/41928/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://electronics.stackexchange.com/posts/41928/revisions" title="show all edits to this post">edited <span title="2013-08-05 12:53:59Z" class="relativetime">Aug 5 '13 at 12:53</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/3920/federico-russo"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/d76c11ddfe6cf5edce875d4ef93c0493.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/3920/federico-russo">Federico Russo</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">3,866</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="30 silver badges"><span class="badge2"></span><span class="badgecount">30</span></span><span title="84 bronze badges"><span class="badge3"></span><span class="badgecount">84</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2012-09-23 16:26:04Z" class="relativetime">Sep 23 '12 at 16:26</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/2064/stevenvh"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/872dbc0986fe053dd935090c90d042d6.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/2064/stevenvh">stevenvh</a><br>
+        <span class="reputation-score" title="reputation score 109744" dir="ltr">110k</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="336 silver badges"><span class="badge2"></span><span class="badgecount">336</span></span><span title="552 bronze badges"><span class="badge3"></span><span class="badgecount">552</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-41928" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-82870" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of 'useful comment' votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Are reed switches fast enough (for say 5 times a second)? And do they wear out, being mechanical devices?</span>
+                –&nbsp;
+                    <a href="http://electronics.stackexchange.com/users/4906/m-alin" title="5050 reputation" class="comment-user">m.Alin</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment82870_41928"><span title="2012-09-23 17:06:50Z" class="relativetime-clean">Sep 23 '12 at 17:06</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 1 time"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-82873" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@m.Alin - Good questions. I've updated my answer.</span>
+                –&nbsp;
+                    <a href="http://electronics.stackexchange.com/users/2064/stevenvh" title="109744 reputation" class="comment-user">stevenvh</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment82873_41928"><span title="2012-09-23 17:56:04Z" class="relativetime-clean">Sep 23 '12 at 17:56</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-41928" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="93"></a>
+<div id="answer-93" class="answer" data-answerid="93" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="93" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>A magnet can be mounted on the edge of the wheel's rim and the Hall 
+Effect sensor mounted very close to (but not contacting) the magnet. As 
+the wheel spins and the magnet passes the sensor, the sensor will pick 
+up the variation in the magnetic field.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://electronics.stackexchange.com/a/93" title="short permalink to this answer" class="short-link" id="link-post-93">share</a><span class="lsep">|</span><a href="http://electronics.stackexchange.com/posts/93/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-11-01 05:28:20Z" class="relativetime">Nov 1 '09 at 5:28</span>
+    </div>
+    <div class="user-gravatar32">
+        <span class="anonymous-gravatar"></span>
+    </div>
+    <div class="user-details">
+        Starliner<br>
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-93" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-93" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="4294"></a>
+<div id="answer-4294" class="answer" data-answerid="4294" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="4294" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>If you still want to go solid-state, they are many "Hall effect 
+switches" which include the Hall effect sensor and Schmitt trigger with 
+hysteresis to provide clean digital output without bounce. They switch 
+whenever some threshold flux density (provided in datasheet) is reached.
+ You can calculate a good combination of magnet and switch or simply 
+experiment.</p>
+
+<p><a href="http://www.allegromicro.com/en/Design-Center/Technical-Documents/Hall-Effect-Sensor-IC-Publications/Hall-Effect-IC-Application-Guide.aspx" rel="nofollow">This site</a> will tell you a lot more.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://electronics.stackexchange.com/a/4294" title="short permalink to this answer" class="short-link" id="link-post-4294">share</a><span class="lsep">|</span><a href="http://electronics.stackexchange.com/posts/4294/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://electronics.stackexchange.com/posts/4294/revisions" title="show all edits to this post">edited <span title="2012-09-10 11:29:20Z" class="relativetime">Sep 10 '12 at 11:29</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/10555/bruno-ferreira"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/c24460b7edf65ece83ec658c17c9b422.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/10555/bruno-ferreira">Bruno Ferreira</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">3,187</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="31 bronze badges"><span class="badge3"></span><span class="badgecount">31</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2010-09-07 19:22:40Z" class="relativetime">Sep 7 '10 at 19:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/1120/user1120"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/5b4d6bed28a664129204750deccb3776.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/1120/user1120">user1120</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">21</span><span title="2 bronze badges"><span class="badge3"></span><span class="badgecount">2</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-4294" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-4294" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="172"></a>
+<div id="answer-172" class="answer" data-answerid="172" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="172" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The parts in bicycle computers are reed-contacts not hall effect 
+sensors. They are completely different. But I think you all are talking 
+about the reed-contacts.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://electronics.stackexchange.com/a/172" title="short permalink to this answer" class="short-link" id="link-post-172">share</a><span class="lsep">|</span><a href="http://electronics.stackexchange.com/posts/172/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://electronics.stackexchange.com/posts/172/revisions" title="show all edits to this post">edited <span title="2012-09-23 09:47:09Z" class="relativetime">Sep 23 '12 at 9:47</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/4906/m-alin"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/ca5d6ef6b63776ceccd1536c557b98c1.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/4906/m-alin">m.Alin</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">5,050</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="29 silver badges"><span class="badge2"></span><span class="badgecount">29</span></span><span title="65 bronze badges"><span class="badge3"></span><span class="badgecount">65</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-11-03 05:38:13Z" class="relativetime">Nov 3 '09 at 5:38</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/162/achim"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/7d0523445d3f1d78b5e4fb5a66dca602.png" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/162/achim">Achim</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">51</span><span title="1 bronze badge"><span class="badge3"></span><span class="badgecount">1</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-172" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-172" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="108"></a>
+<div id="answer-108" class="answer" data-answerid="108" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input name="_id_" value="108" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The magnet can be mounted on a spoke, and the sensor on one of your forks, or the chainstay. </p>
+
+<p>Rather than multiplying by pi etc, the method suggested by my last 
+bike computer was to measure one revolution's linear distance (chalk on 
+the tyre, measure between the two chalk marks), then you can just 
+multiply the revolutions by the circumference direct.</p>
+
+<p>[EDIT] I've just found this <a href="http://www.piclist.com/techref/piclist/biketut/index.htm" rel="nofollow">guide</a> on the piclist site for implementing a bike computer using a PIC, maybe some of the information might be of use to you.</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://electronics.stackexchange.com/a/108" title="short permalink to this answer" class="short-link" id="link-post-108">share</a><span class="lsep">|</span><a href="http://electronics.stackexchange.com/posts/108/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td class="post-signature" align="right">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://electronics.stackexchange.com/posts/108/revisions" title="show all edits to this post">edited <span title="2012-09-23 09:47:38Z" class="relativetime">Sep 23 '12 at 9:47</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/4906/m-alin"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/ca5d6ef6b63776ceccd1536c557b98c1.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/4906/m-alin">m.Alin</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">5,050</span><span title="9 gold badges"><span class="badge1"></span><span class="badgecount">9</span></span><span title="29 silver badges"><span class="badge2"></span><span class="badgecount">29</span></span><span title="65 bronze badges"><span class="badge3"></span><span class="badgecount">65</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-11-01 16:30:04Z" class="relativetime">Nov 1 '09 at 16:30</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://electronics.stackexchange.com/users/103/amos"><div class="gravatar-wrapper-32"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/518ce7b2c54ae157e3195d560a2e0843.jpg" alt="" height="32" width="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://electronics.stackexchange.com/users/103/amos">Amos</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">2,387</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="12 silver badges"><span class="badge2"></span><span class="badgecount">12</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-108" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-108" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post, or add one of your own" href="#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+				        <div class="question-status">
+        <h2>                    <b>protected</b> by <a href="http://electronics.stackexchange.com/users/230/kortuk">Kortuk</a><span class="mod-flair" title="moderator">♦</span> <span dir="ltr"><span title="2012-09-23 06:30:57Z" class="relativetime">Sep 23 '12 at 6:30</span></span>
+</h2>
+        <p>
+Thank you for your interest in this question. 
+Because it has attracted low-quality answers, posting an answer now requires 10 <a href="http://electronics.stackexchange.com/help/whats-reputation">reputation</a> on this site.
+<br><br>
+Would you like to answer one of these <a href="http://electronics.stackexchange.com/unanswered?fromProtectedNotice=true">unanswered questions</a> instead?
+</p>
+    </div>
+
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://electronics.stackexchange.com/questions/tagged/arduino" class="post-tag" title="show questions tagged 'arduino'" rel="tag">arduino</a> <a href="http://electronics.stackexchange.com/questions/tagged/sensor" class="post-tag" title="show questions tagged 'sensor'" rel="tag">sensor</a> <a href="http://electronics.stackexchange.com/questions/tagged/hall-effect" class="post-tag" title="show questions tagged 'hall-effect'" rel="tag">hall-effect</a>  or <a href="http://electronics.stackexchange.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2009-11-01 04:02:41Z"><b>5 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>34731 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://electronics.stackexchange.com/questions/89/how-do-i-measure-the-rpm-of-a-wheel?lastactivity" class="lastactivity-link" title="2013-08-05 12:53:59Z">1 year ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2015/03/podcast-63-the-plumbers-up-to-67-coins/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2015/03/podcast-63-the-plumbers-up-to-67-coins/?cb=1" class="question-hyperlink">Podcast #63 – The Plumber’s Up To 67 Coins</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<style type="text/css">
+    .ads { margin-left: 60px; }
+    .ad-container { width: 220px; height: 250px; margin-right: 20px; margin-bottom: 20px; }
+    .ad-container .ad { height: 250px; }
+    .ad-container .footer-container { overflow: hidden; height: 30px; position: relative; top: -30px; }
+    .ad-container .footer-container .footer { font-family: Arial,Helvetic,Sans-Serif; font-size: 12px; text-align: center; padding-top: 9px; background-color: #000; color: #EFF; opacity: 0.9; filter: alpha(opacity=90); top: 30px; height: 30px; position: relative; }
+    .ad-container a:hover { text-decoration: underline; }
+    #adzerk2 { height: 250px; }
+</style>
+<script>
+    StackExchange.ready(function () {
+        $(".ad-container").hover(
+            function () {
+                $(".ad-container .footer-container .footer").stop(true, true).animate({ top: "0px" }, "fast");
+            },
+            function () {
+                $(".ad-container .footer-container .footer").animate({ top: "30px" }, "fast");
+            });
+    });
+</script>
+    <div class="ad-container">    
+        <div class="ad">    
+        <a href="http://meta.electronics.stackexchange.com/ads/ct/5123?url=http%3a%2f%2fengineering.stackexchange.com%2f" rel="nofollow" target="_blank"><img src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/yjIbH.png" alt="Engineering Stack Exchange" title="Engineering Stack Exchange" height="250" width="220"></a>
+        </div>
+        <div class="footer-container">
+            <div class="footer">
+                7 votes · <a href="http://meta.electronics.stackexchange.com/questions/4057#5123" title="click to comment on this ad" target="_blank">comment</a> · <a href="http://meta.electronics.stackexchange.com/ads/display/4057" target="_blank">stats</a>
+            </div>
+        </div>
+    </div><div style="margin-bottom: 10px;">
+        
+
+<style type="text/css">
+#newsletter-ad {
+    width: 190px;
+    height: 250px;
+    overflow: hidden;
+    background: url('//cdn.sstatic.net/electronics/img/newsletter-ad.png');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+    <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b></p>
+    <ul>
+        <li>Top questions and answers</li>
+        <li>Important announcements</li>
+        <li>Unanswered questions</li>
+    </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" value="Sign up for the newsletter" type="button"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=electronics.stackexchange.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input name="legalLinksShown" value="1" type="hidden">
+    </div>
+</div>
+
+    </div>
+			  
+    
+            
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/31058?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/31058/how-can-i-measure-rotation-on-a-cog-wheel?rq=1" class="question-hyperlink">how can I measure rotation on a cog wheel?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/32068?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/32068/measuring-the-rotation-of-a-bicycle-steering-wheel?rq=1" class="question-hyperlink">Measuring the rotation of a bicycle steering wheel</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/42245?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/42245/hall-effect-switch-or-photointerrupter?rq=1" class="question-hyperlink">Hall-effect switch or photointerrupter</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/53271?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/53271/how-can-i-detect-my-vehicles-shifter-position-will-a-hall-effect-sensor-work?rq=1" class="question-hyperlink">How can I detect my vehicle's shifter position? Will a Hall Effect Sensor work?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/59439?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/59439/is-it-possible-to-program-a-hall-effect-sensor-with-an-arduino?rq=1" class="question-hyperlink">Is it possible to program a hall-effect sensor with an Arduino?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/80151?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/80151/measure-rpm-with-a-discrete-component?rq=1" class="question-hyperlink">Measure RPM with a discrete component?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/90906?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/90906/how-to-pass-12v-onto-a-wire-without-a-relay?rq=1" class="question-hyperlink">How to pass +12V onto a wire without a relay?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/126114?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/126114/how-to-detect-whether-a-bathroom-stall-is-closed?rq=1" class="question-hyperlink">How to detect whether a bathroom stall is closed?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/132506?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/132506/minimal-hall-effect-sensor-circuit-to-keep-something-off-after-certain-rpm-achie?rq=1" class="question-hyperlink">Minimal Hall effect sensor circuit to keep something off after certain RPM achieved</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://electronics.stackexchange.com/q/136578?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">0
+    </div>
+</a><a href="http://electronics.stackexchange.com/questions/136578/simple-way-to-measure-wheel-spinning-speed-with-adroid-phone-magnet-and-maybe?rq=1" class="question-hyperlink">simple way to measure wheel spinning speed with Adroid phone + magnet (and maybe Reed Switch)</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/235562/how-would-i-mix-german-and-icelandic-diacritic-characters-in-a-single-english-do" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How would I mix German and Icelandic diacritic characters in a single English document?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-boardgames" title="Board &amp; Card Games Stack Exchange"></div><a href="http://boardgames.stackexchange.com/questions/23602/can-you-interfere-and-help-and-win-the-game-as-an-elf-in-munchkin" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:147 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can you interfere and help and win the game as an elf in munchkin?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/172624/why-is-the-sky-of-the-moon-always-dark" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is the sky of the moon always dark?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/13619/is-head-on-or-trailing-wind-better" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is head-on or trailing wind better?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/893843/how-to-find-chrome-extensions-that-inject-ads-into-any-webpage-i-browse" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to find Chrome extensions that inject ads into any webpage I browse?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/192656/command-acts-on-the-parent-directory" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    `command .*` acts on the parent directory
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/84690/can-cracked-product-keys-harm-the-user-in-any-way" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can 'cracked' product keys harm the user in any way?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-cooking" title="Seasoned Advice"></div><a href="http://cooking.stackexchange.com/questions/56051/will-spoiled-food-technically-make-you-sick" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:49 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Will spoiled food technically make you sick?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1209408/why-is-a-function-space-considered-to-be-a-vector-space-when-its-elements-are" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is a function space considered to be a "vector" space when its elements are not vectors?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/235547/editing-theorem-environments" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Editing theorem environments
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/42486/how-to-remind-a-professor-about-sending-papers-to-read" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to remind a professor about sending papers to read?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/85163/checking-if-a-number-is-divisible-by-9" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Checking if a number is divisible by 9
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/45231/why-does-my-phones-gps-not-work-in-china" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does my phone's GPS not work in China?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-photo" title="Photography Stack Exchange"></div><a href="http://photo.stackexchange.com/questions/61386/why-does-bright-red-in-direct-sun-come-out-orange" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:61 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does BRIGHT red in direct sun come out orange?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/235449/how-to-get-the-number-of-occurrences-of-characters-in-a-string" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to get the number of occurrences of characters in a string
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/75362/how-to-display-duration-hhmm-so-it-isnt-confused-with-clock-time" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to display duration (HH:MM) so it isn't confused with clock time
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/84819/why-did-hermione-stay-with-harry-and-not-leave-with-ron" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why did Hermione stay with Harry and not leave with Ron?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-aviation" title="Aviation Stack Exchange"></div><a href="http://aviation.stackexchange.com/questions/13604/what-technology-is-being-moved-forward-to-keep-pilots-from-crashing-planes" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:528 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What technology is being moved forward to keep pilots from crashing planes?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/172802/what-causes-the-specific-pattern-of-sparkly-light-from-a-laser-pointer" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What causes the specific pattern of sparkly light from a laser pointer
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-worldbuilding" title="Worldbuilding Stack Exchange"></div><a href="http://worldbuilding.stackexchange.com/questions/13024/lifeform-resistant-to-gunfire-but-vulnerable-to-melee" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:579 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Lifeform - resistant to gunfire but vulnerable to melee
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/62760/can-gfi-breakers-or-gfi-outlets-allow-grounded-outlets-to-be-used" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can GFI breakers or GFI outlets allow grounded outlets to be used?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/1210203/if-a-series-converges-absolutely-then-any-sub-series-also-converges-absolutely" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If a series converges absolutely, then any sub-series also converges absolutely?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-puzzling" title="Puzzling Stack Exchange"></div><a href="http://puzzling.stackexchange.com/questions/11082/i-can-get-you-to-many-places-guess-what-am-i" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:559 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    I can get you to many places. Guess what am I?
+                </a>
+
+            </li>
+            <li style="display: list-item;" class="dno js-hidden">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/193064/convert-all-first-character-in-an-email-id-to-upper-case-in-bash" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Convert all first character in an email id to Upper case in BASH
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://electronics.stackexchange.com/feeds/question/89" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/89/ivc/994c');});
+</script>
+<noscript>
+    <div><img src="/posts/89/ivc/994c" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">lang-c</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://electronics.stackexchange.com/tour">tour</a>
+                    <a href="http://electronics.stackexchange.com/help">help</a>
+                    <a href="http://blog.stackexchange.com/?blb=1">blog</a>
+                        <a href="http://chat.stackexchange.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on")'>mobile</a>
+                    <b><a href="http://electronics.stackexchange.com/contact">contact us</a></b>
+                        <b><a href="http://meta.electronics.stackexchange.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2015 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2015.3.26.2411
+            </div>
+            
+        </div>
+    <iframe id="global-auth-frame" style="display:none" src="arduino%20-%20How%20do%20I%20measure%20the%20RPM%20of%20a%20wheel%20%20-%20Electrical%20Engineering%20Stack%20Exchange_files/read.htm"></iframe></div>
+    <noscript>
+        <div id="noscript-warning">Electrical Engineering Stack Exchange works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-24', '.stackexchange.com');
+        
+        
+        ga('set', 'dimension2', '|arduino|sensor|hall-effect|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>                
+    
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px none; margin: 0px;"><div style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px none; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: italic; font-size-adjust: none; font-family: MathJax_Math,sans-serif;" id="MathJax_Font_Test"></div></div></body></html>

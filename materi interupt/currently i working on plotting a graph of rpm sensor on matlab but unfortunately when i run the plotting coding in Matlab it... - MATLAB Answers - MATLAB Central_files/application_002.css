@@ -1,0 +1,2416 @@
+/*!
+ * jQuery UI CSS Framework 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Theming/API
+ */
+
+/* Layout helpers
+----------------------------------*/
+
+.ui-helper-hidden {
+  display: none;
+}
+.ui-helper-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.ui-helper-reset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  line-height: 1.3;
+  text-decoration: none;
+  font-size: 100%;
+  list-style: none;
+}
+.ui-helper-clearfix:before,
+.ui-helper-clearfix:after {
+  content: "";
+  display: table;
+  border-collapse: collapse;
+}
+.ui-helper-clearfix:after {
+  clear: both;
+}
+.ui-helper-clearfix {
+  min-height: 0; /* support: IE7 */
+}
+.ui-helper-zfix {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  opacity: 0;
+  filter:Alpha(Opacity=0);
+}
+
+.ui-front {
+  z-index: 100;
+}
+
+
+/* Interaction Cues
+----------------------------------*/
+.ui-state-disabled {
+  cursor: default !important;
+}
+
+
+/* Icons
+----------------------------------*/
+
+/* states and images */
+.ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+
+/* Misc visuals
+----------------------------------*/
+
+/* Overlays */
+.ui-widget-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*!
+ * jQuery UI Resizable 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Resizable#theming
+ */
+.ui-resizable {
+  position: relative;
+}
+.ui-resizable-handle {
+  position: absolute;
+  font-size: 0.1px;
+  display: block;
+}
+.ui-resizable-disabled .ui-resizable-handle,
+.ui-resizable-autohide .ui-resizable-handle {
+  display: none;
+}
+.ui-resizable-n {
+  cursor: n-resize;
+  height: 7px;
+  width: 100%;
+  top: -5px;
+  left: 0;
+}
+.ui-resizable-s {
+  cursor: s-resize;
+  height: 7px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+.ui-resizable-e {
+  cursor: e-resize;
+  width: 7px;
+  right: -5px;
+  top: 0;
+  height: 100%;
+}
+.ui-resizable-w {
+  cursor: w-resize;
+  width: 7px;
+  left: -5px;
+  top: 0;
+  height: 100%;
+}
+.ui-resizable-se {
+  cursor: se-resize;
+  width: 12px;
+  height: 12px;
+  right: 1px;
+  bottom: 1px;
+}
+.ui-resizable-sw {
+  cursor: sw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  bottom: -5px;
+}
+.ui-resizable-nw {
+  cursor: nw-resize;
+  width: 9px;
+  height: 9px;
+  left: -5px;
+  top: -5px;
+}
+.ui-resizable-ne {
+  cursor: ne-resize;
+  width: 9px;
+  height: 9px;
+  right: -5px;
+  top: -5px;
+}
+/* Hide from everyone */
+
+html.js .hidden {
+  display: none !important;
+}
+
+/* Hide visually but display to screenreaders */
+html.js .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+
+/* Expand containers to surround floated elements: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+
+/* MATLAB Central and sitewide styles */
+
+.wrapper * {
+  -moz-box-sizing: content-box;
+}
+
+#header label {
+  display: inline;
+  float: left;
+  padding: 0 6px 0 0;
+  font-weight: normal;
+}
+
+#header input {
+  float: none;
+}
+
+#header input[type=text] {
+  border: 1px solid #a3a2a2;
+}
+
+#middle .wrapper {
+  background: #ffffff url(/matlabcentral/images/mlc-answer-banner.jpg) no-repeat 0 0;
+}
+
+table {
+  width: 100%;
+  border: 1px solid #d4d4d4;
+}
+
+th {
+  border-bottom: 1px solid #d4d4d4;
+}
+
+td {
+  padding: 5px 15px 5px 5px;
+}
+
+td p {
+  margin-bottom: 0;
+  font-size: 9pt;
+}
+
+.success,
+.error {
+  width: auto;
+  border-width: 1px !important;
+}
+
+.success h3,
+.error h3 {
+  margin: 5px 0 !important;
+  font-size: 1.1em;
+}
+
+.question-body pre.error,
+.answer-body pre.error,
+.comment-body pre.error,
+.matlabmarkup-preview-body pre.error {
+  min-height: 1em;
+  margin: 0;
+  margin-bottom: 10px;
+  border: 0;
+  padding: 0;
+  color: #cc0000;
+  background: none;
+}
+
+
+/* Left nav */
+
+#localnav .logincta {
+  padding: 9px 0 5px 0.8em;
+  color: #333333;
+}
+
+#localnav .logincta a {
+  display: inline;
+  padding: 0;
+}
+
+ul#localnav li.maincta {
+  margin-top: 1em;
+}
+
+#localnav #my_profile {
+  margin-top: 1em;
+  border-top: 1px solid #d4d4d4;
+}
+
+#localnav #my_profile a {
+  border-top: 1px solid #fff;
+}
+
+#localnav #my_comments {
+  border-bottom: 1px solid #d4d4d4;
+}
+
+#localnav #my_comments a {
+  border-bottom: 1px solid #fff;
+}
+
+#localnav .about {
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+}
+
+.random_callout {
+  margin: 0 10px;
+}
+
+/* Facets */
+
+.filter-container,
+#colleft .container {
+  display: block;
+  width: 175px;
+  margin: 0 0 12px 10px;
+  border: 1px solid #d6d4d4;
+}
+
+.filter-container h3,
+#colleft .container h3 {
+  margin: 0;
+  border: 1px solid #fff;
+  padding: 6px 6px;
+  font-size: 1.0em;
+  line-height: 100%;
+  background: #eaeaea;
+}
+
+.filter-container .filter {
+  _height: 200px;
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-top: 1px solid #d6d4d4;
+  padding: 0;
+  background: #f8f8f8;
+}
+
+.filter-container .filter ul,
+#colleft .container ul {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+
+.filter-container .filter ul li,
+#colleft .container ul li {
+  margin: 0;
+  padding: 0;
+  line-height: 130%;
+  background: none;
+}
+
+.filter-container .filter ul li a,
+#colleft .container ul li a {
+  display: block;
+  border: 0;
+  padding: 5px 7px 5px 7px;
+  background-image: none;
+  text-decoration: none;
+}
+
+.filter-container .filter ul li a:hover,
+.filter-container .filter ul li a.selected:hover {
+  background-color: #dbdbdb;
+}
+
+.filter-container .filter ul li a.selected {
+  color: #000000;
+  font-weight: bold;
+}
+
+.filter-container .filter ul li a.selected span {
+  width: 19px;
+  text-indent: -5000px;
+  background: transparent url(/matlabcentral/answers/assets/close-button-large.png) no-repeat right 0;
+}
+
+.filter-container .filter ul li a.remove-filter,
+.filter-container .filter ul li a span {
+  display: block;
+  float: right;
+  padding: 0;
+}
+
+/* Related questions (left nav) */
+
+#colleft .container ul {
+  border-top: 1px solid #d6d4d4;
+}
+
+#colleft .container ul li a {
+  padding-right: 18px;
+  background: url(/matlabcentral/answers/assets/source-mathworks.png) no-repeat 160px 5px;
+}
+
+
+/* Search form */
+
+.search {
+  margin: 0 0 20px 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 10px 15px 15px 15px;
+  background-color: #e6e6e6;
+  background-image: linear-gradient(left top, #e6e6e6 35%, #f7f7f7 100%);
+  background-image: -o-linear-gradient(left top, #e6e6e6 35%, #f7f7f7 100%);
+  background-image: -moz-linear-gradient(left top, #e6e6e6 35%, #f7f7f7 100%);
+  background-image: -ms-linear-gradient(left top, #e6e6e6 35%, #f7f7f7 100%);
+  background-image: -webkit-linear-gradient(left top, #e6e6e6 35%, #f7f7f7 100%);
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.35, #e6e6e6), color-stop(1, #f7f7f7));
+}
+
+.search h2 {
+  margin: 0;
+  padding: 0 0 2px 0;
+  font-size: 1.1em;
+  color: #bf8c02;
+}
+
+.search-field {
+  width: 600px;
+  float: left;
+  border: 1px solid #c3c3c3;
+  padding: 2px;
+  background-color: #fff;
+  line-height: 1.8;
+}
+
+.search-field input[type=text] {
+  display: block;
+  border: none;
+  outline: none;
+  padding: 2px 0;
+  font-size: 9pt;
+  line-height: 1.6;
+}
+
+.search-contributors input[type=text] {
+  width: 100%;
+}
+
+.search-submit input {
+  display: inline-block;
+  height: 19px;
+  width: 18px;
+  margin: 4px 0 0 5px;
+  border: 0;
+  padding: 0;
+  background: transparent url(/matlabcentral/images/gobutton.gif) no-repeat 0 1px;
+  text-indent: -9999px;
+  vertical-align: baseline;
+}
+
+.search-submit input:hover {
+  background-image: url(/matlabcentral/images/gobutton_hover.gif);
+}
+
+.tokenized .tokens {
+  /*float: left;*/
+}
+
+.tokenized .token {
+  display: block;
+  float: left;
+  margin: 0 5px 0 0;
+  border: 1px solid #d6d4d4;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 1px 0 1px 5px;
+  white-space: nowrap;
+  background-color: #f8f8f8;
+}
+
+.tokenized .token .label {
+  padding: 0 5px 0 0;
+}
+
+.tokenized span.token.selected {
+  background-color: #eaeaea;
+}
+
+.tokenized span.token.highlighted {
+  background-color: #d9d9d9;
+}
+
+.tokenized .token .remove a {
+  display: inline-block;
+  float: none;
+  width: 16px;
+  height: auto;
+  padding: 0;
+  background: transparent url(/matlabcentral/answers/assets/close-button.png) no-repeat center center;
+  text-indent: -5000px;
+}
+
+/* Expand search */
+
+.expand-search {
+  width: 600px;
+  clear: left;
+  padding: 2px 0 0;
+  text-align: right;
+}
+
+
+/* Search tools */
+
+.search-tools {
+  clear: both;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 0 0 3px 0;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.search-tools form {
+  float: left;
+}
+
+.search-tools label {
+  display: inline-block;
+  float: none;
+  padding: 3px 5px 0 0;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.search-tools select {
+  width: auto;
+  float: none;
+  margin: 0;
+}
+
+.search-tools option {
+  padding: 0 20px 0 0;
+}
+
+.search-tools.bottom {
+  border-bottom: 0;
+  padding: 3px 0 0 0;
+}
+
+.feed {
+  float: right;
+  padding: 3px 25px 0 0;
+}
+
+.feed a {
+  padding: 0 0 0 18px;
+  background-position: 1px 0;
+}
+
+.pagination {
+  float: right;
+}
+
+.pagination span,
+.pagination a {
+  display: inline-block;
+  float: left;
+}
+
+.pagination span {
+  border: 1px solid #d4d4d4;
+}
+
+.pagination span.text {
+  border: 0;
+  padding: 4px 5px 0 0;
+}
+
+.pagination .previous {
+  border-right: 0;
+}
+
+.pagination span span,
+.pagination span a {
+  height: 17px;
+  width: 16px;
+  border: 0;
+  padding: 0;
+  background: transparent no-repeat 0 0;
+  text-indent: -9999px;
+}
+
+.pagination .previous span,
+.pagination .previous a {
+  background-image: url(/matlabcentral/images/icon_backward.gif);
+}
+.pagination .previous span.disabled,
+.pagination .previous a.disabled {
+  background-image: url(/matlabcentral/images/icon_backward_disabled.gif);
+}
+.pagination .next span,
+.pagination .next a {
+  background-image: url(/matlabcentral/images/icon_forward.gif);
+}
+.pagination .next span.disabled,
+.pagination .next a.disabled {
+  background-image: url(/matlabcentral/images/icon_forward_disabled.gif);
+}
+
+
+/* Major sections */
+
+#mainbody {
+  width: 740px;
+}
+
+#contactus {
+  clear: both;
+  margin-top: 20px;
+}
+
+
+.hover {
+  position: relative;
+  float: left;
+  padding: 0 0 0 10px;
+}
+
+.hover > a {
+  display: block;
+  width: 16px;
+  height: 16px;
+  font: 0/0 auto;
+  color: transparent;
+  background: transparent url(/matlabcentral/images/icon_info.gif) no-repeat 0 0;
+}
+
+.hover > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 300px;
+  border: 1px solid #d4d4d4;
+  padding: 5px 15px;
+  background-color: #f7f7f7;
+}
+
+.hover p {
+  font-size: 8pt;
+}
+
+.hover ul {
+  margin: 0;
+}
+
+
+/* Forms */
+
+label, strong.label {
+  display: block;
+  float: none;
+  padding: 10px 0 3px 0;
+  font-weight: bold;
+}
+
+label.required:before,
+p.required:before {
+  content: "❉";
+  display: inline-block;
+  width: 12px;
+  font-size: 10px;
+  vertical-align: 10%;
+  color: #990000;
+}
+
+label .maxlength {
+  display: inline-block;
+  float: right;
+  font-weight: normal;
+  font-size: 0.9em;
+}
+
+input[type=text],
+textarea {
+  border: 1px solid #c3c3c3;
+  padding: 5px;
+}
+
+div.radio,
+div.check {
+  position: relative;
+  padding: 0 0 10px 0;
+}
+
+div.radio > label,
+div.check > label {
+  display: inline-block;
+}
+
+div.radio > input[type=radio] {
+  position: absolute;
+  top: 1px;
+  left: 0;
+}
+
+div.check > input[type=checkbox] {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+div.radio > label,
+div.radio > p,
+div.radio > ul,
+div.check > label,
+div.check > p,
+div.check > ul {
+  margin: 0 0 0 20px;
+  line-height: 1.4;
+}
+
+div.radio > label,
+div.check > label {
+  padding: 0 0 0.25em 0;
+}
+
+div.check > p {
+  margin-bottom: 0.25em;
+}
+
+form .submit {
+  padding: 5px 0 0 0;
+}
+
+form .submit a {
+  padding: 0 0 0 10px;
+}
+
+.closure-form textarea,
+.flagging-form textarea {
+  width: 420px;
+  height: 100px;
+}
+
+.closure-form .radio,
+.closure-form .message,
+.flagging-form .radio,
+.flagging-form .message {
+  clear: left;
+}
+
+.closure-form .radio label,
+.flagging-form .radio label {
+  display: block;
+  float: left;
+}
+
+.reopen-form {
+  min-height: 25px !important;
+}
+
+.contact-form {
+  border: 1px solid #d4d4d4;
+  padding: 5px 15px;
+  background-color: #f7f7f7;
+  font-size: 9pt;
+}
+
+.contact-form .label {
+  display: block;
+  padding: 10px 0 0;
+  font-weight: bold;
+}
+
+.contact-form textarea {
+  width: 500px;
+  height: 200px;
+}
+
+.watch-form {
+  padding: 25px 0 0;
+}
+
+.watch-form label {
+  font-weight: normal;
+}
+
+.question-list .question,
+.contributor-list .contributor,
+.activity-list .activity,
+.flagging-list .flagging {
+  width: auto;
+  float: none;
+  clear: both;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 10px 0;
+}
+
+.question-list .question > div,
+.contributor-list .contributor > div,
+.activity-list .activity > div,
+.flagging-list .flagging > div {
+  float: left;
+}
+
+.question-list .answers-count,
+.question-list .votes-count,
+.contributor-list .count {
+  margin: 0 30px 0 10px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.question-list .answers-count span,
+.question-list .votes-count span,
+.contributor-list .count {
+  display: block;
+  width: 60px;
+}
+
+.question-list .answers-count {
+  border: 1px solid #d4d4d4;
+}
+
+.question-list .accepted {
+  border: 1px solid #418f36;
+  background: none;
+  font-weight: normal;
+}
+
+.question-list .answers-count span {
+  width: 58px;
+  font-size: 2em;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.question-list h3,
+.question-list .contribution,
+.question-list .tag-list,
+.question-list .product-list {
+  width: 640px;
+  margin: 0;
+}
+
+.question-list h3 {
+  width: 615px;
+  padding: 0 25px 5px 0;
+}
+
+.contributor-list .order {
+  width: 20px;
+  color: #888888;
+  font-weight: bold;
+}
+
+.contributor-list h2 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+h2 .profile__stats li { 
+  font-weight: normal !important; 
+}
+
+.contributor-list .avatar {
+  width: 85px;
+}
+
+.contributor-list .contributor_profile {
+  width: 335px;
+}
+
+.contributor-list .contributor_profile p {
+  padding: 0 15px 0 0;
+}
+
+.contributor-list .count {
+  width: 75px;
+  margin: 0;
+  padding: 0;
+  color: #888888;
+}
+
+.contributor-list .count span {
+  display: block;
+  font-size: 2em;
+  line-height: 1;
+}
+
+.contributor-list .count .highlighted {
+  color: #121212;
+  font-weight: bold;
+}
+
+.flagging-list .flagging {
+  padding: 5px 0;
+}
+
+.question-wrapper,
+.contributor-wrapper {
+  border: 1px solid #d4d4d4;
+  padding: 15px;
+  background-color: #f7f7f7;
+}
+
+.contributor-wrapper {
+  border-bottom: 0;
+}
+
+.question,
+.answer {
+  width: 605px;
+  float: right;
+}
+
+.support-answer h1 {
+  padding-right: 20px;
+}
+
+.support-answer h1 {
+  background: url(/matlabcentral/answers/assets/source-mathworks.png) no-repeat right 3px;
+}
+
+.support-answer-icon {
+  position: absolute;
+  right: 5px;
+  width: 12px;
+}
+
+.support-answer-icon div {
+  width: auto;
+  padding: 5px;
+  white-space: nowrap;
+}
+
+
+.question-tools,
+.answer-tools,
+.avatar {
+  width: 90px;
+}
+
+.avatar img {
+  width: 65px;
+  border: 1px solid #c1c1c1;
+}
+
+.contributor-wrapper .avatar {
+  width: 155px;
+  float: left;
+}
+
+.contributor-wrapper .avatar img {
+  width: auto;
+  max-width: 125px;
+  max-height: 125px;
+}
+
+
+.activity div {
+  width: 690px;
+}
+
+.activity .avatar {
+  width: 50px;
+}
+
+.activity .avatar img {
+  max-width: 35px;
+  max-height: 35px;
+}
+
+.activity p {
+  margin: 0 0 3px;
+  font-size: 11px;
+}
+
+.activity p.time {
+  margin: 0;
+  color: #686868;
+}
+
+.flagging div {
+  width: 620px;
+}
+
+.flagging div.time {
+  width: 120px;
+}
+
+.flagging p,
+.flagging-list li p {
+  margin: 5px 0 0;
+  font-size: 8pt;
+  color: #686868;
+}
+
+.flagging-list li p {
+  margin: 0 0 5px 5px;
+}
+
+
+.vote {
+  padding: 15px 0;
+}
+
+.vote button {
+  display: block;
+  outline: none;
+  height: 18px;
+  margin: 0;
+  padding: 1px 0 0 20px;
+  border: 0;
+  background: transparent url(/matlabcentral/images/icon_vote_off.png) no-repeat 0 1px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.vote button.on {
+  background-image: url(/matlabcentral/images/icon_vote_on.png);
+}
+
+.flag,
+.edit,
+.close,
+.delete {
+  padding: 0 0 3px;
+  background-image: none;
+}
+
+.flag a,
+.edit a,
+.close a,
+.delete a,
+.add-comment a {
+  display: block;
+  border: 1px solid transparent;
+  padding: 3px 5px 3px 24px;
+  background-color: transparent;
+  background-position: 3px center;
+  background-repeat: no-repeat;
+}
+
+.flag a {
+  background-image: url(/matlabcentral/images/icon_flag_yellow.png);
+}
+
+.edit a {
+  background-image: url(/matlabcentral/images/icon_edit.png);
+}
+
+.close a {
+  background-image: url(/matlabcentral/images/icon_lock.png);
+}
+
+.delete a {
+  background-image: url(/matlabcentral/images/icon_delete.png);
+}
+
+.add-comment a {
+  display: inline-block;
+  border: 1px solid #d6d6d6;
+  padding: 4px 6px 4px 20px;
+  background-image: url(/matlabcentral/answers/assets/bullet_add.png);
+  background-color: #fff;
+  text-decoration: none;
+}
+
+.flag a:hover,
+.edit a:hover,
+.close a:hover,
+.delete a:hover {
+  border: 1px solid #d6d6d6;
+  background-color: #fff;
+  text-decoration: none;
+}
+
+.answer-tools .flag a:hover,
+.answer-tools .edit a:hover,
+.answer-tools .delete a:hover {
+  background-color: #f7f7f7;
+}
+
+.comment-tools .flag,
+.comment-tools .edit,
+.comment-tools .delete {
+  display: inline-block;
+  padding: 0 0 0 2px;
+}
+
+.comment-tools .flag a,
+.comment-tools .edit a,
+.comment-tools .delete a {
+  display: inline-block;
+}
+
+.permalink {
+  opacity: 0.75;
+}
+
+.permalink:hover {
+  opacity: 1;
+}
+
+.answer-tools .permalink {
+  display: block;
+  margin: 20px 0 0 0;
+  padding: 0 0 0 25px;
+  color: #686868;
+  background: transparent url(../images/icon_link.gif) no-repeat 4px center;
+  text-decoration: none;
+}
+
+.comment-tools .permalink {
+  margin: 0 15px 0 0;
+  padding: 0 0 0 20px;
+  color: #686868;
+  background: transparent url(../images/icon_link.gif) no-repeat 0 center;
+  text-decoration: none;
+}
+
+.add-comment {
+  padding: 10px 0 0 24px;
+}
+
+
+.question-body,
+.question-form {
+  margin: 5px 0 0 0;
+  border: 1px solid #ececec;
+  padding: 8px 10px;
+  background-color: #ffffff;
+}
+
+.question-body .closed {
+  padding: 2px 0 15px 20px;
+  font-size: 9pt;
+  font-weight: bold;
+  color: #660000;
+  background: transparent url(/matlabcentral/images/icon_lock.png) no-repeat 0 0;
+}
+
+.question-form {
+  padding-top: 0;
+}
+
+.question-form input[type=text] {
+  width: 570px;
+}
+
+.question-form .maxlength {
+  margin-right: 130px;
+}
+
+.create-question-form {
+  border: 1px solid #d4d4d4;
+  padding: 5px 15px;
+  background-color: #f7f7f7;
+}
+
+.create-question-form h3 {
+  margin: 10px 0 5px 0;
+}
+
+.create-question-form input[type=text],
+.create-question-form .multicomplete-wrapper {
+  width: 570px;
+  font-size: 9pt;
+}
+
+.create-question-form .matlabmarkup-dialog input[type=text] {
+  font-size: 8pt;
+}
+
+.create-question-form div.check {
+  margin: 10px 0 0;
+}
+
+
+.comments h2 {
+  margin: 10px 0 0;
+  padding: 0 0 0 24px;
+  font-size: 1.1em;
+  background: transparent url(/matlabcentral/answers/assets/comment.png) no-repeat 0 center;
+}
+
+.toggle-comments {
+  display: none;
+}
+
+.js .toggle-comments {
+  display: block;
+  padding: 0 0 5px 24px;
+}
+
+.toggle-comments a {
+  color: #686868;
+  text-decoration: underline;
+}
+
+.comment {
+  padding: 0 0 0 24px;
+  background-image: none !important;
+}
+
+.comment .contribution {
+  float: left;
+  padding: 4px 0 5px 11px;
+}
+
+.comment-tools {
+  float: right;
+  padding: 0 0 1px;
+}
+
+.comment-body,
+.comment-form {
+  clear: both;
+  border: 1px solid #ececec;
+  padding: 8px 10px;
+  background-color: #ffffff;
+}
+
+.comment-form {
+  margin: 5px 0 0 24px;
+}
+
+.comment-form p {
+  margin: 0;
+}
+
+.comment .comment-form {
+  margin-left: 0;
+}
+
+.comment .flaggings {
+  clear: both;
+}
+
+.comment-form.matlabmarkup .ui-wrapper,
+.comment-form textarea.ui-resizable {
+  min-height: 75px;
+}
+
+
+.attached-files {
+  border-right: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+  border-left: 1px solid #ececec;
+  padding: 5px 10px;
+  background-color: #ffffff;
+}
+
+#mainbody .attached-files ul {
+  list-style: none outside none;
+  margin: 0;
+}
+
+.attached-files ul li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 5px 0 0;
+  background: none;
+}
+
+
+.contribution {
+  padding: 0 0 5px 0;
+}
+
+.contribution a.accepted-answer {
+  font-weight: bold;
+  color: #418f36;
+}
+
+.latest-activity strong {
+  color: #686868;
+}
+
+.flaggings {
+  margin: 5px 0 10px;
+  border: 1px solid #d6d6d6;
+  padding: 5px 5px 5px 30px;
+  background: #fff url(/matlabcentral/images/icon_flag_yellow.png) no-repeat 4px 3px;
+}
+
+#mainbody .flaggings .flagging-list {
+  clear: right;
+  margin: 0;
+  padding: 5px 0 0;
+}
+
+.flagging-list li {
+  font-size: 8pt;
+}
+
+.toggle-flaggings {
+  float: right;
+}
+
+h1 .manage-spam {
+  float: right;
+  font-size: 8pt;
+}
+
+
+.spam-warning {
+    margin: 5px 0 0;
+    border-top: 1px solid rgb(242, 200, 73);
+    border-right: 1px solid rgb(242, 200, 73);
+    border-left: 1px solid rgb(242, 200, 73);
+    padding: 5px 5px 5px 30px;
+    background: #fff url(../images/alert.png) no-repeat 4px 3px;
+}
+
+.question .spam-warning {
+    border-bottom: 1px solid rgb(242, 200, 73);
+}
+
+.comment .spam-warning {
+    border-bottom: none;
+    clear: both;
+}
+
+.answer-wrapper.spam .answer-body,
+.comment.spam .comment-body {
+    border-right-color: rgb(242, 200, 73);
+    border-bottom-color: rgb(242, 200, 73);
+    border-left-color: rgb(242, 200, 73);
+}
+
+
+.tags {
+  clear: both;
+}
+
+.tags,
+.products {
+  width: 355px;
+  float: left;
+  padding: 15px 0 0 0;
+}
+
+.tags {
+  width: 385px;
+}
+
+.tags h2,
+.products h2 {
+  position: relative;
+  margin: 0;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  padding: 5px;
+  font-size: 1em;
+  background-color: #f7f7f7;
+}
+
+.tags h2,
+.tag-list {
+  margin-right: 30px;
+}
+
+.tags h2 a,
+.products h2 a {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  padding: 0 5px 0 16px;
+  font-weight: normal;
+  background: transparent url(/matlabcentral/answers/assets/bullet_go.png) no-repeat 0 80%;
+}
+
+.tag-list,
+.product-list {
+  border: 1px solid #d4d4d4;
+  border-top: 1px solid #ececec;
+  padding: 5px;
+}
+
+.tag-list p,
+.product-list p {
+  margin: 0;
+}
+
+.tag-list em,
+.product-list em {
+  color: #999999;
+  font-style: italic;
+}
+
+.tag-list ul,
+.product-list ul {
+  list-style: none outside none;
+  margin: 0 !important;
+  padding: 0;
+}
+
+.tag-list li,
+.product-list li,
+.tag-list li form,
+.product-list li form,
+.flagging-list li form,
+.attached-files li form {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.separator:after {
+  content: ",";
+  display: inline-block;
+  padding: 0 5px 0 0;
+}
+
+.tag-list li button,
+.product-list li button,
+.flagging-list li button,
+.attached-files li button {
+  cursor: pointer;
+  width: 14px;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  padding: 0 0 0 5px;
+  color: #990000;
+  background: transparent url(/matlabcentral/images/bullet_delete.png) no-repeat 50% 50%;
+  text-indent: -9999px;
+}
+
+.flagging-list li button {
+  background-position: 50% 25%;
+}
+
+.tip {
+  margin: 0;
+  padding: 5px 0 0 0;
+  font-size: 0.9em;
+  color: #686868;
+}
+
+h1 .tip {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+}
+
+label .tip {
+  display: block;
+  font-weight: normal;
+}
+
+.question-list .tag-list,
+.question-list .product-list {
+  float: left;
+  clear: left;
+  border: none;
+  padding: 5px 0 0;
+}
+
+.question-list .tag-list > span,
+.question-list .product-list > span {
+  display: block;
+  float: left;
+  width: 60px;
+  padding-top: 1px;
+  font-weight: bold;
+}
+
+.question-list .tag-list ul,
+.question-list .product-list ul {
+  display: block;
+  float: left;
+  width: 580px;
+}
+
+
+.answers {
+  clear: both;
+  padding: 15px 0 0 0;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.answers > h2 {
+  margin: 0;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  padding: 5px 0 5px 16px;
+  color: #bf8c02;
+  font-size: 1.3em;
+}
+
+.answers > p {
+  margin: 0;
+  border-right: 1px solid #d4d4d4;
+  border-left: 1px solid #d4d4d4;
+  padding: 5px 0 5px 16px;
+}
+
+.answer-wrapper {
+  clear: both;
+  border-top: 1px solid #ececec;
+  border-right: 1px solid #d4d4d4;
+  border-left: 1px solid #d4d4d4;
+  padding: 15px;
+}
+
+.accepted {
+  margin: 0 0 5px;
+  padding: 3px 0 3px 20px;
+  color: #418f36;
+  background: transparent url(/matlabcentral/images/icon_accepted.png) no-repeat 0 center;
+  font-weight: bold;
+}
+
+.add-answer {
+  border-right: 1px solid #d4d4d4;
+  border-left: 1px solid #d4d4d4;
+}
+
+.add-answer h3 {
+  margin: 0;
+  border-top: 5px solid #ececec;
+  padding: 10px 0 5px 15px;
+}
+.add-answer .error h3 {
+  border-top: 0;
+}
+.add-answer p.rate-limited {
+  margin: 0;
+  padding: 10px 15px;
+}
+
+.answer-body,
+.answer-form {
+  border: 1px solid #ececec;
+  padding: 8px 10px;
+}
+
+.answer-form {
+  padding-top: 0;
+}
+
+.create-answer-form {
+  border: none;
+  padding: 10px 15px 10px 15px;
+}
+
+.accepted-answer-form button {
+  cursor: pointer;
+  display: block;
+  margin: 0 0 10px;
+  border: 1px solid #d6d6d6;
+  padding: 3px 5px 4px 24px;
+  color: #418f36;
+  background: #fff url(/matlabcentral/answers/assets/bullet_go.png) no-repeat 3px 1px;
+  font-weight: bold;
+}
+
+.question-body img,
+.question-form .matlabmarkup-preview-body img,
+.answer-body img,
+.answer-form .matlabmarkup-preview-body img {
+  max-width: 585px;
+}
+
+.comment-body img,
+.comment-form .matlabmarkup-preview-body img {
+  max-width: 540px;
+}
+
+
+/* Displayed code */
+
+.question-body p, .answer-body p, .comment-body p, .matlabmarkup-preview-body p {
+  line-height: 1.4;
+  margin: 0 0 7px 0;
+}
+
+.question-body pre, .answer-body pre, .comment-body pre, .matlabmarkup-preview-body pre {
+  line-height: 1.4;
+  margin: 0 0 10px 0;
+}
+
+/* Tabbed panels */
+
+.tab-bar {
+  clear: left;
+  border-right: 1px solid #d4d4d4;
+  border-left: 1px solid #d4d4d4;
+  background-color: #f7f7f7;
+}
+
+#mainbody .tab-bar ul {
+  list-style: none outside none;
+  position: relative;
+  top: 1px;
+  margin: 0;
+  padding: 0 0 0 9px;
+}
+
+.tab-bar li {
+  float: left;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.tab-bar li a {
+  display: inline-block;
+  width: 93px;
+  min-height: 20px;
+  padding: 5px 0 0 0;
+  background: transparent url(/matlabcentral/images/tab_inactive.gif) no-repeat 0 0;
+  text-align: center;
+}
+
+.active-tab-profile #profile_tab a,
+.active-tab-questions #questions_tab a,
+.active-tab-answers #answers_tab a,
+.active-tab-comments #comments_tab a {
+  color: #bf8c02;
+  background-image: url(/matlabcentral/images/tab_active.gif);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.tab-bar .pagination {
+  padding: 3px 3px 0 0;
+}
+
+.tab-body {
+  clear: left;
+  border-top: 1px solid #d4d4d4;
+}
+
+.tab-body .pagination {
+  padding: 3px 4px 0 0;
+}
+
+
+/* Contributor profiles */
+
+.edit-profile {
+  display: block;
+  margin: 15px 0 0;
+  padding: 0 5px 0 16px;
+  background: transparent url(/matlabcentral/answers/assets/bullet_go.png) no-repeat 0 80%;
+}
+
+.hcard {
+  width: 360px;
+  float: left;
+}
+
+.hcard p {
+  font-size: 8pt;
+}
+
+.hcard dl {
+  clear: left;
+  padding: 0 0 5px;
+}
+
+.hcard dt {
+  font-weight: bold;
+}
+
+.hcard .personal-profile {
+  padding-top: 5px;
+}
+
+.hcard .personal-profile dt,
+.hcard .personal-profile dd {
+  width: 100%;
+  float: none;
+  margin: 0;
+}
+
+.reputation {
+  width: 150px;
+  float: right;
+  border: 1px solid #c3c3c3;
+  padding: 6px;
+  background-color: #fff;
+}
+
+.reputation h2 {
+  margin: 0;
+  font-size: 1em;
+}
+
+.reputation .value {
+  margin: 0 0 10px;
+  line-height: 1;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.reputation .question-count {
+  padding: 6px 0;
+}
+
+.earned-privileges .privilege-earned {
+  width: 40px;
+}
+
+.earned-privileges .reputation-required {
+  width: 120px;
+}
+
+
+/* Tag & product multicomplete */
+
+.ui-autocomplete {
+  list-style: none outside none;
+  position: absolute;
+  float: left;
+  margin: 0;
+  border: 1px solid #c3c3c3;
+  padding: 0;
+  background-color: #fdfdfd;
+  text-align: left;
+}
+
+.ui-autocomplete li {
+  width: 100%;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+.ui-autocomplete a {
+  cursor: default;
+  display: block;
+  padding: 3px 24px 3px 6px;
+  color: #121212;
+  font-family: sans-serif;
+  font-size: 10pt;
+  text-decoration: none;
+}
+
+.ui-autocomplete a.ui-state-hover,
+.ui-autocomplete a.ui-state-focus {
+  background-color: #e3e3e3;
+}
+
+.multicomplete-wrapper {
+  border: 1px solid #c3c3c3;
+  padding: 5px;
+  background-color: #fff;
+  font-family: sans-serif;
+  font-size: 9pt;
+}
+
+.multicomplete-wrapper input {
+  min-height: 14px;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  font-size: 1em;
+  font-family: sans-serif;
+  background-color: transparent;
+}
+
+.multicomplete-token {
+  display: inline-block;
+  font-size: 1em;
+}
+
+.multicomplete-token:after {
+  content: ",";
+  display: inline-block;
+  padding: 0 5px 0 0;
+}
+
+.multicomplete-remove-token {
+  cursor: pointer;
+  display: inline-block;
+  width: 7px;
+  margin: 0;
+  border: 0;
+  padding: 0 0 0 4px;
+  color: #990000;
+  background: transparent url(/matlabcentral/images/bullet_delete.png) no-repeat 0 75%;
+  text-indent: -9999px;
+}
+
+.multicomplete-error {
+  color: #900;
+}
+
+.multicomplete-error span {
+  font-weight: bold;
+}
+
+
+/* Question autosuggest */
+
+ul.question-autosuggest {
+  width: 726px;
+  max-width: 726px;
+  max-height: 155px;
+  overflow: scroll;
+}
+
+ul.question-autosuggest li.autosuggest-label {
+  background-color: #afc5db;
+}
+
+ul.question-autosuggest li.autosuggest-label span {
+  display: inline-block;
+  padding: 3px 0 3px 6px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+ul.question-autosuggest li {
+  padding: 0;
+}
+
+ul.question-autosuggest li a {
+  display: block;
+  width: 726px;
+  float: left;
+  clear: left;
+  padding: 0;
+}
+
+ul.question-autosuggest li a span {
+  display: inline-block;
+  float: left;
+}
+
+ul.question-autosuggest li a strong {
+  background-color: #afc5db;
+  font-weight: normal;
+}
+
+ul.question-autosuggest li span.answers-count {
+  width: 30px;
+  margin: 2px 12px 0 6px;
+  border: 1px solid #686868;
+  padding: 2px 0 0;
+  background: none;
+  background-color: #ffffff;
+  font-weight: bold;
+  font-size: 9pt;
+  text-align: center;
+}
+
+ul.question-autosuggest li span.accepted {
+  border: 1px solid #55b947;
+  color: #55b947;
+}
+
+ul.question-autosuggest li span.title {
+  max-width: 652px;
+  margin: 4px 0 6px;
+}
+
+ul.question-autosuggest li span.support-answer {
+  width: 12px;
+  height: 12px;
+  margin: 5px 0 0 6px;
+  text-indent: -5000px;
+  background: transparent url(/matlabcentral/answers/assets/source-mathworks.png) no-repeat 0 0;
+}
+
+
+/* jQuery UI dialog */
+
+.ui-dialog {
+  position: absolute;
+  min-width: 500px;
+  border: 1px solid #c3c3c3;
+  background-color: #fff;
+  -moz-box-shadow:    0 0 10px 4px #d4d4d4;
+  -webkit-box-shadow: 0 0 10px 4px #d4d4d4;
+  box-shadow:         0 0 10px 4px #d4d4d4;
+  text-align: left;
+}
+
+.ui-dialog-titlebar {
+  cursor: move;
+  position: relative;
+  border-bottom: 1px solid #e3e3e3;
+  padding: 10px 20px 10px 31px;
+  background: #f7f7f7 url(../images/gripper.png) no-repeat 5px center;
+}
+
+.ui-dialog-title {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.ui-dialog-titlebar-close {
+  display: inline-block;
+  position: absolute;
+  right: 5px;
+  top: 6px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  border: 1px solid #f7f7f7;
+  background: transparent url(../images/close-button.png) no-repeat center center;
+}
+
+.ui-dialog-titlebar-close:hover {
+  border: 1px solid #d4d4d4;
+  background-color: #e3e3e3;
+}
+
+.ui-dialog-titlebar-close span {
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+.ui-dialog-content {
+  padding: 10px 20px 15px 31px;
+}
+
+.ui-dialog-compact .ui-dialog-titlebar {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  padding: 0;
+  background: none;
+}
+
+.ui-dialog-compact .ui-dialog-title {
+  display: none;
+}
+
+.ui-dialog-compact .ui-dialog-titlebar-close {
+  right: 0;
+  top: 0;
+  border: 1px solid #ffffff;
+}
+
+
+.permalink-dialog {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 10px 15px !important;
+}
+
+.permalink-dialog p {
+  margin: 0;
+  padding: 0;
+}
+
+.permalink-dialog .link-wrapper {
+  margin: 5px 0 0 0;
+  border: 1px solid #d4d4d4;
+  padding: 5px;
+}
+
+.word_break {
+  word-break: break-all;
+}
+
+
+
+/* back port from Bootstrap */
+
+button {
+    font-family: inherit;
+}
+
+.btn {
+    -webkit-user-select: none;
+    background-image: none;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    margin-bottom: 0;
+    padding: 8px 20px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: normal;
+}
+
+.btn-default {
+    background-color: #fff;
+    border-color: #ccc;
+    color: #333;
+}
+
+.btn-sm {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 4px 18px;
+}
+
+.btn-default:active, .btn-default:focus, .btn-default:hover {
+    background-color: #e5e5e5;
+    border-color: #adadad;
+    color: #3c3c3c;
+    text-decoration: none;
+}
+.matlabmarkup textarea {
+  resize: none;
+  display: block;
+  overflow: auto;
+  min-height: 150px;
+  border: 0;
+  outline: none;
+  padding: 0;
+  font-size: 1.1em;
+  font-family: monospace;
+}
+
+.matlabmarkup-wrapper {
+  position: relative !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  border: 1px solid #c3c3c3;
+  background-color: #ffffff;
+}
+
+.matlabmarkup .ui-wrapper {
+  margin: 0 !important; /* without this !important jQuery UI overrides margin with some wacky calculations */
+  padding: 5px;
+}
+
+.matlabmarkup .ui-resizable-handle.ui-resizable-se {
+  width: 16px;
+  height: 16px;
+  /* Base64-encoded assets/images/gripper-se-dots.png */
+  background:
+    transparent
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOBAMAAADtZjDiAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAPUExURQAAAKKiov///6Ojo+Li4l22cusAAAABdFJOUwBA5thmAAAAKUlEQVQI12NgwAcYBaC0EVRACVUWIs9oBJVXQpYHyoqA5EGyzEZQWSUASWACa1CeDjwAAAAASUVORK5CYII=)
+    no-repeat 0 0;
+}
+
+.matlabmarkup-toolbar {
+  height: 24px;
+}
+
+.matlabmarkup-toolbar a {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  overflow: hidden;
+  margin: 0 4px 2px 0;
+  padding: 3px 2px 1px 2px;
+  border: 1px solid #a3a3a3;
+  text-decoration: none;
+  color: #686868;
+  font-family: sans-serif;
+  font-size: 8pt;
+  line-height: 12pt;
+  /* Base64-encoded assets/images/toolbar.png */
+  background:
+    #fff
+    url(data:image/png;base64,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)
+    no-repeat 0 0;
+}
+
+.matlabmarkup-toolbar span {
+  cursor: pointer;
+  display: inline-block;
+  text-indent: -9999px;
+}
+
+a.matlabmarkup-code span,
+a.matlabmarkup-help span {
+  text-indent: 0;
+}
+
+a.matlabmarkup-bold {
+  background-position: 1px -143px;
+}
+
+a.matlabmarkup-italic {
+  background-position: -17px -125px;
+}
+
+a.matlabmarkup-monospaced {
+  background-position: -35px -107px;
+}
+
+a.matlabmarkup-bulleted-list {
+  background-position: -53px -89px;
+}
+
+a.matlabmarkup-numbered-list {
+  background-position: -71px -71px;
+}
+
+a.matlabmarkup-code {
+  width: auto;
+  margin-right: 18px;
+  margin-left: 18px;
+  padding: 3px 6px 1px 22px;
+  background-position: -88px -53px;
+}
+
+a.matlabmarkup-hyperlink {
+  background-position: -107px -35px;
+}
+
+a.matlabmarkup-image {
+  background-position: -125px -16px;
+}
+
+a.matlabmarkup-attach-file {
+  background-position: -144px 2px;
+}
+
+a.matlabmarkup-help {
+  width: auto;
+  margin: 0 0 2px 16px;
+  border: 1px solid transparent;
+  padding: 3px 6px 1px 20px;
+  background-color: transparent;
+  background-position: 0 2px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKkSURBVDjLpZPdT5JhGMb9W+BPaK3matVqndXWOOigA6fmJ9DUcrUMlrN0mNMsKTUznQpq6pyKAm8CIogmypcg8GIiX8rHRHjhVbPt6o01nMvZWge/k3vP9duuZ/edAyDnf/hjoCMP2Vr3gUDj3CdV6zT1xZ6iFDaKnLEkBFOmPfaZArWT5sw60iFP+BAbOzTcQSqDZzsNRyCNkcVoaGghzDlVQKylOHJrMrUZ2Yf52y6kc36IxpyoH1lHF7EBgyMKV4jCJ5U/1UVscU4IZOYEa3I1HtwI01hwxlDLhDoJD/wxGr5YGmOLAdRIrVCuhmD3JdA6SQabx12srGB0KSpc86ew4olDOGjH4x4z0gdHDD9+c4TaQQtq+k2Yt0egXYugTmoVZgV9cyHSxXTtJjZR3WNCVfcK/NE0ppYDUNu2QTMCtS0IbrsOrVMOWL27eNJtJLOCDoWXdgeTEEosqPxoBK/TwDzWY9rowy51gJ1dGr2zLpS2aVH5QQ+Hbw88sZ7OClrGXbQrkMTTAQu4HXqUv9eh7J0OSfo7tiIU+GItilpUuM/AF2tg98eR36Q+FryQ2kjbVhximQu8dgPKxPMoeTuH4tfqDIWvCBQ2KlDQKEe9dBlGTwR36+THFZg+QoUxAL0jgsoOQzYYS+wjskcjTzSToVAkA7Hqg4Spc6tm4vgT+eIFVvmb+eCSMwLlih/cNg0KmpRoGzdl+BXOb5jAsMYNjSWAm9VjwesPR1knFilPNMu510CkdPZtqK1BvJQsoaRZjqLGaTzv1UNp9EJl9uNqxefU5QdDnFNX+Y5Qxrn9bDLUR6zjqzsMizeWYdG5gy6ZDbk8aehiuYRz5jHdeDTKvlY1IrhSMUxe4g9SuVwpdaFsgDxf2i84V9zH/us1/is/AdevBaK9Tb3EAAAAAElFTkSuQmCC);
+}
+
+
+.matlabmarkup-dialog {
+  overflow: hidden;
+  clear: left;
+  margin: 0 0 5px 0;
+  border: 1px solid #c3c3c3;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 8pt;
+  line-height: 12pt;
+  background-color: #ffffff;
+}
+
+.matlabmarkup-dialog .errors {
+  margin: 0 0 5px 0;
+  border: 1px solid #d12f19;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 8pt;
+  line-height: 12pt;
+  background-color: #ffffff;
+}
+
+.matlabmarkup-dialog .title {
+  margin: 0 0 7px 0;
+  font-weight: bold;
+}
+
+.matlabmarkup-dialog .errors .title {
+  padding: 0 0 0 40px;
+  color: #d12f19;
+}
+
+.matlabmarkup-dialog .errors ul {
+  list-style-position: inside;
+  padding: 0 0 0 40px;
+}
+
+.matlabmarkup-dialog div {
+  width: 512px;
+}
+
+.matlabmarkup-dialog label {
+  display: inline-block;
+  width: 100px;
+  font-weight: bold;
+}
+
+.matlabmarkup-dialog input[type=text] {
+  display: inline-block;
+  width: 390px;
+  border: 1px solid #c3c3c3;
+  padding: 3px 5px;
+}
+
+.matlabmarkup-dialog input.placeholder {
+  color: #aaaaaa;
+}
+
+.matlabmarkup-dialog .buttons {
+  clear: left;
+}
+
+.matlabmarkup-dialog .guidelines {
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 4px 0 0 20px;
+  text-decoration: none;
+  /* Base64-encoded assets/images/info.png */
+  background:
+    #fff
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKcSURBVDjLpZPLa9RXHMU/d0ysZEwmMQqZiTaP0agoaKGJUiwIxU0hUjtUQaIuXHSVbRVc+R8ICj5WvrCldJquhVqalIbOohuZxjDVxDSP0RgzyST9zdzvvffrQkh8tBs9yy9fPhw45xhV5X1U8+Yhc3U0LcEdVxdOVq20OA0ooQjhpnfhzuDZTx6++m9edfDFlZGMtXKxI6HJnrZGGtauAWAhcgwVnnB/enkGo/25859l3wIcvpzP2EhuHNpWF9/dWs/UnKW4EOGDkqhbQyqxjsKzMgM/P1ymhlO5C4ezK4DeS/c7RdzQoa3x1PaWenJjJZwT9rQ1gSp/js1jYoZdyfX8M1/mp7uFaTR8mrt29FEMQILr62jQ1I5kA8OF59jIItVA78dJertTiBNs1ZKfLNG+MUHX1oaURtIHEAOw3p/Y197MWHEJEUGCxwfHj8MTZIcnsGKxzrIURYzPLnJgbxvG2hMrKdjItjbV11CYKeG8R7ygIdB3sBMFhkem0RAAQ3Fuka7UZtRHrasOqhYNilOwrkrwnhCU/ON5/q04vHV48ThxOCuoAbxnBQB+am65QnO8FqMxNCjBe14mpHhxBBGCWBLxD3iyWMaYMLUKsO7WYH6Stk1xCAGccmR/Ozs/bKJuXS39R/YgIjgROloSDA39Deit1SZWotsjD8pfp5ONqZ6uTfyWn+T7X0f59t5fqDhUA4ry0fYtjJcWeZQvTBu4/VqRuk9/l9Fy5cbnX+6Od26s58HjWWaflwkusKGxjm1bmhkvLXHvh1+WMbWncgPfZN+qcvex6xnUXkzvSiYP7EvTvH4toDxdqDD4+ygT+cKMMbH+3MCZ7H9uAaDnqytpVX8cDScJlRY0YIwpAjcNcuePgXP/P6Z30QuoP4J7WbYhuQAAAABJRU5ErkJggg==)
+    no-repeat 0 3px;
+}
+
+.matlabmarkup-dialog .button {
+  display: inline-block;
+  float: right;
+  margin: 10px 0 0 10px;
+  border: 1px solid #c3c3c3;
+  padding: 3px 10px;
+  text-decoration: none;
+  color: #686868;
+  background-color: #fafafa;
+}
+
+.matlabmarkup-dialog .button.disabled,
+.matlabmarkup-dialog .upload-control-button.disabled {
+  cursor: default;
+  outline: none;
+  border: 1px solid #eaeaea;
+  color: #c3c3c3;
+  background-color: #fafafa;
+}
+
+.matlabmarkup-dialog .button.cancel {
+  border: 1px solid transparent;
+  padding: 3px 0;
+  color: #005fce;
+  background-color: transparent;
+}
+
+.matlabmarkup-dialog .buttons .guidelines:visited,
+.matlabmarkup-dialog .button.cancel:visited {
+  color: #004aa0;
+}
+.matlabmarkup-dialog .buttons .guidelines:hover,
+.matlabmarkup-dialog .button.cancel:hover {
+  text-decoration: underline;
+}
+
+.matlabmarkup-dialog .panel-control {
+  width: 135px;
+  float: left;
+}
+
+.matlabmarkup-dialog .panel-control input,
+.matlabmarkup-dialog .panel-control label {
+  display: block;
+  float: left;
+  font-weight: normal;
+}
+
+.matlabmarkup-dialog .panel-control input {
+  clear: left;
+  padding: 0 0 5px 0;
+}
+
+.matlabmarkup-dialog .panel-control label {
+  padding: 0 0 5px 5px;
+}
+
+.matlabmarkup-dialog .panel {
+  width: 362px;
+  float: left;
+}
+
+.matlabmarkup-dialog .panel label {
+  width: auto;
+  margin: 0 10px 0 0;
+}
+
+.matlabmarkup-dialog .panel input[type=text] {
+  width: 315px;
+}
+
+
+.matlabmarkup-dialog .upload-control-wrapper {
+  width: 350px;
+  border: 1px solid #c3c3c3;
+  padding: 3px;
+}
+
+.matlabmarkup-dialog .upload-control-wrapper.error {
+  border: 1px solid #d12f19;
+}
+
+.matlabmarkup-dialog .upload-control-button {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 10px 0 0;
+  border: 1px solid #c3c3c3;
+  padding: 3px 10px;
+  color: #686868;
+  background-color: #fafafa;
+}
+
+.matlabmarkup-dialog .upload-control-wrapper input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 2px 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+}
+
+.matlabmarkup-dialog .upload-control-label {
+  display: inline-block;
+  padding: 4px 0 0;
+  vertical-align: top;
+  color: #aaaaaa;
+}
+
+
+.matlabmarkup .pending-uploads {
+  margin: 0 !important;
+  border-right: 1px solid #c3c3c3;
+  border-bottom: 1px solid #c3c3c3;
+  border-left: 1px solid #c3c3c3;
+  padding: 3px 5px;
+  background-color: #ffffff;
+}
+
+.matlabmarkup .pending-uploads span {
+  display: inline-block;
+  padding: 0 10px 0 0;
+}
+
+.matlabmarkup-preview {
+  clear: left;
+  border: 1px solid #c3c3c3;
+  border-top: none;
+}
+
+.matlabmarkup-preview-body {
+  clear: both;
+  min-height: 75px;
+  overflow-x: auto;
+  overflow-y: auto;
+  border-top: 1px solid #eaeaea;
+  padding: 5px;
+  background-color: #fdfdfd;
+}
+
+.matlabmarkup-preview-divider {
+  overflow: hidden;
+  padding: 0 5px;
+  font-family: sans-serif;
+  font-size: 8pt;
+  font-weight: bold;
+  background-color: #fafafa;
+}
+
+.matlabmarkup-preview-divider span {
+  display: block;
+  float: left;
+  padding: 4px 0;
+}
+
+.matlabmarkup-preview-divider a {
+  display: block;
+  height: 16px;
+  float: right;
+  outline: none;
+  padding: 4px 0 0;
+  font-weight: normal;
+  text-decoration: none;
+  color: #686868;
+  /* Base64-encoded assets/images/on-off.png */
+  background:
+    transparent
+    url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAkCAMAAACzM5rVAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAACoUExURQAAADKvJM7OztfX19vb29vb29/f39jY2NnZ2dXV1c/Pz9HR0dTU1NXV1dnZ2RRFFCJiFiRmFh2AFCh6GS6ZICR0GCqHHB2JFDCfIiexFCqNHjCvJCqFHTCuJDClIjCqIyl/HPX19ezs7PT09Ovr6+/v7/Ly8u3t7X65d6bXo4PEfIPFfa3bqorKhXLDbbXes5POj3bGcnnGdYzKhrPdsZLOjoPMgIrRgnxt/OYAAAAhdFJOUwCAGoDVgNUagNWAgNWA1RqAgBrVgNWAGoAagNXV1dXV1WUX3pkAAABtSURBVCjPY2AYIMDOysbCwY4ixKqqqKjOjCLEpqiqpMyHIsSiqKSizIkixKGkrKbCjWo8LycPFxPDSAOSjNLyEuIoQozm+jraUihCsiZmhgYyKEJymkZ6xsIoQiJaproagihCQmIKogL8A+U5AKtPB2otReBdAAAAAElFTkSuQmCC)
+    no-repeat 0 0;
+}
+
+.matlabmarkup-preview-divider a:active,
+.matlabmarkup-preview-divider a:focus {
+  outline: none;
+}
+
+.matlabmarkup-preview-divider .matlabmarkup-preview-refresh {
+  margin-right: 20px;
+  padding-left: 16px;
+  /* Base64-encoded assets/images/refresh.gif */
+  background:
+    transparent
+    url(data:image/gif;base64,R0lGODlhEAAQAMQfAJXG2JXa+ZLO5ChrlkCy4TZ1kiVvpCN0trvo9SN5xTd4lrfh7iR9zo3S+EGz7JDJ4TaCromrvC9ymyV+0Dd3mTl1koe72YvN7LTj+9ne6N3g6v7+/0Cw2Stoh////////yH5BAEAAB8ALAAAAAAQABAAAAV94CeOXumJ5ah6VVFQpXSqX6YgC4JAljGTnYVAwCFcMIffx9OJdDqDB8HRSCiZCpMh0GgwroWTZ2A4JBiTn2nNVk8YiYNhIA6vGJhAwFdSdK4JAQ4EDwMDTX8rBwEXBBxDAIkrBhYQDw8AAAoaGzQeMh4ULhVKJDNrNKmqNCEAOw==)
+    no-repeat 0 3px;
+}
+
+.matlabmarkup-preview-divider .matlabmarkup-preview-toggle {
+  width: 40px;
+  padding-left: 14px;
+  background-position: -2px -17px;
+}
+
+.matlabmarkup-preview-divider .off {
+  background-position: -2px 1px;
+}
+
+.matlabmarkup-preview-divider .hidden {
+  display: none;
+}

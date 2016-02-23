@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<!--[if IE ]>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<![endif]-->
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<title>Timer dan Counter Mikrokontroler | Geyosoft.com</title>
+	<!--iOS/android/handheld specific -->
+<link rel="apple-touch-icon" href="http://www.geyosoft.com/wp-content/themes/point/apple-touch-icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="pingback" href="http://www.geyosoft.com/xmlrpc.php">
+	<link rel="alternate" type="application/rss+xml" title="Geyosoft.com » Feed" href="http://www.geyosoft.com/feed">
+<link rel="alternate" type="application/rss+xml" title="Geyosoft.com » Comments Feed" href="http://www.geyosoft.com/comments/feed">
+<link rel="alternate" type="application/rss+xml" title="Geyosoft.com » Timer dan Counter Mikrokontroler Comments Feed" href="http://www.geyosoft.com/2013/timer-dan-counter-mikrokontroler/feed">
+<link rel="stylesheet" id="contact-form-7-css" href="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-lightbox-swipebox-front-css" href="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/swipebox.css" type="text/css" media="all">
+<link rel="stylesheet" id="stylesheet-css" href="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/style.css" type="text/css" media="all">
+<style id="stylesheet-inline-css" type="text/css">
+
+		body {background-color:#326693; }
+		body {background-image: url();}
+		input#author:focus, input#email:focus, input#url:focus, #commentform textarea:focus, .widget .wpt_widget_content #tags-tab-content ul li a { border-color:#326693;}
+		a:hover, .menu .current-menu-item > a, .menu .current-menu-item, .current-menu-ancestor > a.sf-with-ul, .current-menu-ancestor, footer .textwidget a, .single_post a, #commentform a, .copyrights a:hover, a, footer .widget li a:hover, .menu > li:hover > a, .single_post .post-info a, .post-info a, .readMore a, .reply a, .fn a, .carousel a:hover, .single_post .related-posts a:hover, .sidebar.c-4-12 .textwidget a, footer .textwidget a, .sidebar.c-4-12 a:hover { color:#326693; }	
+		.nav-previous a, .nav-next a, .header-button, .sub-menu, #commentform input#submit, .tagcloud a, #tabber ul.tabs li a.selected, .featured-cat, .mts-subscribe input[type='submit'], .pagination a, .widget .wpt_widget_content #tags-tab-content ul li a, .latestPost-review-wrapper { background-color:#326693; color: #fff; }
+		
+		
+			
+</style>
+<link rel="stylesheet" id="GoogleFonts-css" href="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/css_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="GoogleFonts2-css" href="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-css" href="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/responsive.css" type="text/css" media="all">
+<script src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/ca-pub-2044266494217305.js" type="text/javascript" async=""></script><script src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/jquery_003.js"></script>
+<script type="text/javascript" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/jquery.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var rlArgs = {"script":"swipebox","selector":"lightbox","custom_events":"","activeGalleries":"1","animation":"1","hideBars":"1","hideBarsDelay":"5000","videoMaxWidth":"1080"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/front.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.geyosoft.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.geyosoft.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Accelerometer dan Gyroscope" href="http://www.geyosoft.com/2013/accelerometer-dan-gyroscope">
+<link rel="next" title="Teknologi NFC" href="http://www.geyosoft.com/2013/teknologi-nfc">
+<meta name="generator" content="WordPress 4.1.1">
+<link rel="canonical" href="http://www.geyosoft.com/2013/timer-dan-counter-mikrokontroler">
+<link rel="shortlink" href="http://www.geyosoft.com/?p=1748">
+<link href="https://plus.google.com/107473444475578826090" rel="author">
+<link href="https://plus.google.com/107473444475578826090" rel="publisher">
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-34800575-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><style type="text/css">
+/* <![CDATA[ */
+img.latex { vertical-align: middle; border: none; }
+/* ]]> */
+</style>
+</head>
+<body id="blog" class="single single-post postid-1748 single-format-standard main">
+	<div class="main-container">
+					<div class="trending-articles">
+				<ul>
+					<li class="firstlink">Now Trending:</li>
+																<li class="trendingPost ">
+							<a href="http://www.geyosoft.com/2014/4-raspberry-pi-arduino-due-udoo" title="4 Raspberry Pi + Arduino DUE = UDOO" rel="bookmark">4 Raspberry Pi + Arduino...</a>
+						</li>                   
+											<li class="trendingPost ">
+							<a href="http://www.geyosoft.com/2014/elementary-os-linux-rasa-mac" title="Elementary OS : Linux rasa Mac" rel="bookmark">Elementary OS : Linux ra...</a>
+						</li>                   
+											<li class="trendingPost ">
+							<a href="http://www.geyosoft.com/2013/mengenal-rfid" title="Mengenal RFID" rel="bookmark">Mengenal RFID</a>
+						</li>                   
+											<li class="trendingPost last">
+							<a href="http://www.geyosoft.com/2013/smartbot-robot-dengan-otak-smartphone" title="Smartbot, Robot dengan Otak Smartphone" rel="bookmark">Smartbot, Robot dengan O...</a>
+						</li>                   
+									</ul>
+			</div>
+				<header class="main-header">
+			<div id="header">
+															  <h2 id="logo" class="image-logo">
+																<a href="http://www.geyosoft.com/"><img src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/geyosoft2.png" alt="Geyosoft.com" height="61" width="364"></a>
+							</h2><!-- END #logo -->
+													<div class="secondary-navigation">
+					<nav id="navigation">
+													<ul id="menu-menu2" class="menu"><li id="menu-item-2309" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a title="Home" href="http://www.geyosoft.com/">Home<br><span class="sub"></span></a></li>
+<li id="menu-item-2242" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children"><a title="Theory" href="http://www.geyosoft.com/category/theory">Theory<br><span class="sub">Theory</span></a>
+<ul style="display: none;" class="sub-menu">
+	<li id="menu-item-2254" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://www.geyosoft.com/category/theory/electronics">Electronics<br><span class="sub">Electronics</span></a></li>
+	<li id="menu-item-2256" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent"><a href="http://www.geyosoft.com/category/theory/mikrokontroler">Microcontroller<br><span class="sub">Microcontroller</span></a></li>
+	<li id="menu-item-2253" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://www.geyosoft.com/category/theory/programming">Programming<br><span class="sub">Programming</span></a></li>
+	<li id="menu-item-2255" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://www.geyosoft.com/category/theory/control-system">Control System<br><span class="sub">Control System</span></a></li>
+	<li id="menu-item-2257" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://www.geyosoft.com/category/theory/power-system">Power System<br><span class="sub">Power System</span></a></li>
+	<li id="menu-item-2258" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://www.geyosoft.com/category/theory/telecomunication">Telecomunication<br><span class="sub">Telecomunication</span></a></li>
+</ul>
+</li>
+<li id="menu-item-2240" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="http://www.geyosoft.com/category/tutorial">Tutorial<br><span class="sub">Tutorial</span></a>
+<ul style="display: none;" class="sub-menu">
+	<li id="menu-item-2241" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://www.geyosoft.com/category/tutorial/avr-tutorial">AVR Tutorial<br><span class="sub">AVR Tutorial</span></a></li>
+</ul>
+</li>
+<li id="menu-item-2042" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="http://www.geyosoft.com/category/archive-all-project">Archive All Project<br><span class="sub">Project</span></a>
+<ul style="display: none;" class="sub-menu">
+	<li id="menu-item-2043" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://www.geyosoft.com/category/archive-all-project/avr-project">AVR Project<br><span class="sub">AVR Project</span></a></li>
+	<li id="menu-item-2310" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://www.geyosoft.com/category/archive-all-project/electronics-project">Electronics Project<br><span class="sub">Electronics Project</span></a></li>
+</ul>
+</li>
+</ul>												<a href="#" id="pull">Menu</a>
+					</nav>
+				</div>
+			</div>
+		</header>
+					<div class="header-bottom-second">
+				<div id="header-widget-container"><div class="widget-header"><script async="" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/adsbygoogle.js"></script>
+<!-- Banner Atas -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-2044266494217305" data-ad-slot="9921675468"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" width="728"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>									<div class="widget-header-bottom-right">
+						<div class="textwidget">
+							<div class="topad"><a href="http://www.geyosoft.com/2013/button%20link" class="header-button">Button Text!</a> Submit  original article and get paid. <a href="#">Find out</a> More </div>
+						</div>
+					</div> 
+						</div></div>							<div id="page" class="single">
+	<div class="content">
+		<!-- Start Article -->
+		<article class="article">		
+							<div id="post-1748" class="post-1748 post type-post status-publish format-standard has-post-thumbnail hentry category-mikrokontroler category-theory tag-timer-counter has_thumb">
+					<div class="single_post">
+						<header>
+							<!-- Start Title -->
+							<h1 class="title single-title">Timer dan Counter Mikrokontroler</h1>
+							<!-- End Title -->
+							<!-- Start Post Meta -->
+							<div class="post-info"><span class="theauthor"><a rel="nofollow" href="http://www.geyosoft.com/author/geyosoft" title="Posts by I Putu Giovanni Eliezer">I Putu Giovanni Eliezer</a></span> | <span class="thetime">17 October 2013</span> | <span class="thecategory"><a href="http://www.geyosoft.com/category/theory/mikrokontroler" rel="nofollow">Microcontroller</a>, <a href="http://www.geyosoft.com/category/theory" rel="nofollow">Theory</a></span> | <span class="thecomment"><a href="http://www.geyosoft.com/2013/timer-dan-counter-mikrokontroler#comments">2 Comments</a></span></div>
+							<!-- End Post Meta -->
+						</header>
+						<!-- Start Content -->
+						<div class="post-single-content box mark-links">
+														<p style="text-align: justify;"><b>Pengenalan Timer &amp; Counter</b></p>
+<p style="text-align: justify;">Timer &amp; Counter merupakan fitur yang
+ telah tertanam di mikrokontroler AVR yang memiliki fungsi terhadap 
+waktu. Fungsi pewaktu yang dimaksud disini adalah penentuan kapan 
+program tersebut dijalankan, tidak hanya itu saja fungsi timer yang 
+lainnya adalah PWM, ADC, dan Oscillator.&nbsp;Prinsip kerja timer dengan
+ cara membagi frekuensi (prescaler) pada clock yang terdapat pada 
+mikrokontroler sehingga timer dapat berjalan sesuai dengan frekuensi 
+yang di kehendaki.</p>
+<p style="text-align: justify;">Timer merupakan fungsi waktu yang sumber
+ clocknya berasal dari clock internal. Sedangkan counter merupakan 
+fungsi perhitungan yang sumber clocknya berasal dari external 
+mikrokontroler. Salah satu contoh penggunaan fungsi timer yaitu pada jam
+ digital yang sumber clocknya bisa menggunakan crystal oscillator dan 
+contoh penggunaan counter pada penghitung barang pada konveyor yang 
+sumber clocknya berasal dari sensor yang mendeteksi barang tersebut.</p>
+<p style="text-align: justify;">Pada mikrokontroler ATMEGA 16 memiliki 3
+ buah timer yaitu timer 0 (8bit), timer1 (16bit), dan timer 2 (8bit). 
+Untuk mengenai register lengkapnya bisa dibaca pada datasheet. Namun 
+yang akan dibahas pada tulisan kali ini hanya timer 0(8bit) dan timer1 
+(16 bit) saja.</p>
+<p style="text-align: justify;"><strong>Register yang Digunakan untuk Timer &amp; Counter</strong></p>
+<ul style="text-align: justify;">
+<li>TCNT0 = Register Timer 1</li>
+<li>TCNT 1 = Register Timer 0</li>
+<li>Ttimer0 = Periode Timer 0</li>
+<li>Ttimer 1 =Periode Timer 1</li>
+<li>Tosc = Periode Clock</li>
+<li>Fosc = Frekuensi Crystall Clock</li>
+<li>N = Prescaler (1, 8, 64, 256, 1024)</li>
+</ul>
+<p style="text-align: justify;"><strong>Prescaler</strong></p>
+<p style="text-align: justify;">Pada dasarnya Timer hanya menghitung 
+pulsa clock. Frekuensi pulsa clock yang dihitung tersebut bisa sama 
+dengan frekuensi crystal yang digunakan atau dapat diperlambat 
+menggunakan prescaler dengan faktor 8, 64, 256 atau 1024.</p>
+<p style="text-align: justify;">Contoh penggunaan prescaler :</p>
+<p style="text-align: justify;">Suatu mikrokontroler menggunakan crystal
+ dengan frekuensi 8 MHz dan timer yang digunakan adalah Timer 1 (16 Bit)
+ maka maksimum waktu Timer yang bisa dihasilkan adalah :</p>
+<p style="text-align: justify;">TMAX = 1/fCLK x (FFFFh + 1)<br>
+= 0.125&nbsp;µs x 65536<br>
+= 0.008192 s</p>
+<p style="text-align: justify;">Untuk menghasilkan waktu Timer yang lebih lama dapat menggunakan prescaler 1024, maka waktu Timer yang bisa dihasilkan adalah :</p>
+<p style="text-align: justify;">TMAX = 1/fCLK x (FFFFh+1) x N<br>
+= 0.125&nbsp;µs x 655536 x 1024<br>
+= 8.388608 s</p>
+<p style="text-align: justify;"><strong>Tujuan Penggunaan Timer &amp; Counter</strong></p>
+<ol style="text-align: justify;">
+<li>Melaksanaan tugas secara ber-ulang</li>
+<li>Mengendalikan kecepatan motor DC (PWM)</li>
+<li>Melakukan perhitungan (Counter)</li>
+<li>Membuat penundaan waktu (delay)</li>
+</ol>
+<p style="text-align: justify;"><strong>TIMER 0 (8 Bit)</strong></p>
+<p style="text-align: center;"><img class="aligncenter" title="Blok Diagram Timer 0" alt="Blok Diagram Timer 0" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/blok-diagram-timer0.png" height="401" width="502"></p>
+<p style="text-align: justify;">Untuk perhitungan timer 0 dapat menggunakan rumus :</p>
+<p style="text-align: justify;">Ttimer0 = Tosc*(256-TCNT0)*N &nbsp; &nbsp; →&nbsp;(8 Bit = 256 ≈ 2^8)</p>
+<p style="text-align: justify;">Sebenarnya Timer 0 tidak dapat 
+menghasilkan periode selama 1 detik karena keterbatasan jumlah bit nya 
+(8 bit = 256). Namun dengan penggunaan rumus dapat dilakukan 
+pemanipulasian agar timer 0 dapat menghasilkan periode waktu selama 1 
+detik. Dengan cara membuat timer selama 0.01 detik lalu dilakukan 
+perulangan sebanyak 100 kali sehingga akan menghasilkan waktu 1 detik 
+(0.01 detik x 100 kali = 1 detik).</p>
+<p style="text-align: justify;">Contoh penggunaan untuk timer 0 &nbsp;dengan crystal 12 MHz dan menggunakan skala clock 1024 maka akan menghasilkan :</p>
+<p style="text-align: justify;">Tosc = 1/Fosc = 1/12 = 0,083<br>
+0.01 = 0.083*(256-TCNT0)*1024<br>
+TCNT = 128=&nbsp;<strong>8A</strong>&nbsp;(Hexadesimal)</p>
+<p style="text-align: justify;">Berdasarkan perhitungan tersebut di 
+dapatkan 8A, maka nilai tersebut harus di inputkan ke register TCNT0 
+agar timer 0 bernilai 1 detik. Berikut ini contoh penggunaan nya pada 
+Codevision AVR :</p>
+<p style="text-align: center;"><img class="aligncenter" alt="" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/TIMER%25200.JPG" height="437" width="225"></p>
+<p style="text-align: justify;"><strong>TIMER 1 (16 Bit)</strong></p>
+<p style="text-align: center;"><img class="aligncenter" title="Blok Diagram TImer 1" alt="Blok Diagram TImer 1" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/blok-diagram-timer1.png" height="376" width="486"></p>
+<p style="text-align: justify;">Untuk perhitungan timer 1 dapat menggunakan rumus :</p>
+<p style="text-align: justify;">Ttimer 1 = Tosc*(65536-TCNT1)*N &nbsp; &nbsp;&nbsp;→(16 Bit = 65536 ≈&nbsp;2^16)</p>
+<p style="text-align: justify;">Contoh penggunaan untuk timer 1 detik 
+(Timer1 = 1 detik) dengan crystal 12 MHz dan menggunakan skala clock 
+1024 maka akan menghasilkan :</p>
+<p style="text-align: justify;">Tosc = 1/Fosc = 1/12 = 0,083<br>
+1 = 0.083*(65536-TCNT1)*1024<br>
+TCNT = 53818 = <strong>D23A</strong> (Hexadesimal)</p>
+<p style="text-align: justify;">Berdasarkan perhitungan tersebut di 
+dapatkan D23A, maka nilai tersebut harus di inputkan ke register TCNT1 
+agar timer 1 bernilai 1 detik. Berikut ini contoh penggunaan nya pada 
+Codevision AVR :</p>
+<p style="text-align: center;"><img class="aligncenter" alt="" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/TIMER1.JPG" height="437" width="225"></p>
+<p style="text-align: justify;"><strong>Counter 0 &amp; 1</strong></p>
+<p style="text-align: justify;">Untuk penggunaan fungsi counter pada 
+mikrokontroler lebih mudah jika dibandingkan dengan fungsi timer, karena
+ tidak memerlukan perhitungan untuk penginputan nilai ke register TCNT. 
+Register TCNT akan secara otomatis akan mencacah jika ada input yang 
+masuk, input yang masuk contohnya dapat berupa push button.</p>
+<p style="text-align: justify;">Pada Counter 0, input berasal dari T0 
+atau PORT B 0 yang mampu mencacah input hingga 256 (8 Bit). Berikut ini 
+konfigurasi Counter 0 pada Codevision AVR :</p>
+<p style="text-align: justify;">Pada Counter 1, input berasal dari T1 atau PORT B 1 yang mampu mencacah hingga 65536 (16 Bit).</p>
+<p style="text-align: justify;">Untuk konfigurasi counter 0 &amp; 1 pada Codevision AVR sama seperti konfigurasi Timer 0 dan 1.</p>
+														 
+													</div>
+						<!-- End Content -->
+							
+							<!-- Start Related Posts -->
+							<div class="related-posts"><h3>Related Posts</h3><div class="postauthor-top"><ul>								<li class=" rpexcerpt1 ">
+									<a rel="nofollow" class="relatedthumb" href="http://www.geyosoft.com/2013/membuat-sampling-sinyal-sinus-dan-cosinus-di-matlab" title="Membuat Sampling Sinyal Sinus dan Cosinus di MATLAB">
+										<span class="rthumb">
+																							<img src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/sinus-signal-gs-13-85x65.jpg" class="attachment-widgetthumb wp-post-image" alt="sinus-signal-gs-13" title="" height="46" width="60">																					</span>
+										<span>
+											Membuat Sampling Sinyal Sinus dan Cosinus di MATLAB										</span>
+									</a>
+									<div class="meta">
+										<a href="http://www.geyosoft.com/2013/membuat-sampling-sinyal-sinus-dan-cosinus-di-matlab#comments" rel="nofollow">2 Comments</a> | <span class="thetime">Jan 14, 2013</span>
+									</div> <!--end .entry-meta-->
+								</li>
+																								<li class=" rpexcerpt2 last">
+									<a rel="nofollow" class="relatedthumb" href="http://www.geyosoft.com/2013/membuat-sampling-sinyal-frekuensi-rendah" title="Membuat Sampling Sinyal Frekuensi Rendah">
+										<span class="rthumb">
+																							<img src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/signal-sampling-gs-13-85x65.jpg" class="attachment-widgetthumb wp-post-image" alt="signal-sampling-gs-13" title="" height="46" width="60">																					</span>
+										<span>
+											Membuat Sampling Sinyal Frekuensi Rendah										</span>
+									</a>
+									<div class="meta">
+										<a href="http://www.geyosoft.com/2013/membuat-sampling-sinyal-frekuensi-rendah#comments" rel="nofollow">No Comments</a> | <span class="thetime">Jan 14, 2013</span>
+									</div> <!--end .entry-meta-->
+								</li>
+																								<li class=" rpexcerpt3 ">
+									<a rel="nofollow" class="relatedthumb" href="http://www.geyosoft.com/2012/kode-ascii" title="Kode ASCII">
+										<span class="rthumb">
+																							<img src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/411px-ASCII_logo.jpg" class="attachment-widgetthumb wp-post-image" alt="411px-ASCII_logo.svg" title="" height="46" width="60">																					</span>
+										<span>
+											Kode ASCII										</span>
+									</a>
+									<div class="meta">
+										<a href="http://www.geyosoft.com/2012/kode-ascii#comments" rel="nofollow">1 Comment</a> | <span class="thetime">Nov 8, 2012</span>
+									</div> <!--end .entry-meta-->
+								</li>
+																								<li class="last rpexcerpt4 last">
+									<a rel="nofollow" class="relatedthumb" href="http://www.geyosoft.com/2013/dasar-sistem-kontrol" title="Dasar Sistem Kontrol">
+										<span class="rthumb">
+																							<img src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/control-system-basic-85x65.jpg" class="attachment-widgetthumb wp-post-image" alt="control-system-basic" title="" height="46" width="60">																					</span>
+										<span>
+											Dasar Sistem Kontrol										</span>
+									</a>
+									<div class="meta">
+										<a href="http://www.geyosoft.com/2013/dasar-sistem-kontrol#comments" rel="nofollow">No Comments</a> | <span class="thetime">Apr 2, 2013</span>
+									</div> <!--end .entry-meta-->
+								</li>
+																</ul></div></div>							<!-- End Related Posts -->
+						  
+													<!-- Start Author Box -->
+							<div class="postauthor-container">
+								<h4>About The Author</h4>
+								<div class="postauthor">
+									<img alt="" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/24ac562ece31be88e63d0d09426d4017.jpg" class="avatar avatar-100 photo" height="100" width="100">									<h5>I Putu Giovanni</h5>
+									<p>Lahir di Kota Denpasar, 28 Januari 1994. Saat ini sedang 
+berdomisili di Surabaya. Sedang aktif sebagai mahasiswa di salah satu 
+Institut negeri ternama di kota Surabaya. Bidang pendidikan  dalam 
+Teknik Elektro terutama bidang pengaturan. Mulai aktif nge-blog saat 
+mulai SMA dan terus dikembangkan hingga saat ini.</p>
+								</div>
+							</div>
+							<!-- End Author Box -->
+						  
+					</div>
+				</div>
+				<!-- You can start editing here. -->
+	<div id="comments">
+		<div class="total-comments">2 Comments</div>
+		<ol class="commentlist">
+			<div class="navigation">
+				<div class="alignleft"></div>
+				<div class="alignright"></div>
+			</div>
+				<li class="comment even thread-even depth-1" id="li-comment-640">
+		<div id="comment-640" style="position:relative;">
+			<div class="comment-author vcard">
+				<img alt="" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/f4ee772eee2527ffe5f287d863b8fb63.jpg" class="avatar avatar-70 photo" height="70" width="70">				<div class="comment-metadata">
+				<span class="fn">yans</span>				<time>10 March 2014</time>
+				<span class="comment-meta">
+									</span>
+				<span class="reply">
+					<a class="comment-reply-link" href="http://www.geyosoft.com/2013/timer-dan-counter-mikrokontroler?replytocom=640#respond" onclick='return addComment.moveForm( "comment-640", "640", "respond", "1748" )' aria-label="Reply to yans">Reply</a>				</span>
+				</div>
+			</div>
+						<div class="commentmetadata">
+				<p>kalo input counter berupa pulsa gimana caranya ?</p>
+			</div>
+		</div>
+	</li>
+<!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-653">
+		<div id="comment-653" style="position:relative;">
+			<div class="comment-author vcard">
+				<img alt="" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/669db11b2dfdd3e5ecbeebc8a113da14.jpg" class="avatar avatar-70 photo" height="70" width="70">				<div class="comment-metadata">
+				<span class="fn"><a href="http://elektro-industri10.blogspot.com/" rel="external nofollow" class="url">Putra</a></span>				<time>18 April 2014</time>
+				<span class="comment-meta">
+									</span>
+				<span class="reply">
+					<a class="comment-reply-link" href="http://www.geyosoft.com/2013/timer-dan-counter-mikrokontroler?replytocom=653#respond" onclick='return addComment.moveForm( "comment-653", "653", "respond", "1748" )' aria-label="Reply to Putra">Reply</a>				</span>
+				</div>
+			</div>
+						<div class="commentmetadata">
+				<p>Selamat malam,,Mas,,mau tanya,,btw bagaimana cara mendelay dutycycle untuk proses switching DC DC converter..?terimakasih</p>
+			</div>
+		</div>
+	</li>
+<!-- #comment-## -->
+			<div class="navigation bottomnav">
+				<div class="alignleft"></div>
+				<div class="alignright"></div>
+			</div>
+		</ol>
+	</div>
+	<div class="bordersperator2"></div>
+	<div id="commentsAdd">
+		<div id="respond" class="box m-t-6">
+											<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title"></h3><h4><span>Add a Comment</span></h4> <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://www.geyosoft.com/2013/timer-dan-counter-mikrokontroler#respond" style="display:none;">Cancel reply</a></small>
+									<form action="http://www.geyosoft.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name:<span class="required">*</span></label><input id="author" name="author" size="30" type="text"></p>
+<p class="comment-form-email"><label for="email">Email Address:<span class="required">*</span></label><input id="email" name="email" size="30" type="text"></p>
+<p class="comment-form-url"><label for="url">Website:</label><input id="url" name="url" size="30" type="text"></p>
+												<p class="comment-form-comment"><label for="comment">Comment:<span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="5" aria-required="true"></textarea></p>												<p class="form-submit">
+							<input name="submit" id="submit" class="submit" value="Add Comment" type="submit">
+							<input name="comment_post_ID" value="1748" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						<input name="4a416efac7e0c16222abe2efc5970318" value="4a416efac7e0c16222abe2efc5970318" type="hidden"><p id="gasp_p" style="clear:both;"><label><input name="cl_check_35f" id="cl_check_35f" type="checkbox"> Konfirmasi Untuk Memberikan Komentar</label></p><script type="text/javascript">
+        //v1.5.1
+        var gasp_p = document.getElementById("gasp_p");
+        var gasp_cb = document.createElement("input");
+        var gasp_text = document.createTextNode(" Konfirmasi Untuk Memberikan Komentar");
+        gasp_cb.type = "checkbox";
+        gasp_cb.id = "cl_check_35f";
+        gasp_cb.name = "cl_check_35f";
+
+        var gasp_label = document.createElement("label");
+        gasp_p.appendChild(gasp_label);
+        gasp_label.appendChild(gasp_cb);
+        gasp_label.appendChild(gasp_text);
+        var frm = gasp_cb.form;
+        frm.onsubmit = gasp_it;
+        function gasp_it(){
+        if(gasp_cb.checked != true){
+        alert("Please check the box to confirm that you are NOT a spammer");
+        return false;
+        }
+        return true;
+        }
+        </script>
+        <noscript>you MUST enable javascript to be able to comment</noscript>
+        <input id="gasp_email" name="gasp_email" value="" type="hidden"><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="cd8ca6d4a7" type="hidden"></p><p style="display: none;"></p>					<input id="ak_js" name="ak_js" value="1428380249159" type="hidden"></form>
+							</div><!-- #respond -->
+					</div>
+	</div>
+					</article>
+		<!-- End Article -->
+		<!-- Start Sidebar -->
+		<aside class="sidebar c-4-12">
+	<div id="sidebars" class="sidebar">
+		<div class="sidebar_list">
+			<li id="search-3" class="widget widget-sidebar widget_search"><form method="get" id="searchform" class="search-form" action="http://www.geyosoft.com" _lpchecked="1">
+	<fieldset>
+		<input name="s" id="s" value="Search the site" onblur="if (this.value == '') {this.value = 'Search the site';}" onfocus="if (this.value == 'Search the site') {this.value = '';}" type="text">
+		<input id="search-image" class="sbutton" style="border:0; vertical-align: top;" value="Search" type="submit">
+	</fieldset>
+</form></li><li id="mts_subscribe_widget-2" class="widget widget-sidebar mts_subscribe_widget">        	
+			<div class="mts-subscribe">
+                
+                
+                <form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" _lpchecked="1">
+					<input value="Your email Address..." onblur="if (this.value == '') {this.value = 'Your email Address...';}" onfocus="if (this.value == 'Your email Address...') {this.value = '';}" name="email" type="text">
+					<input value="" name="uri" type="hidden"><input name="loc" value="en_US" type="hidden"><input value="Subscribe" type="submit">
+				</form>
+
+                <div class="result"></div>
+                
+            </div><!--subscribe_widget-->
+		
+		</li><li id="text-14" class="widget widget-sidebar widget_text">			<div class="textwidget"><script async="" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/adsbygoogle.js"></script>
+<!-- banner baru -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2044266494217305" data-ad-slot="7847162261"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="250" width="300"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</li><li id="text-16" class="widget widget-sidebar widget_text">			<div class="textwidget"><script async="" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/adsbygoogle.js"></script>
+<!-- banner baru -->
+<ins data-adsbygoogle-status="done" class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-2044266494217305" data-ad-slot="7847162261"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="250" width="300"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</li><li id="text-17" class="widget widget-sidebar widget_text">			<div class="textwidget"><iframe src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/likebox.htm" scrolling="no" style="border:none; overflow:hidden; width:300px; height:290px;" allowtransparency="true" frameborder="0"></iframe></div>
+		</li>		</div>
+	</div><!--sidebars-->
+</aside>		<!-- End Sidebar -->
+				</div><!--.content-->
+	</div><!--#page-->
+<footer>
+	</footer><!--footer-->
+<div class="copyrights"><!--start copyrights-->
+<div class="row" id="copyright-note">
+					<div class="foot-logo">
+			<a href="http://www.geyosoft.com/" rel="nofollow"><img src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/Geyosoft-circle2.png" alt="Geyosoft.com" height="44" width="44"></a>
+		</div>
+		<div class="copyright-left-text">Copyright © 2015 <a href="http://www.geyosoft.com/" title="Computer and Electrical Engineering" rel="nofollow">Geyosoft.com</a>.</div>
+	<div class="copyright-text"></div>
+	<div class="footer-navigation">
+					<ul class="menu">
+				<li class="page_item page-item-1387"><a href="http://www.geyosoft.com/kontak">Contact</a></li>
+<li class="page_item page-item-65"><a href="http://www.geyosoft.com/daftar-isi">Site Map</a></li>
+<li class="page_item page-item-2"><a href="http://www.geyosoft.com/about-us">About Us</a></li>
+			</ul>
+				</div>
+	<div class="top"><a href="#top" class="toplink">&nbsp;</a></div>
+</div>
+<!--end copyrights-->
+</div>
+<script type="text/javascript" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/form.js"></script>
+<script type="text/javascript" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/jquery_002.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/www.geyosoft.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/scripts.js"></script>
+<script type="text/javascript" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/comment-reply.js"></script>
+<script type="text/javascript" src="Timer%20dan%20Counter%20Mikrokontroler%20_%20Geyosoft.com_files/customscript.js"></script>
+</div><!--.main-container-->
+
+</body></html>

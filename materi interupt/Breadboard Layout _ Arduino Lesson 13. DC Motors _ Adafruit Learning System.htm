@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths js-ready" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+<script src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/308175db61" type="text/javascript"></script><script src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/nr-632.js"></script><script src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"308175db61","applicationID":"3238541","transactionName":"cVZXRUFeWghRShtEVlVcSh5AWVkT","queueTime":0,"applicationTime":35,"agent":"js-agent.newrelic.com/nr-632.min.js"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"UQUGWV5XGwACV1lXAwA="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+    <title>Breadboard Layout | Arduino Lesson 13. DC Motors | Adafruit Learning System</title>
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="6Tk6kZQUFxAzo21ucv4uOLdl8l0zjiutBCrbPVIUn0xo+/3skqLUouD+8uO+laN1CdTjsFdjxK8RAOKFYtGolg==">
+  <link rel="alternate" type="application/atom+xml" title="ATOM" href="https://learn.adafruit.com/feed">
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://learn.adafruit.com/feed.rss">
+  <link rel="stylesheet" media="screen" href="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/fonts.css">
+  <link rel="stylesheet" media="screen" href="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/application-799f2dbcbafd1299a536ec340996e563.css">
+  <!--[if lt IE 9]>
+    <script src="/assets/ie.html5.js"></script>
+    <script src="/assets/ie.respond.js"></script>
+  <![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@adafruit">
+  <meta name="twitter:title" content="Arduino Lesson 13. DC Motors">
+  <meta name="twitter:description" content="Learn Arduino, Lesson 13. DC Motors">
+  <meta name="twitter:image:src" content="https://learn.adafruit.com/system/guides/images/000/000/134/medium800/overview.jpg">
+  <meta name="twitter:domain" content="https://learn.adafruit.com">
+
+  <link rel="canonical" href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/breadboard-layout">
+<style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="application pages show">
+  <div id="outer-wrapper">
+    <div id="inner-wrapper">
+      
+      <header id="adafruit-header">
+    <div id="small-header-content" class="container visible-xs">
+    <a id="small-header-menu-button" class="menu-link" href="#small-header-nav">
+      <i class="fa fa-bars"> </i>
+    </a>
+    <div class="small-header-logo">
+      <a href="https://www.adafruit.com/">
+        <img id="small-logo" alt="Adafruit Logo" title="Adafruit" src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/adafruit_logo_small.png" height="50" width="50">
+</a>    </div>
+    <a class="small-header-cart" href="https://www.adafruit.com/shopping_cart">
+      <span class="small-cart-count">0</span>
+      <i class="fa fa-shopping-cart"></i>
+</a>  </div>
+    <nav id="small-header-nav" role="navigation" class="visible-xs">
+      <div class="block">
+        <ul>
+          <li>
+            <div id="small-search-wrapper">
+              <div id="small-search-inner-wrapper">
+                <form action="https://learn.adafruit.com/search" method="get">
+                  <label for="mobile-search" style="display:none;">Search</label>
+                  <input id="mobile-search" name="q" placeholder="Search Adafruit" type="text">
+                  <i class="fa fa-search"></i>
+                </form>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="https://www.adafruit.com/categories">SHOP</a>
+          </li>
+          <li>
+            <a href="https://www.adafruit.com/blog">BLOG</a>
+          </li>
+          <li>
+            <a href="https://learn.adafruit.com/">LEARN</a>
+          </li>
+          <li>
+            <a href="https://forums.adafruit.com/">FORUMS</a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/adafruit">VIDEOS</a>
+          </li>
+            <li>
+              <a href="https://learn.adafruit.com/users/sign_in">SIGN IN</a>
+            </li>
+          <li>
+            <a class="close-btn" id="small-nav-close-button" href="#top">CLOSE MENU</a>
+          </li>
+        </ul>
+
+    </div>
+  </nav>
+
+  <div id="header-content" class="container hidden-xs">
+    <div id="header-profile">
+      <a id="header-cart" href="https://www.adafruit.com/shopping_cart">
+        0 Items <i class="fa fa-shopping-cart"></i>
+</a>      <div id="account">
+          <a href="https://learn.adafruit.com/users/sign_in">Sign In</a>
+      </div>
+      <div id="search-wrapper">
+        <form action="https://learn.adafruit.com/search" method="get">
+          <label for="search" style="display:none;">Search</label>
+          <span style="position: relative; display: inline-block;" class="twitter-typeahead"><input style="position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none repeat scroll 0% 0% rgb(0, 0, 0);" class="tt-hint" autocomplete="off" spellcheck="off" disabled="disabled" type="text"><input dir="auto" style="position: relative; vertical-align: top; background-color: transparent;" spellcheck="false" autocomplete="off" class="tt-query" id="search" name="q" type="text"><span style="position: absolute; left: -9999px; visibility: hidden; white-space: nowrap; font-family: &quot;Gotham SSm A&quot;,&quot;Gotham SSm B&quot;; font-size: 12px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></span><span style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;" class="tt-dropdown-menu"></span></span>
+          <i class="fa fa-search"></i>
+          <input style="visibility: hidden; position: fixed;" type="submit">
+        </form>
+      </div>
+    </div>
+    <div id="navigation">
+      <a href="https://www.adafruit.com/">
+        <img id="logo" alt="Adafruit Logo" title="Adafruit" src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/logo_2x.png" height="60" width="172">
+</a>      <nav class="hover-menu">
+  <ul>
+    <li id="nav-shop"><a href="https://www.adafruit.com/categories">SHOP</a>
+      <div class="flyouts">
+<div class="flyout">
+<div class="container">
+<div class="flyout-content row"><div class="column col-lg-6 col-md-6 col-sm-6">
+<div class="title categories">
+PRODUCT CATEGORIES <br class="hidden-lg"><a href="http://www.adafruit.com/categories">(SEE ALL 27)</a>
+</div>
+<div class="row">
+<div class="col-lg-6 col-md-6 col-sm-6">
+<ul class="links categories"><li><a href="http://www.adafruit.com/category/17">ARDUINO (129)</a></li>
+<li><a href="http://www.adafruit.com/category/105">RASPBERRY PI (301)</a></li>
+<li><a href="http://www.adafruit.com/category/75">BEAGLEBONE (24)</a></li>
+<li><a href="http://www.adafruit.com/category/168">NEOPIXELS (34)</a></li>
+<li><a href="http://www.adafruit.com/category/65">WEARABLES (94)</a></li>
+<li><a href="http://www.adafruit.com/category/117">YOUNG ENGINEERS (84)</a></li>
+<li><a href="http://www.adafruit.com/category/290">COSPLAY/COSTUMING (148)</a></li>
+<li><a href="http://www.adafruit.com/category/82">PROTOTYPING (157)</a></li>
+<li><a href="http://www.adafruit.com/category/307">HALLOWEEN (210)</a></li>
+<li><a href="http://www.adafruit.com/category/203">KITS &amp; PROJECTS (141)</a></li>
+<li><a href="http://www.adafruit.com/category/63">LCDS &amp; DISPLAYS (97)</a></li>
+<li><a href="http://www.adafruit.com/category/196">BOARDS (165)</a></li>
+<li><a href="http://www.adafruit.com/category/328">RESELLER &amp; UNIVERSITY PACKS (2)</a></li>
+<li><a href="http://www.adafruit.com/category/37">LEDS (214)</a></li>
+</ul>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6">
+<ul class="links"><li><a href="http://www.adafruit.com/category/44">POWER (151)</a></li>
+<li><a href="http://www.adafruit.com/category/33">CABLES (102)</a></li>
+<li><a href="http://www.adafruit.com/category/8">TOOLS (114)</a></li>
+<li><a href="http://www.adafruit.com/category/227">ROBOTICS &amp; CNC (125)</a></li>
+<li><a href="http://www.adafruit.com/category/234">ACCESSORIES (110)</a></li>
+<li><a href="http://www.adafruit.com/category/54">COMPONENTS &amp; PARTS (263)</a></li>
+<li><a href="http://www.adafruit.com/category/35">SENSORS (158)</a></li>
+<li><a href="http://www.adafruit.com/category/50">EL WIRE/TAPE/PANEL (82)</a></li>
+<li><a href="http://www.adafruit.com/category/128">3D PRINTING (50)</a></li>
+<li><a href="http://www.adafruit.com/category/40">BOOKS (82)</a></li>
+<li><a href="http://www.adafruit.com/category/254">SOFTWARE (7)</a></li>
+<li><a href="http://www.adafruit.com/category/112">WIRELESS (65)</a></li>
+<li><a href="http://www.adafruit.com/category/14">GIFT CERTIFICATES (4)</a></li>
+</ul>
+</div>
+</div>
+</div><div class="column col-lg-3 col-md-3 col-sm-6 new-column">
+<div class="title new">
+NEW PRODUCTS <a href="http://www.adafruit.com/new"><br class="hidden-lg">(SEE ALL 116)</a>
+</div>
+<ul class="links new"><li>
+<a href="http://www.adafruit.com/product/2447"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2447-00.jpg" alt="SmartiPi Kit - LEGO® Compatible Case for Raspberry Pi B+ / Pi 2 - Gray"></a>
+<a href="http://www.adafruit.com/product/2447" class="name">SmartiPi Kit - LEGO® Compatible Case for Raspberry Pi B+ / Pi 2 - Gray<span class="price">$24.95</span></a>
+<div class="clear"></div>
+</li><li>
+<a href="http://www.adafruit.com/product/2446"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2446-01.jpg" alt="NinjaFlex - 1.75mm Diameter - Satin Sheen Gold - .50 Kg"></a>
+<a href="http://www.adafruit.com/product/2446" class="name">NinjaFlex - 1.75mm Diameter - Satin Sheen Gold - .50 Kg<span class="price">$49.95</span></a>
+<div class="clear"></div>
+</li><li>
+<a href="http://www.adafruit.com/product/2445"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2445-01.jpg" alt="NinjaFlex - 1.75mm Diameter - Semitranslucent White - .50 Kg"></a>
+<a href="http://www.adafruit.com/product/2445" class="name">NinjaFlex - 1.75mm Diameter - Semitranslucent White - .50 Kg<span class="price">$49.95</span></a>
+<div class="clear"></div>
+</li><li>
+<a href="http://www.adafruit.com/product/2444"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2444-01.jpg" alt="NinjaFlex - 1.75mm Diameter - Green Grass - .50 Kg"></a>
+<a href="http://www.adafruit.com/product/2444" class="name">NinjaFlex - 1.75mm Diameter - Green Grass - .50 Kg<span class="price">$49.95</span></a>
+<div class="clear"></div>
+</li><li>
+<a href="http://www.adafruit.com/product/2443"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2443-01.jpg" alt="NinjaFlex - 1.75mm Diameter - Liquid Hot Lava - .50 Kg"></a>
+<a href="http://www.adafruit.com/product/2443" class="name">NinjaFlex - 1.75mm Diameter - Liquid Hot Lava - .50 Kg<span class="price">$49.95</span></a>
+<div class="clear"></div>
+</li></ul>
+</div><div class="column col-lg-3 col-md-3 hidden-sm">
+<div class="title featured">
+FEATURED PRODUCTS <a href="http://www.adafruit.com/featured"><br class="hidden-lg">(SEE ALL 36)</a>
+</div>
+<ul class="links featured"><li>
+<a href="http://www.adafruit.com/product/2358"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2358-03.jpg" alt="Raspberry Pi 2 - Model B - ARMv7 with 1G RAM"></a>
+<a href="http://www.adafruit.com/product/2358" class="name">Raspberry Pi 2 - Model B - ARMv7 with 1G RAM<span class="price">$44.95</span></a>
+<div class="clear"></div>
+</li><li>
+<a href="http://www.adafruit.com/product/2403"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2403-02.jpg" alt="Spark Maker Kit - Includes Spark Core with Chip Antenna"></a>
+<a href="http://www.adafruit.com/product/2403" class="name">Spark Maker Kit - Includes Spark Core with Chip Antenna<span class="price">$64.95</span></a>
+<div class="clear"></div>
+</li><li>
+<a href="http://www.adafruit.com/product/2345"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2345-06.jpg" alt="Adafruit RGB Matrix HAT + RTC for Raspberry Pi - Mini Kit"></a>
+<a href="http://www.adafruit.com/product/2345" class="name">Adafruit RGB Matrix HAT + RTC for Raspberry Pi - Mini Kit<span class="price">$24.95</span></a>
+<div class="clear"></div>
+</li><li>
+<a href="http://www.adafruit.com/product/2310"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2310-07.jpg" alt="Adafruit Perma-Proto HAT for Pi Mini Kit - No EEPROM"></a>
+<a href="http://www.adafruit.com/product/2310" class="name">Adafruit Perma-Proto HAT for Pi Mini Kit - No EEPROM<span class="price">$4.95</span></a>
+<div class="clear"></div>
+</li><li>
+<a href="http://www.adafruit.com/product/2315"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/2315-04.jpg" alt="Adafruit PiTFT 2.2" hat="" mini="" kit="" -="" 320x240="" 2.2"="" tft="" no="" touch"=""></a>
+<a href="http://www.adafruit.com/product/2315" class="name">Adafruit PiTFT 2.2" HAT Mini Kit - 320x240 2.2" TFT - No Touch<span class="price">$24.95</span></a>
+<div class="clear"></div>
+</li> </ul>
+</div></div>
+</div>
+</div>
+</div>
+    </li>
+    <li id="nav-blog"><a href="https://www.adafruit.com/blog">BLOG</a>
+        <div class="flyouts">
+    <div class="flyout">
+      <div class="container">
+        <div class="flyout-content row">
+
+          <div class="column col-lg-6 col-md-6 col-sm-6">
+            <div class="title categories">
+              POPULAR CATEGORIES <br class="hidden-lg"><a href="https://blog.adafruit.com/categories/">(SEE ALL 165)</a>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <ul class="links categories">
+																	<li><a href="https://blog.adafruit.com/category/art/">ART (3079)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/3d-printing/">3D PRINTING (3022)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/random/">RANDOM (2717)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/raspberry-pi/">RASPBERRY PI (2611)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/arduino/">ARDUINO (2063)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/wearables/">WEARABLES (2009)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/science/">SCIENCE (1189)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/robotics/">ROBOTICS (1147)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/ledslcds/">LEDS-LCDS (1118)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/ee/">EE (1101)</a>
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																							 
+             </li></ul></div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <ul class="links categories">
+																																																																													<li><a href="https://blog.adafruit.com/category/maker-business/">MAKER BUSINESS (1043)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/announce/">ANNOUNCE (976)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/costuming/">COSTUMING (926)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/educators/">EDUCATORS (891)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/ask-an-engineer/">ASK-AN-ENGINEER (884)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/cosplay/">COSPLAY (813)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/opensourcehardware/">OPEN SOURCE HARDWARE (780)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/community/">COMMUNITY (772)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/tutorials/">TUTORIALS (532)</a>
+																	</li><li><a href="https://blog.adafruit.com/category/events/">EVENTS (507)</a>
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+																																																																								
+											                </li></ul>
+              </div>
+            </div>
+          </div> 
+          <div class="column col-lg-3 col-md-3 col-sm-3">
+			            <div class="title new">
+              NEW POSTS <br class="hidden-lg"><a href="https://blog.adafruit.com/">(SEE ALL)</a>
+            </div>
+            <ul class="links new">
+									<li>
+						<a href="https://blog.adafruit.com/2015/03/31/drawings-in-space-wooden-wireframe-sculptures-of-everyday-objects-by-janusz-grunspek-arttuesday/"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/wood-1-new-300x232.jpg"></a>						<span class="blog-flyout-datetime">March 31, 2015 at 2:00 pm</span>
+						<a href="https://blog.adafruit.com/2015/03/31/drawings-in-space-wooden-wireframe-sculptures-of-everyday-objects-by-janusz-grunspek-arttuesday/" class="name">Drawings in Space: Wooden Wireframe Sculptures of…</a>
+						<div class="clear"></div>
+					</li>
+									<li>
+						<a href="https://blog.adafruit.com/2015/03/31/otto-piene-light-ballet-1969-arttuesday/"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/otto-piene-light-ballet-1969-art-300x169.jpg"></a>						<span class="blog-flyout-datetime">March 31, 2015 at 1:00 pm</span>
+						<a href="https://blog.adafruit.com/2015/03/31/otto-piene-light-ballet-1969-arttuesday/" class="name">Otto Piene: Light Ballet, 1969 #ArtTuesday</a>
+						<div class="clear"></div>
+					</li>
+									<li>
+						<a href="https://blog.adafruit.com/2015/03/31/with-new-nonstick-coating-the-wait-and-waste-is-over/"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/24ketchup_pour-master1050-300x108.jpg"></a>						<span class="blog-flyout-datetime">March 31, 2015 at 12:00 pm</span>
+						<a href="https://blog.adafruit.com/2015/03/31/with-new-nonstick-coating-the-wait-and-waste-is-over/" class="name">With New Nonstick Coating, the Wait, and Waste, Is…</a>
+						<div class="clear"></div>
+					</li>
+				            </ul>
+          </div>
+          <div class="column col-lg-3 col-md-3 col-sm-3">
+			            <div class="title featured">
+              FEATURED POSTS <br class="hidden-lg"><a href="https://blog.adafruit.com/category/featured">(SEE ALL 44)</a>
+            </div>
+            <ul class="links featured">
+									<li>
+						<a href="https://blog.adafruit.com/2015/03/27/arduinod15/"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/arduinoday2015blog-300x101.jpg"></a>						<span class="blog-flyout-datetime">March 27, 2015 at 10:37 pm</span>
+						<a href="https://blog.adafruit.com/2015/03/27/arduinod15/" class="name">#ArduinoD15</a>
+						<div class="clear"></div>
+					</li>
+									<li>
+						<a href="https://blog.adafruit.com/2015/03/20/adafruit-youtube-reaches-15-million-views/"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/adafruit_15M_blog1-300x101.jpg"></a>						<span class="blog-flyout-datetime">March 20, 2015 at 4:45 pm</span>
+						<a href="https://blog.adafruit.com/2015/03/20/adafruit-youtube-reaches-15-million-views/" class="name">Adafruit YouTube Reaches 15 Million Views!…</a>
+						<div class="clear"></div>
+					</li>
+									<li>
+						<a href="https://blog.adafruit.com/2015/03/07/makers-hackers-artists-engineers-community-google-reaches-100000-makers/"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/adafruit_100k_members_blog-300x101.jpg"></a>						<span class="blog-flyout-datetime">March 7, 2015 at 9:54 am</span>
+						<a href="https://blog.adafruit.com/2015/03/07/makers-hackers-artists-engineers-community-google-reaches-100000-makers/" class="name">Makers, hackers, artists &amp; engineers –…</a>
+						<div class="clear"></div>
+					</li>
+				            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    </li>
+    <li id="nav-learn"><a href="https://learn.adafruit.com/">LEARN</a>
+        <div class="flyouts">
+    <div class="flyout">
+      <div class="container">
+        <div class="flyout-content row">
+
+          <div class="column col-lg-6 col-md-6 col-sm-6">
+            <div class="title categories">
+              GUIDE CATEGORIES <br class="hidden-lg"><a href="https://learn.adafruit.com/">(SEE ALL 738)</a>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <ul class="links categories">
+                    <li><a href="https://learn.adafruit.com/category/components">COMPONENTS (35)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/sensors">SENSORS (122)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/hacks">HACKS (22)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/microcomputers">MICROCOMPUTERS (9)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/adafruit-products">ADAFRUIT PRODUCTS (196)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/maker-business">MAKER BUSINESS (20)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/projects">PROJECTS (88)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/leds">LEDS (127)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/raspberry-pi">RASPBERRY PI (152)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/braincrafts">BRAINCRAFTS (31)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/lcds-and-displays">LCDS &amp; DISPLAYS (46)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/el">EL WIRE/TAPE/PANEL (11)</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6">
+                <ul class="links categories">
+                    <li><a href="https://learn.adafruit.com/category/tools">TOOLS (28)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/microcontrollers">MICROCONTROLLERS (60)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/learn-arduino">LEARN ARDUINO (38)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/customer-projects">CUSTOMER PROJECTS (16)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/beaglebone">BEAGLEBONE (34)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/circuit-playground">CIRCUIT PLAYGROUND (7)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/3d-printing">3D PRINTING (91)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/trinket">TRINKET (55)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/robotics">ROBOTICS (12)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/collins-lab">COLLIN'S LAB (7)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/community-support">COMMUNITY SUPPORT (17)</a></li>
+                    <li><a href="https://learn.adafruit.com/category/wearables">WEARABLES (119)</a></li>
+                </ul>
+              </div>
+            </div>
+          </div> 
+          <div class="column col-lg-3 col-md-3 col-sm-3">
+            <div class="title new">
+              NEW GUIDES <br class="hidden-lg"><a href="https://learn.adafruit.com/guides/latest">(SEE ALL 63)</a>
+            </div>
+            <ul class="links new">
+                    <li>
+                      <a href="https://learn.adafruit.com/nunchuket-kung-fu-pc-video-game-fighting-stick"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/IMG_2779.JPG" alt="Introducing the iTapStick: Video Game USB Mouse Stick for Wii Nunchuk Controllers"></a>
+                      <a href="https://learn.adafruit.com/nunchuket-kung-fu-pc-video-game-fighting-stick" class="name">INTRODUCING THE ITAPSTICK: VIDEO GAME USB MOUSE STICK FOR WII NUNCHUK CONTROLLERS</a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="https://learn.adafruit.com/phone-controlled-plant-waterer-cc3200"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/Nexmo_Cover.jpg" alt="Phone-Controlled Plant Waterer with CC3200"></a>
+                      <a href="https://learn.adafruit.com/phone-controlled-plant-waterer-cc3200" class="name">PHONE-CONTROLLED PLANT WATERER WITH CC3200</a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="https://learn.adafruit.com/raspberry-pi-open-sound-control"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/sine.gif" alt="Using OSC to Communicate with a Raspberry Pi"></a>
+                      <a href="https://learn.adafruit.com/raspberry-pi-open-sound-control" class="name">USING OSC TO COMMUNICATE WITH A RASPBERRY PI</a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="https://learn.adafruit.com/raspipe-a-raspberry-pi-pipeline-viewer-part-2"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/MVI_5346_56-179.gif" alt="RasPipe: A Raspberry Pi Pipeline Viewer, Part 2"></a>
+                      <a href="https://learn.adafruit.com/raspipe-a-raspberry-pi-pipeline-viewer-part-2" class="name">RASPIPE: A RASPBERRY PI PIPELINE VIEWER, PART 2</a>
+                      <div class="clear"></div>
+                    </li>
+            </ul>
+          </div>
+          <div class="column col-lg-3 col-md-3 col-sm-3">
+            <div class="title featured">
+              FEATURED GUIDES <br class="hidden-lg"><a href="https://learn.adafruit.com/guides/featured">(SEE ALL 116)</a>
+            </div>
+            <ul class="links featured">
+                    <li>
+                      <a href="https://learn.adafruit.com/adafruit-ultimate-gps"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/746_LRG.jpg" alt="Adafruit Ultimate GPS"></a>
+                      <a href="https://learn.adafruit.com/adafruit-ultimate-gps" class="name">ADAFRUIT ULTIMATE GPS</a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="https://learn.adafruit.com/adafruit-2-8-tft-touch-shield-v2"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/1651_LRG.jpg" alt="Adafruit 2.8&quot; TFT Touch Shield v2 - Capacitive or Resistive"></a>
+                      <a href="https://learn.adafruit.com/adafruit-2-8-tft-touch-shield-v2" class="name">ADAFRUIT 2.8" TFT TOUCH SHIELD V2 - CAPACITIVE OR RESISTIVE</a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="https://learn.adafruit.com/all-about-stepper-motors"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/IMG_4810_crop.jpg" alt="All About Stepper Motors"></a>
+                      <a href="https://learn.adafruit.com/all-about-stepper-motors" class="name">ALL ABOUT STEPPER MOTORS</a>
+                      <div class="clear"></div>
+                    </li>
+                    <li>
+                      <a href="https://learn.adafruit.com/mini-mac-pi"><img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/hero-pi-dt-2.JPG" alt="Mini Mac Pi"></a>
+                      <a href="https://learn.adafruit.com/mini-mac-pi" class="name">MINI MAC PI</a>
+                      <div class="clear"></div>
+                    </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </li>
+    <li id="nav-forums"><a href="https://forums.adafruit.com/">FORUMS</a>
+    </li>
+    <li id="nav-forums"><a href="https://www.youtube.com/adafruit">VIDEOS</a>
+    </li>
+  </ul>
+</nav>      
+    </div>
+  </div>
+</header>
+
+      <div id="main-content">
+        <div id="page-wrapper">
+	<div id="categories-block" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <div id="categories-content" class="container">
+      <span class="category page-home-link"><a href="https://learn.adafruit.com/">
+        <i class="fa fa-home"></i>
+      </a></span>
+        <span class="category ">
+    <a href="https://learn.adafruit.com/category/learn-arduino">LEARN ARDUINO</a>
+  </span>
+
+        <span class="category purple">
+    <a href="https://learn.adafruit.com/series/learn-arduino">LEARN ARDUINO (14 of 18)</a>
+  </span>
+
+      <span id="guide-favorite">
+  <a data-original-title="Favorite this guide?" class="favorites-link category right red" title="" data-toggle="tooltip" data-placement="left" data-remote="true" rel="nofollow" data-method="post" href="https://learn.adafruit.com/guides/134/favorites.js">
+    <i class="fa fa-heart-o"></i>
+</a></span>
+    <div class="clear"></div>
+  </div>
+</div>
+<div class="clear"></div>
+		<div id="content-wrapper" class="container" data-page-id="707" data-guide-id="134">
+			<div class="row">
+				<div class="sidebar-left-wrapper hidden-phone hidden-tablet col-lg-two-and-half col-md-3 col-sm-4 col-xs-12">
+					<div style="width: 230px;" class="sidebar-left-content" data-clampedwidth=".sidebar-left-wrapper">
+							<nav class="sidebar-left">
+		<div class="title-bar">
+			<img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/overview_003.jpg" class="img-responsive">
+	    <div class="title">
+		    <h1><a href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/overview">Arduino Lesson 13. DC Motors</a></h1>
+		    <span class="tagline"><a href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/overview">Learn Arduino, Lesson 13. DC Motors</a></span>
+		  </div>
+	  </div>
+	  <ul class="page-parent nav">
+			  <li class="">
+      <a class="sidebar-parent" href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/overview">Overview</a>
+      <span class="page-draft-status">
+      </span>
+</li>
+  <li class="">
+      <a class="sidebar-parent" href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/parts">Parts</a>
+      <span class="page-draft-status">
+      </span>
+</li>
+  <li class="active">
+      <a class="sidebar-parent" href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/breadboard-layout">Breadboard Layout</a>
+      <span class="page-draft-status">
+      </span>
+</li>
+  <li class="">
+      <a class="sidebar-parent" href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/arduino-code">Arduino Code</a>
+      <span class="page-draft-status">
+      </span>
+</li>
+  <li class="">
+      <a class="sidebar-parent" href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/transistors">Transistors</a>
+      <span class="page-draft-status">
+      </span>
+</li>
+  <li class="">
+      <a class="sidebar-parent" href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/other-things-to-do">Other Things to Do</a>
+      <span class="page-draft-status">
+      </span>
+</li>
+
+			<li class="single-page-spacer"></li>
+	      <li class="single-page-link"><a href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors?view=all">Single Page</a></li>
+			<li><a href="https://learn.adafruit.com/downloads/pdf/adafruit-arduino-lesson-13-dc-motors.pdf">Download PDF</a></li>
+	  </ul>
+	</nav>
+	  <header class="sidebar-meta hidden-xs">
+    <h4>Contributors</h4>
+      <div><a href="https://learn.adafruit.com/users/simonmonk">Simon Monk</a></div>
+  </header>
+
+	  <header class="sidebar-meta hidden-xs">
+    <a class="feedback-link" title="Feedback? Corrections?" rel="nofollow" data-remote="true" data-method="get" href="https://learn.adafruit.com/pages/707/settings_modal">
+          Feedback?  Corrections?
+</a>  </header>
+
+
+					</div>
+				</div>
+					<article class="col-lg-7 col-md-6 col-sm-8 col-xs-12">
+					<div class="content">
+							<div class="page-title-wrapper">
+								<h1 class="headline">
+									<span id="breadboard-layout">Breadboard Layout</span>
+								</h1>
+								    <a class="author" style="background-color: #FF6302;" data-hover-color="#d95402" data-default-color="#FF6302" href="https://learn.adafruit.com/users/simonmonk">
+        <img alt="Author Gravatar Image" class="user-gravatar load-gravatar" data-gravatar_hash="d41d8cd98f00b204e9800998ecf8427e" src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/d41d8cd98f00b204e9800998ecf8427e.jpg" height="30" width="30">
+        <span class="name">SIMON MONK</span>
+</a>    <div class="clear"></div>
+
+							</div>
+							<div class="page-content">
+									    <div class="row-fluid build-text">
+      
+<p>When you put together the breadboard, there are
+two things to look out for.</p>
+<p>Firstly, make sure that the transistor is the
+right way around. The flat side of the transistor should be on the
+right-hand side of the breadboard.</p>
+<p>Secondly the striped end of the diode should be
+towards the +5V power line - see the image below!<br></p>
+
+    </div>
+    <div class="row-fluid build-alert">
+      <div class="alert">
+        <i class="fa fa-exclamation-circle"></i>
+        The motor that comes with Adafruit Arduino kits does not draw 
+more than 250mA but if you have a different motor, it could easily draw 
+1000mA, more than a USB port can handle! If you aren't sure of a motor's
+ current draw, power the Arduino from a wall adapter, not just USB
+      </div>
+    </div>
+      <div class="row-fluid build-image">
+        <a href="https://learn.adafruit.com/assets/2346">
+          <img class="2346-asset img-responsive" src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/learn_arduino_breadboard.jpg" alt="learn_arduino_breadboard.jpg">
+</a>      </div>
+    <div class="row-fluid build-text">
+      <p>The motor can be connected either way around.</p>
+    </div>
+
+								<div class="page-navigation">
+										<a class="previous-page" href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/parts">
+											<i class="fa fa-chevron-left"></i>PARTS
+</a>										<a class="next-page" href="https://learn.adafruit.com/adafruit-arduino-lesson-13-dc-motors/arduino-code">
+											ARDUINO CODE<i class="fa fa-chevron-right"></i>
+</a>									<div class="clear"></div>
+								</div>
+								<span class="page-last-updated">Last updated on 2015-03-31 at 05.20.14 PM</span>
+									<span class="page-last-updated">Published on 2012-12-17 at 03.54.43 PM</span>
+							</div>
+					</div>
+				</article>
+				<div class="col-lg-two-and-half col-md-3 hidden-sm hidden-xs">
+  <header class="sidebar-right">
+    <div class="sidebar-right-content">
+      
+        <div class="product-wrapper">
+    <div class="product-image">
+      <a href="http://www.adafruit.com/product/756">
+          <img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/756-00.jpg" alt="756-00.jpg" class="img-responsive" height="233">
+</a>    </div>
+    <div class="product-details">
+      <span class="product-price">$1.95</span>
+      <div class="product-title">NPN Bipolar Transistors (PN2222) - 10 pack</div>
+        <a id="756-product" class="product-buy" data-pid="756" data-qty="1" href="http://www.adafruit.com/product/756">
+          ADD TO CART
+</a>    </div>
+  </div>
+  <div class="product-wrapper">
+    <div class="product-image">
+      <a href="http://www.adafruit.com/product/711">
+          <img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/711-06.jpg" alt="711-06.jpg" class="img-responsive" height="233">
+</a>    </div>
+    <div class="product-details">
+      <span class="product-price">$1.95</span>
+      <div class="product-title">DC Toy / Hobby Motor - 130 Size</div>
+        <a id="711-product" class="product-buy" data-pid="711" data-qty="1" href="http://www.adafruit.com/product/711">
+          ADD TO CART
+</a>    </div>
+  </div>
+  <div class="product-wrapper">
+    <div class="product-image">
+      <a href="http://www.adafruit.com/product/758">
+          <img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/758-00.jpg" alt="758-00.jpg" class="img-responsive" height="233">
+</a>    </div>
+    <div class="product-details">
+      <span class="product-price">$3.95</span>
+      <div class="product-title">Premium Male/Male Jumper Wires - 40 x 6" (150mm)</div>
+        <a id="758-product" class="product-buy" data-pid="758" data-qty="1" href="http://www.adafruit.com/product/758">
+          ADD TO CART
+</a>    </div>
+  </div>
+  <div class="product-wrapper">
+    <div class="product-image">
+      <a href="http://www.adafruit.com/product/64">
+          <img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/64-00.jpg" alt="64-00.jpg" class="img-responsive" height="233">
+</a>    </div>
+    <div class="product-details">
+      <span class="product-price">$5.00</span>
+      <div class="product-title">Half-size breadboard</div>
+        <a id="64-product" class="product-buy" data-pid="64" data-qty="1" href="http://www.adafruit.com/product/64">
+          ADD TO CART
+</a>    </div>
+  </div>
+  <div class="product-wrapper">
+    <div class="product-image">
+      <a href="http://www.adafruit.com/product/50">
+          <img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/50-00.jpg" alt="50-00.jpg" class="img-responsive" height="233">
+</a>    </div>
+    <div class="product-details">
+      <span class="product-price">$24.95</span>
+      <div class="product-title">Arduino Uno R3 (Atmega328 - assembled)</div>
+        <a id="50-product" class="product-buy" data-pid="50" data-qty="1" href="http://www.adafruit.com/product/50">
+          ADD TO CART
+</a>    </div>
+  </div>
+
+        <div class="add-all-to-cart-container">
+          <a class="add-all-to-cart" href="#">ADD ALL TO CART</a>
+          <div class="add-all-to-cart-progress"></div>
+        </div>
+      <div class="clear"></div>
+    </div>
+  </header>
+</div>
+
+			</div>
+		</div>
+			<div class="related-guides-wrapper container">
+  <div class="row">
+    <div class="related-guides-title col-lg-12">
+      <h2>
+        RELATED GUIDES
+      </h2>
+    </div>
+  </div>
+  <div class="related-guides-content row">
+    	<div class="501-guide masonry-block col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <div class="guide-block">
+            <div class="title-bar">
+                <div class="guide-categories">
+                    <ul>
+                            <li class="category child-category">
+                                    <a href="https://learn.adafruit.com/category/sensors">SENSORS</a>
+                                    <span class="category-link-spacer">/</span>
+                                <a href="https://learn.adafruit.com/category/temperature">TEMPERATURE</a>
+                            </li>
+                    </ul>
+                </div>
+                <a href="https://learn.adafruit.com/bluetooth-temperature-and-humidity-sensor">
+                    <img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/IMG_7836.jpg" class="img-responsive guide-image" data-standard-image="/system/guides/images/000/000/501/medium310/IMG_7836.jpg?1396715907" data-mobile-image="/system/guides/images/000/000/501/medium800/IMG_7836.jpg?1396715907">
+</a>                <div class="title">
+                    <h5>
+                        <a href="https://learn.adafruit.com/bluetooth-temperature-and-humidity-sensor">
+                            Bluetooth Temperature &amp; Humidity Sensor<br>
+</a>                    </h5>
+                                    <div class="tagline">
+                    <a href="https://learn.adafruit.com/bluetooth-temperature-and-humidity-sensor">
+                    Build a wireless temperature &amp; humidity sensor using the BlueFruit module!
+</a>                </div>
+                </div>
+            </div>
+
+            <div class="details">
+
+                <div class="description">
+                    <a href="https://learn.adafruit.com/bluetooth-temperature-and-humidity-sensor">
+                        In this project, you will learn how to connect a
+ Bluetooth module to Arduino, transmit measurements from a temperature 
+&amp; humidity sensor to your computer, and display the data in a nice 
+Python interface.
+</a>                </div>
+                    <a class="author" style="background-color: #FF6302;" data-hover-color="#d95402" data-default-color="#FF6302" href="https://learn.adafruit.com/users/marco26fr">
+        <img alt="Author Gravatar Image" class="user-gravatar load-gravatar" data-gravatar_hash="d41d8cd98f00b204e9800998ecf8427e" src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/d41d8cd98f00b204e9800998ecf8427e.jpg" height="30" width="30">
+        <span class="name">M. SCHWARTZ</span>
+</a>    <div class="clear"></div>
+
+            </div>
+
+
+        </div>
+	</div>
+	<div class="141-guide masonry-block col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <div class="guide-block">
+            <div class="title-bar">
+                <div class="guide-categories">
+                    <ul>
+                            <li class="category ">
+                                <a href="https://learn.adafruit.com/category/learn-arduino">LEARN ARDUINO</a>
+                            </li>
+                    </ul>
+                </div>
+                <a href="https://learn.adafruit.com/adafruit-arduino-lesson-15-dc-motor-reversing">
+                    <img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/overview.jpg" class="img-responsive guide-image" data-standard-image="/system/guides/images/000/000/141/medium310/overview.jpg?1396720580" data-mobile-image="/system/guides/images/000/000/141/medium800/overview.jpg?1396720580">
+</a>                <div class="title">
+                    <h5>
+                        <a href="https://learn.adafruit.com/adafruit-arduino-lesson-15-dc-motor-reversing">
+                            Arduino Lesson 15. DC Motor Reversing<br>
+</a>                    </h5>
+                                    <div class="tagline">
+                    <a href="https://learn.adafruit.com/adafruit-arduino-lesson-15-dc-motor-reversing">
+                    Learn Arduino, Lesson 15. DC Motor Reversing
+</a>                </div>
+                </div>
+            </div>
+
+            <div class="details">
+
+                <div class="description">
+                    <a href="https://learn.adafruit.com/adafruit-arduino-lesson-15-dc-motor-reversing">
+                        This is Lesson 15 in the Learn Arduino Adafruit 
+series.
+
+In this lesson, you will learn how to control both the direction and 
+speed of a small DC motor using an Arduino and the L293 motor driver 
+chip.
+</a>                </div>
+                    <a class="author" style="background-color: #FF6302;" data-hover-color="#d95402" data-default-color="#FF6302" href="https://learn.adafruit.com/users/simonmonk">
+        <img alt="Author Gravatar Image" class="user-gravatar load-gravatar" data-gravatar_hash="d41d8cd98f00b204e9800998ecf8427e" src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/d41d8cd98f00b204e9800998ecf8427e.jpg" height="30" width="30">
+        <span class="name">SIMON MONK</span>
+</a>    <div class="clear"></div>
+
+            </div>
+
+
+        </div>
+	</div>
+	<div class="124-guide masonry-block col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <div class="guide-block">
+            <div class="title-bar">
+                <div class="guide-categories">
+                    <ul>
+                            <li class="category ">
+                                <a href="https://learn.adafruit.com/category/learn-arduino">LEARN ARDUINO</a>
+                            </li>
+                    </ul>
+                </div>
+                <a href="https://learn.adafruit.com/adafruit-arduino-lesson-7-make-an-rgb-led-fader">
+                    <img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/overview_002.jpg" class="img-responsive guide-image" data-standard-image="/system/guides/images/000/000/124/medium310/overview.jpg?1396720723" data-mobile-image="/system/guides/images/000/000/124/medium800/overview.jpg?1396720723">
+</a>                <div class="title">
+                    <h5>
+                        <a href="https://learn.adafruit.com/adafruit-arduino-lesson-7-make-an-rgb-led-fader">
+                            Arduino Lesson 7. Make an RGB LED Fader<br>
+</a>                    </h5>
+                                    <div class="tagline">
+                    <a href="https://learn.adafruit.com/adafruit-arduino-lesson-7-make-an-rgb-led-fader">
+                    Learn Arduino, Lesson 7. Make an RGB LED Fader
+</a>                </div>
+                </div>
+            </div>
+
+            <div class="details">
+
+                <div class="description">
+                    <a href="https://learn.adafruit.com/adafruit-arduino-lesson-7-make-an-rgb-led-fader">
+                        This is Lesson 7 in the Learn Arduino Adafruit 
+series.
+
+In this lesson, you will be combining some of the things that you learnt
+ in earlier lessons to use three push switches (from lesson 6) to 
+control the color of the RGB LED that you used in lesson 3.
+</a>                </div>
+                    <a class="author" style="background-color: #FF6302;" data-hover-color="#d95402" data-default-color="#FF6302" href="https://learn.adafruit.com/users/simonmonk">
+        <img alt="Author Gravatar Image" class="user-gravatar load-gravatar" data-gravatar_hash="d41d8cd98f00b204e9800998ecf8427e" src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/d41d8cd98f00b204e9800998ecf8427e.jpg" height="30" width="30">
+        <span class="name">SIMON MONK</span>
+</a>    <div class="clear"></div>
+
+            </div>
+
+
+        </div>
+	</div>
+	<div class="103-guide masonry-block col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <div class="guide-block">
+            <div class="title-bar">
+                <div class="guide-categories">
+                    <ul>
+                            <li class="category ">
+                                <a href="https://learn.adafruit.com/category/raspberry-pi">RASPBERRY PI</a>
+                            </li>
+                    </ul>
+                </div>
+                <a href="https://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi">
+                    <img src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/ds1307rtc_LRG.jpg" class="img-responsive guide-image" data-standard-image="/system/guides/images/000/000/103/medium310/ds1307rtc_LRG.jpg?1396720864" data-mobile-image="/system/guides/images/000/000/103/medium800/ds1307rtc_LRG.jpg?1396720864">
+</a>                <div class="title">
+                    <h5>
+                        <a href="https://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi">
+                            Adding a Real Time Clock to Raspberry Pi<br>
+</a>                    </h5>
+                                    <div class="tagline">
+                    <a href="https://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi">
+                    Keep time at all times with a real time clock
+</a>                </div>
+                </div>
+            </div>
+
+            <div class="details">
+
+                <div class="description">
+                    <a href="https://learn.adafruit.com/adding-a-real-time-clock-to-raspberry-pi">
+                        To keep costs low, the Raspberry Pi does not 
+include a Real Time Clock module. Instead, users are expected to have it
+ always connected to WiFi or Ethernet and keep time by checking the 
+network.  Since we want to include an external module, we'll have to 
+wire one up. We'll go with the easy-to-use and low-cost DS1307.
+</a>                </div>
+                    <a class="author" style="background-color: #e40d84;" data-hover-color="#c20b70" data-default-color="#e40d84" href="https://learn.adafruit.com/users/adafruit2">
+        <img alt="Author Gravatar Image" class="user-gravatar load-gravatar" data-gravatar_hash="3f7ca151e1f7f7dead8b2db60aa744c1" src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/3f7ca151e1f7f7dead8b2db60aa744c1.png" height="30" width="30">
+        <span class="name">LADY ADA</span>
+</a>    <div class="clear"></div>
+
+            </div>
+
+
+        </div>
+	</div>
+
+  </div>
+</div>
+
+		<div class="footer-spacer"></div>
+</div>
+
+
+
+<div class="modal fade" id="notify-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">  
+      <div class="modal-header">
+        <a href="#" class="close" data-dismiss="modal">×</a>
+        <h5>OUT OF STOCK NOTIFICATION</h5>
+      </div>
+      <div class="modal-body">
+        <p class="notify-modal-form-header"></p>
+        <div class="notify-modal-products"></div>
+        <form id="notify-modal-form" name="back_in_stock_notification">
+          <p class="notify-modal-form-notice"></p>
+          <div class="notify-modal-break"></div>
+          <div class="form-group">
+            <label class="inputLabel" for="name">YOUR NAME</label>
+            <input size="25" maxlength="64" name="name" type="text">
+          </div>
+
+          <div class="form-group">
+            <label class="inputLabel" for="email">YOUR EMAIL</label>
+            <input size="25" maxlength="96" name="email" type="email">
+          </div>
+        
+          <input name="daigo" style="display:none;" type="text">
+          <input name="notify_me" value="true" type="hidden">
+        </form>
+        <div id="notify-modal-success" style="display:none">
+          <p>You have been successfully subscribed to the Notification 
+List for this product and will therefore receive an e-mail from us when 
+it is back in stock!</p>
+          <p>For security reasons, an e-mail has been sent to you 
+acknowledging your subscription. Please remember that this subscription 
+will not result in you receiving any e-mail from us about anything other
+ than the restocking of this item.</p>
+          <p>If, for any reason, you would like to unsubscribe from the 
+Notification List for this product you will find details of how to do so
+ in the e-mail that has just been sent to you!</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" id="close-notify" style="display: none" data-dismiss="modal" data-target="#notify-modal">CLOSE</a>
+        <a href="#" id="submit-notify" rel="nofollow" class="blue-button">NOTIFY ME</a>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+      <footer id="adafruit-footer">
+  <div id="footer-content" class="container">
+    <div class="row">
+      <div class=" col-lg-6 col-md-6 col-sm-4 col-xs-12">
+        <nav>
+          <ul>
+            <li><a href="http://www.adafruit.com/contact_us">CONTACT</a></li>
+            <li><a href="http://www.adafruit.com/support">SUPPORT</a>
+            </li><li><a href="http://www.adafruit.com/distributors">DISTRIBUTORS</a></li>
+            <li><a href="http://www.adafruit.com/educators">EDUCATORS</a></li>
+            <li><a href="http://www.adafruit.com/jobs">JOBS</a></li>
+            <li><a href="http://www.adafruit.com/faq">FAQ</a></li>
+            <li><a href="http://www.adafruit.com/shippinginfo/">SHIPPING &amp; RETURNS</a></li>
+            <li><a href="http://www.adafruit.com/terms_of_service/">TERMS OF SERVICE</a></li>
+            <li><a href="http://www.adafruit.com/privacy">PRIVACY &amp; LEGAL</a></li>
+            <li><a href="http://www.adafruit.com/about">ABOUT US</a></li>
+          </ul>
+        </nav>
+        <div id="footer-copyright">
+          <a href="http://nytm.org/made-in-nyc/">ENGINEERED IN NYC</a> <span>Adafruit&nbsp;®</span>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-8 hidden-xs">
+        <div id="footer-quote" class="">
+          
+"We understand human mental processes only slightly better than a fish understands swimming"
+          <span class="quote-author">- <a href="http://en.wikiquote.org/wiki/John_McCarthy_%28computer_scientist%29">John McCarthy</a>
+</span>
+        </div>
+        
+      </div>
+      <div id="footer-seals">
+        <img class="img-responsive" src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/seals_2x.jpg" alt="Seals 2x">
+      </div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+  </div>
+  
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-7723544-1']);
+      _gaq.push(['_setDomainName', 'adafruit.com']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+  <script src="Breadboard%20Layout%20_%20Arduino%20Lesson%2013.%20DC%20Motors%20_%20Adafruit%20Learning%20System_files/application-fb77faf16d87c7bb5511986e99f82112.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "url": "https://learn.adafruit.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://learn.adafruit.com/search?q={search_term}",
+        "query-input": "required name=search_term"
+      }
+    }
+  </script>
+
+</body></html>

@@ -1,0 +1,1214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Tutorial Arduino - Push Buttons | Famosa Studio Blog Page</title>
+<link rel="stylesheet" href="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/reset.css" type="text/css" media="screen">
+<link rel="stylesheet" href="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/defaults.css" type="text/css" media="screen">
+<!--[if lt IE 8]><link rel="stylesheet" href="http://famosastudio.com/fastwp303/wp-content/themes/Levels/flexipanel/css/ie.css" type="text/css" media="screen" /><![endif]-->
+<link rel="stylesheet" href="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/style_002.css" type="text/css" media="screen">
+
+	<link rel="canonical" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311">
+	<meta name="description" content="Tutorial Arduino kali ini akan menjelaskan tentang membaca input dari push button. Pemakaian push button sebagai input pada Arduino sangat mudah sekali.">
+	<meta name="keywords" content="arduino,tutorial,arduino uno,push buttons,input,led,resistor,pull-up,pull-down">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Tutorial Arduino – Push Buttons">
+	<meta property="og:description" content="Tutorial Arduino kali ini akan menjelaskan tentang membaca input dari push button. Pemakaian push button sebagai input pada Arduino sangat mudah sekali.">
+	<meta property="og:url" content="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311">
+	<meta property="og:image" content="http://famosastudio.com/fastwp303/wp-content/uploads/2011/07/PushButton-ResistorPullUpSchematic300.jpg">
+	<meta property="article:published_time" content="2011-07-28">
+	<meta property="article:modified_time" content="2011-07-28">
+	<meta property="article:author" content="http://blog.famosastudio.com/author/zerfani">
+	<meta property="article:section" content="Tutorial">
+	<meta property="article:tag" content="Arduino">
+	<meta property="article:tag" content="Arduino Tutorial">
+	<meta property="article:tag" content="Input">
+	<meta property="article:tag" content="Starter Kit">
+	<meta property="og:site_name" content="Famosa Studio Blog">
+	<meta name="twitter:card" content="summary">
+<link rel="alternate" type="application/rss+xml" title="Famosa Studio Blog » Tutorial Arduino – Push Buttons Comments Feed" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311/feed">
+<link rel="stylesheet" id="codecolorer-css" href="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/codecolorer.css" type="text/css" media="screen">
+<link rel="stylesheet" id="really_simple_share_style-css" href="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/style.css" type="text/css" media="all">
+<script async="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/cbgapi.loaded_1"></script><script async="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/cbgapi.loaded_0"></script><script gapi_processed="true" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/plusone.js" async="" type="text/javascript"></script><script src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/widgets.js" id="twitter-wjs"></script><script type="text/javascript" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/jquery.js"></script>
+<script type="text/javascript" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/jquery-migrate.js"></script>
+<script type="text/javascript" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/superfish.js"></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://famosastudio.com/fastwp303/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://famosastudio.com/fastwp303/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Memprogram Famosa Studio Robotik Kit" href="http://blog.famosastudio.com/2011/07/bengkel/memprogram-famosa-studio-robotik-kit/299">
+<link rel="next" title="Tutorial Arduino – Potentiometers" href="http://blog.famosastudio.com/2011/08/tutorial/tutorial-arduino-potentiometers/326">
+
+<link rel="shortlink" href="http://blog.famosastudio.com/?p=311">
+
+
+<!-- Facebook Like Thumbnail -->
+<meta property="og:image" content="http://famosastudio.com/fastwp303/wp-content/uploads/2011/07/PushButton-ResistorPullUpSchematic300-150x150.jpg">
+<!-- End Facebook Like Thumbnail -->
+
+<script type="text/javascript">
+        //<![CDATA[
+        
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+      
+      window.___gcfg = {lang: "en"};
+		  (function() {
+		    var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
+		    po.src = "https://apis.google.com/js/plusone.js";
+		    var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(po, s);
+		  })();
+      
+        //]]>
+  		</script><link rel="shortcut icon" href="http://famosastudio.com/fastwp303/wp-content/themes/Levels/images/favicon.png" type="image/x-icon">
+<link rel="alternate" type="application/rss+xml" title="Famosa Studio Blog RSS Feed" href="http://blog.famosastudio.com/feed">
+<link rel="pingback" href="http://famosastudio.com/fastwp303/xmlrpc.php">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+
+<script src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/printfriendly.js" type="text/javascript"></script><script src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/e.htm" type="text/javascript" defer="defer"></script></head>
+
+<body data-twttr-rendered="true" class="single single-post postid-311 single-format-standard">
+
+<div id="wrapper">
+
+    <div id="wrap-header">
+            
+        <div id="header">
+        
+            <div id="branding">
+             
+                <a href="http://blog.famosastudio.com/"><img class="logo" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/famosastudioblog.png" alt="Famosa Studio Blog" title="Famosa Studio Blog"></a>
+             
+            </div><!-- #branding -->
+
+            <div id="header-banner">
+
+                 
+
+            </div><!-- #header-banner -->
+
+        </div><!-- #header -->
+                    			<div class="wrap-menu-secondary"><ul id="menu-nav" class="menus menu-secondary sf-js-enabled"><li id="menu-item-9" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-9"><a href="http://blog.famosastudio.com/">Home</a></li>
+<li id="menu-item-7" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-7"><a href="http://blog.famosastudio.com/category/tentang-kami">Tentang Kami</a></li>
+<li id="menu-item-5" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-5"><a href="http://blog.famosastudio.com/category/edukasi">Edukasi</a></li>
+<li id="menu-item-6" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-6"><a href="http://blog.famosastudio.com/category/produk">Produk</a></li>
+<li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-8"><a href="http://blog.famosastudio.com/category/tutorial">Tutorial</a></li>
+<li id="menu-item-4" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4"><a href="http://blog.famosastudio.com/category/bengkel">Bengkel</a></li>
+<li id="menu-item-354" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-354"><a href="http://blog.famosastudio.com/category/berita">Berita</a></li>
+<li id="menu-item-10" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10"><a href="http://www.famosastudio.com/">Toko Online</a></li>
+</ul></div>              <!--.secondary menu--> 
+            	
+        
+    </div><!-- #wrap-header -->
+    <div id="main">
+        
+        <div id="wrap-content">
+                
+            <div class="content">
+                            
+                
+                <div class="wrap-post wrap-post-single">
+                
+                    <div class="post-311 post type-post status-publish format-standard hentry category-tutorial tag-arduino tag-arduino-tutorial tag-input tag-starter-kit post clearfix" id="post-311">
+                                        
+                        <h2 class="title">Tutorial Arduino – Push Buttons</h2>
+                                                
+                        <div class="postmeta-primary">
+
+                            <span class="meta_date">July 28, 2011</span> &nbsp; <span class="meta_author">Zerfani Yulias</span> &nbsp; <span class="meta_comments"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comments" title="Comment on Tutorial Arduino – Push Buttons">25 Comments</a></span> 
+                        </div>
+                                                
+                        <div class="entry clearfix">
+                            
+                            <img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/PushButton-ResistorPullUpSchematic300-300x225.jpg" class="alignleft featured_image wp-post-image" alt="PushButton-ResistorPullUpSchematic300" height="225" width="300">                            
+                            <div class="pf-content"><p><strong>Ide Dasar</strong></p>
+<p>Tutorial <a title="Beli Arduino" href="http://www.famosastudio.com/arduino" target="_blank">Arduino</a> terakhir yang kita posting adalah tutorial menggunakan buzzer, yang bisa dilihat di <a title="Tutorial Arduino – Buzzer" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-buzzer/171">sini</a>.
+ Tutorial tersebut menjelaskan bagaimana membuat ‘musik’ dengan Arduino.
+ Posting-posting tutorial sebelumnya lebih mengutamakan dalam 
+menghasilkan keluaran (output), jadi posting kali ini akan membuat 
+Arduino untuk menerima masukan (input). Arduino akan ‘mendengarkan’, 
+‘melihat’ dan ‘merasakan’.</p>
+<p>Kita akan mulai dengan tombol (push buttons) yang sederhana. Koneksi 
+untuk penggunaan tombol juga sangat mudah. Ada tambahan komponen yaitu 
+resistor, yang bisa berfungsi sebagai <em>pull-up</em> atau <em>pull-down</em>,
+ tergantung penempatannya. Kenapa diperlukan resistor? Karena Arduino 
+berbeda dengan kita yang tahu kapan tombol ditekan atau tidak. Arduino 
+‘merasakan’ bahwa tombol ditekan atau tidak dari arus yang melewatinya, 
+apakah HIGH atau LOW.</p>
+<p>Ada dua skenario penggunaan tombol yang akan kita bahas. Pertama, 
+ketika tombol ditekan pin Arduino akan menjadi LOW dan menjadi HIGH 
+kalau dilepas. Skenario yang kedua adalah ketika tombol ditekan, pin 
+Arduino akan menjadi HIGH dan LOW kalau tombol dilepas.</p>
+<p><strong>Rangkaian</strong></p>
+<p>Komponen yang diperlukan:</p>
+<ul>
+<li>2 buah push button</li>
+<li>2 buah resistor 10K ohm</li>
+<li>1 buah resistor 330 ohm</li>
+<li>1 buah LED</li>
+<li>Kabel jumper</li>
+</ul>
+<p>Untuk skenario pertama, berarti pin Arduino akan dihubungkan dengan 
+GND (ground) melalui tombol. Ketika tombol ditekan, pin akan menjadi 
+LOW, tetapi pada saat dilepas maka kondisi pin akan mengambang (float) 
+(hal ini kadang bisa menimbulkan kesalahan). Nah di sini fungsi resistor
+ akan menjadi hal yang penting. Resistor akan dipasangkan antara pin 
+Arduino dan +5V, sehingga ketika tombol dilepas maka pin akan terhubung 
+dengan +5V melalui resistor dan pin menjadi HIGH. Ini yang dinamakan 
+resistor menjadi <em>pull-up</em>, karena resistor menarik pin ke atas 
+pada +5V. Oh ya, kita memakai resistor dengan nilai 10K ohm. Perhatikan 
+pada skematik berikut.</p>
+<div id="attachment_314" style="width: 460px" class="wp-caption aligncenter"><a target="_blank" href="http://famosastudio.com/fastwp303/wp-content/uploads/2011/07/PushButton-ResistorPullUpSchematic.jpg"><img class="size-full wp-image-314" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/PushButton-ResistorPullUpSchematic-e1311837843940.jpg" alt="" height="338" width="450"></a><p class="wp-caption-text">Skema rangkaian push button dengan pull-up resistor</p></div>
+<p style="text-align: left">Pada skenario kedua, pin Arduino akan 
+dihubungkan dengan dengan +5V melalui tombol. Ketika tombol ditekan, pin
+ akan menjadi HIGH dan agar pada saat dilepas pin menjadi LOW kita 
+gunakan resistor 10K ohm. Resistor seperti ini dinamakan <em>pull-down</em>, karena resistor menarik pin ke bawah pada GND (ground). Perhatikan juga skematik berikut.</p>
+<div id="attachment_315" style="width: 460px" class="wp-caption aligncenter"><a target="_blank" href="http://famosastudio.com/fastwp303/wp-content/uploads/2011/07/PushButton-ResistorPullDownSchematic.jpg"><img class="size-full wp-image-315" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/PushButton-ResistorPullDownSchematic-e1311837992537.jpg" alt="" height="337" width="450"></a><p class="wp-caption-text">Skema rangkaian push button dengan pull-down resistor</p></div>
+<p>Berikut ini adalah gambar simulasi penempatan komponen pada 
+breadboard dan board Arduino.&nbsp;Gambar simulasi ini menggunakan 
+software Fritzing yang bisa didapat di&nbsp;<a href="http://fritzing.org/" target="_blank">sini</a>.</p>
+<div id="attachment_316" style="width: 411px" class="wp-caption aligncenter"><a target="_blank" href="http://famosastudio.com/fastwp303/wp-content/uploads/2011/07/PushButton-ResistorPullUp.jpg"><img class="size-full wp-image-316" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/PushButton-ResistorPullUp.jpg" alt="" height="546" width="401"></a><p class="wp-caption-text">Push buttor for Arduino - Pull-up Resistor</p></div>
+<div id="attachment_317" style="width: 415px" class="wp-caption aligncenter"><a target="_blank" href="http://famosastudio.com/fastwp303/wp-content/uploads/2011/07/PushButton-ResistorPullDown.jpg"><img class="size-full wp-image-317" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/PushButton-ResistorPullDown.jpg" alt="" height="540" width="405"></a><p class="wp-caption-text">Push button for Arduino - Pull-down Resistor</p></div>
+<p><strong>Kode Pemrograman</strong></p>
+<p>Di bawah ini adalah kode pemrograman yang digunakan untuk push 
+button.&nbsp;Tidak perlu mengetiknya karena sudah tersedia pada software
+ Arduino. Klik menu&nbsp;<strong>File &gt; Examples &gt; 2.Digital &gt; Button</strong>.</p>
+<pre>
+<div class="codecolorer-container c default" style="overflow:auto;white-space:nowrap;height:600px;"><table cellpadding="0" cellspacing="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br>41<br>42<br>43<br>44<br>45<br>46<br>47<br>48<br>49<br>50<br>51<br>52<br>53<br>54<br></div></td><td><div class="c codecolorer"><span class="coMULTI">/*<br>
+&nbsp; Button<br>
+<br>
+&nbsp;Turns on and off a light emitting diode(LED) connected to digital<br>
+&nbsp;pin 13, when pressing a pushbutton attached to pin 2. <br>
+<br>
+&nbsp;The circuit:<br>
+&nbsp;* LED attached from pin 13 to ground<br>
+&nbsp;* pushbutton attached to pin 2 from +5V<br>
+&nbsp;* 10K resistor attached to pin 2 from ground<br>
+<br>
+&nbsp;* Note: on most Arduinos there is already an LED on the board<br>
+&nbsp;attached to pin 13.<br>
+<br>
+&nbsp;created 2005<br>
+&nbsp;by DojoDave &lt;http://www.0j0.org&gt;<br>
+&nbsp;modified 28 Oct 2010<br>
+&nbsp;by Tom Igoe<br>
+<br>
+&nbsp;This example code is in the public domain.<br>
+<br>
+&nbsp;http://www.arduino.cc/en/Tutorial/Button<br>
+&nbsp;*/</span><br>
+<br>
+<span class="co1">// constants won't change. They're used here to</span><br>
+<span class="co1">// set pin numbers:</span><br>
+<span class="kw4">const</span> <span class="kw4">int</span> buttonPin <span class="sy0">=</span> <span class="nu0">2</span><span class="sy0">;</span> &nbsp; &nbsp; <span class="co1">// the number of the pushbutton pin</span><br>
+<span class="kw4">const</span> <span class="kw4">int</span> ledPin <span class="sy0">=</span> &nbsp;<span class="nu0">13</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp;<span class="co1">// the number of the LED pin</span><br>
+<br>
+<span class="co1">// variables will change:</span><br>
+<span class="kw4">int</span> buttonState <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// variable for reading the pushbutton status</span><br>
+<br>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; <span class="co1">// initialize the LED pin as an output:</span><br>
+&nbsp; pinMode<span class="br0">(</span>ledPin<span class="sy0">,</span> OUTPUT<span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; <span class="co1">// initialize the pushbutton pin as an input:</span><br>
+&nbsp; pinMode<span class="br0">(</span>buttonPin<span class="sy0">,</span> INPUT<span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span><br>
+&nbsp; <span class="co1">// read the state of the pushbutton value:</span><br>
+&nbsp; buttonState <span class="sy0">=</span> digitalRead<span class="br0">(</span>buttonPin<span class="br0">)</span><span class="sy0">;</span><br>
+<br>
+&nbsp; <span class="co1">// check if the pushbutton is pressed.</span><br>
+&nbsp; <span class="co1">// if it is, the buttonState is HIGH:</span><br>
+&nbsp; <span class="kw1">if</span> <span class="br0">(</span>buttonState <span class="sy0">==</span> HIGH<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="co1">// turn LED on:</span><br>
+&nbsp; &nbsp; digitalWrite<span class="br0">(</span>ledPin<span class="sy0">,</span> HIGH<span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; <span class="br0">}</span><br>
+&nbsp; <span class="kw1">else</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; <span class="co1">// turn LED off:</span><br>
+&nbsp; &nbsp; digitalWrite<span class="br0">(</span>ledPin<span class="sy0">,</span> LOW<span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span></div></td></tr></tbody></table></div>
+
+</pre>
+<p>Program di atas dapat berfungsi untuk 2 skenario kita tadi.</p>
+<p><strong>Membuat Perubahan</strong></p>
+<p>Mungkin ada yang merasa kalau contoh di atas terlalu gampang. Ok, kita akan melakukan beberapa perubahan:</p>
+<ul>
+<li><strong>1 tombol untuk On dan 1 lagi tombol untuk Off</strong></li>
+</ul>
+<p style="padding-left: 60px">Kita akan membuat perubahan sehingga On 
+dan Off dari LED ditentukan dari 1 buah tombol, 1 menghidupkan dan 1 
+lagi untuk mematikan.</p>
+<p style="padding-left: 60px">Ok, kita pilih rangkaian push button 
+dengan pull-up resistor. Tambahkan rangkaian untuk tombol kedua dengan 
+kondisi yang sama pada breadboard anda. Bedanya tombol kedua ini 
+menggunaan pin 3 dari Arduino. Bagaimana, bisa kan? Hasilnya kurang 
+lebih seperti ini.</p>
+<div id="attachment_318" style="width: 423px" class="wp-caption aligncenter"><a target="_blank" href="http://famosastudio.com/fastwp303/wp-content/uploads/2011/07/PushButton-ResistorPullUp2.jpg"><img class="size-full wp-image-318 " src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/PushButton-ResistorPullUp2.jpg" alt="" height="547" width="413"></a><p class="wp-caption-text">2 Push buttons for Arduino - Pull-up Resistors</p></div>
+<p style="padding-left: 60px">Kemudian rubah kode programnya menjadi seperti ini:</p>
+<p>&nbsp;</p>
+<pre>
+<div class="codecolorer-container c default" style="overflow:auto;white-space:nowrap;height:600px;"><table cellpadding="0" cellspacing="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br></div></td><td><div class="c codecolorer"><span class="kw4">const</span> <span class="kw4">int</span> buttonPin1 <span class="sy0">=</span> <span class="nu0">2</span><span class="sy0">;</span> &nbsp; &nbsp; <span class="co1">// the number of the pushbutton pin</span><br>
+<span class="kw4">const</span> <span class="kw4">int</span> buttonPin2 <span class="sy0">=</span> <span class="nu0">3</span><span class="sy0">;</span> &nbsp; &nbsp; <span class="co1">// the number of the pushbutton pin</span><br>
+<span class="kw4">const</span> <span class="kw4">int</span> ledPin <span class="sy0">=</span> &nbsp;<span class="nu0">13</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp;<span class="co1">// the number of the LED pin</span><br>
+<br>
+<span class="co1">// variables will change:</span><br>
+<span class="kw4">int</span> buttonState <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> &nbsp; &nbsp; &nbsp; &nbsp; <span class="co1">// variable for reading the pushbutton status</span><br>
+<br>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; <span class="co1">// initialize the LED pin as an output:</span><br>
+&nbsp; pinMode<span class="br0">(</span>ledPin<span class="sy0">,</span> OUTPUT<span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; <span class="co1">// initialize the pushbutton pin as an input:</span><br>
+&nbsp; pinMode<span class="br0">(</span>buttonPin1<span class="sy0">,</span> INPUT<span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; pinMode<span class="br0">(</span>buttonPin2<span class="sy0">,</span> INPUT<span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span><br>
+<br>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span><br>
+&nbsp; <span class="co1">// read the state of the pushbutton value:</span><br>
+&nbsp; <span class="kw1">if</span> <span class="br0">(</span>digitalRead<span class="br0">(</span>buttonPin1<span class="br0">)</span> <span class="sy0">==</span> LOW<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; digitalWrite<span class="br0">(</span>ledPin<span class="sy0">,</span> LOW<span class="br0">)</span><span class="sy0">;</span> <span class="co1">//turn LED off</span><br>
+&nbsp; <span class="br0">}</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">(</span>digitalRead<span class="br0">(</span>buttonPin2<span class="br0">)</span> <span class="sy0">==</span> LOW<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; digitalWrite<span class="br0">(</span>ledPin<span class="sy0">,</span> HIGH<span class="br0">)</span><span class="sy0">;</span> <span class="co1">//turn LED on</span><br>
+&nbsp; <span class="br0">}</span><br>
+<span class="br0">}</span></div></td></tr></tbody></table></div>
+
+</pre>
+<p style="padding-left: 60px">Upload programnya dan mulailah mencoba 
+tombol On dan tombol Off-nya. Seru kan! Nah coba sekarang gunakan 
+rangkaian push button dengan pull-down resistor. Tambahkan tombol kedua 
+dan sesuaikan programnya, kemudian upload dan lihat hasilnya.</p>
+<ul>
+<li><strong>Fading naik dan turun</strong></li>
+</ul>
+<p style="padding-left: 60px">Kita akan gunakan tombol untuk mengatur 
+sinyal analog dan melakukan pengaturan LED agar memudar (fading) naik 
+atau turun sesuai tombol yang ditekan. Rubah kabel jumper untuk LED yang
+ tadinya di pin 13 menjadi pin 9. Rubah juga di kode program: <strong>const int ledPin = 13;</strong> –&gt;&nbsp;<strong>const int ledPin = 9;</strong></p>
+<p style="padding-left: 60px">Kemudian rubah kode program pada bagian loop() menjadi:</p>
+<pre>
+<div class="codecolorer-container c default" style="overflow:auto;white-space:nowrap;"><table cellpadding="0" cellspacing="0"><tbody><tr><td class="line-numbers"><div>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br></div></td><td><div class="c codecolorer"><span class="kw4">int</span> value <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span><br>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span><br>
+&nbsp; <span class="kw1">if</span> <span class="br0">(</span>digitalRead<span class="br0">(</span>inputPin1<span class="br0">)</span> <span class="sy0">==</span> LOW<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; value<span class="sy0">--;</span><br>
+&nbsp; <span class="br0">}</span> <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">(</span>digitalRead<span class="br0">(</span>inputPin2<span class="br0">)</span> <span class="sy0">==</span> LOW<span class="br0">)</span> <span class="br0">{</span><br>
+&nbsp; &nbsp; value<span class="sy0">++;</span> <span class="br0">}</span><br>
+&nbsp; value <span class="sy0">=</span> constrain<span class="br0">(</span>value<span class="sy0">,</span> <span class="nu0">0</span><span class="sy0">,</span> <span class="nu0">255</span><span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; analogWrite<span class="br0">(</span>ledPin<span class="sy0">,</span> value<span class="br0">)</span><span class="sy0">;</span><br>
+&nbsp; delay<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy0">;</span><br>
+<span class="br0">}</span></div></td></tr></tbody></table></div>
+
+</pre>
+<ul>
+<li><strong>Merubah kecepatan fading</strong></li>
+</ul>
+<p style="padding-left: 60px">Jika anda ingin agar LED memudar (fading) lebih cepat atau lebih lambat, hanya perlu merubah kode 1 baris saja:</p>
+<p style="padding-left: 60px"><strong>delay(10);</strong> –&gt; <strong>delay(nilai baru);</strong></p>
+<p style="padding-left: 60px">Agar memudar lebih cepat, ganti nilai baru
+ dengan angka yang lebih kecil, untuk memudar lebih lambat, ganti nilai 
+baru dengan angka yan glebih besar.</p>
+<p>Baiklah, itu tadi tutorial Arduino mengenai push button atau tombol. Semoga bermanfaat dan selamat mencoba!</p>
+<div class="printfriendly pf-align"><a href="http://www.printfriendly.com/print?url=http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311" rel="nofollow" onclick="window.print(); return false;"><img style="border:none;-webkit-box-shadow:none; box-shadow:none;" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/pf-button.gif" alt="Print Friendly"></a></div></div><div style="min-height:33px;" class="really_simple_share really_simple_share_button robots-nocontent snap_nopreview"><div class="really_simple_share_facebook_like" style="width:100px;"><iframe src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/like.htm" scrolling="no" style="border:none; overflow:hidden; width:100px; height:27px;" allowtransparency="true" frameborder="0"></iframe></div><div class="really_simple_share_twitter" style="width:100px;"><iframe style="width: 109px; height: 20px;" data-twttr-rendered="true" title="Twitter Tweet Button" class="twitter-share-button twitter-tweet-button twitter-share-button twitter-count-horizontal" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/tweet_button.htm" allowtransparency="true" scrolling="no" id="twitter-widget-0" frameborder="0"></iframe></div><div class="really_simple_share_google1" style="width:80px;"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 90px; height: 20px;"><iframe title="+1" data-gapiattached="true" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/fastbutton.htm" name="I0_1427550271518" id="I0_1427550271518" vspace="0" tabindex="0" style="position: static; top: 0px; width: 90px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" scrolling="no" marginwidth="0" marginheight="0" hspace="0" frameborder="0" width="100%"></iframe></div></div></div>
+		<div class="really_simple_share_clearfix"></div>
+                        </div>
+                        
+                        <div class="postmeta-secondary">
+                            <span class="meta_categories">Posted in:  <a href="http://blog.famosastudio.com/category/tutorial" title="View all posts in Tutorial" rel="category tag">Tutorial</a></span> &nbsp; <span class="meta_tags">Tags: <a href="http://blog.famosastudio.com/tag/arduino" rel="tag">Arduino</a>, <a href="http://blog.famosastudio.com/tag/arduino-tutorial" rel="tag">Arduino Tutorial</a>, <a href="http://blog.famosastudio.com/tag/input" rel="tag">Input</a>, <a href="http://blog.famosastudio.com/tag/starter-kit" rel="tag">Starter Kit</a></span> 
+                        </div>
+                                                
+                    </div>
+                 
+                </div><!-- Post ID 311 -->
+                
+                                
+                
+        
+            <div id="comments">
+                        
+            <h3 id="comments-title">25 Responses to <em>Tutorial Arduino – Push Buttons</em></h3>
+            
+            <ol class="commentlist">
+    		  		<li class="comment even thread-even depth-1 parent" id="comment-61">
+				<div id="div-comment-61" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/c1763612831d1a0e0e632b20256974f7.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">mibnus</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-61">
+			November 25, 2011 at 14:49</a>		</div>
+
+		<p>Slamat sore boossssssssss……</p>
+<p>mau nanya cara masukan script programnya gmana sih……….tolong dong share ke qta</p>
+<p>ma’kasih sebelumnya</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=61#respond" onclick='return addComment.moveForm("div-comment-61", "61", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zerfani bypostauthor odd alt depth-2" id="comment-62">
+				<div id="div-comment-62" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/594f5f398ae45a2a916377c5625df573.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Zerfani Yulias</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-62">
+			November 25, 2011 at 14:54</a>		</div>
+
+		<p>Halo Mas Ibnu, script program apa nih? Program untuk Arduino?<br>
+Gampang kok caranya. Buka software Arduino (arduino.exe), copy kode 
+program yang mau dijalanin (misalnya contoh program di halaman ini), 
+kemudian paste ke software Arduino, jalankan compile, kalau tidak ada 
+error bisa diupload ke board Arduino.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=62#respond" onclick='return addComment.moveForm("div-comment-62", "62", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-152">
+				<div id="div-comment-152" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/7fe6fbe250834ff785a1a964eb4d5a07.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">susiloharjo</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-152">
+			February 21, 2012 at 15:01</a>		</div>
+
+		<p>Mantep pak thanx ilmunya sekalian dong kalau implementasinya untuk 
+motor servo bagaimana? pake 2 push button untuk putar kiri dan kanan per
+ step servo</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=152#respond" onclick='return addComment.moveForm("div-comment-152", "152", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zerfani bypostauthor odd alt depth-2" id="comment-157">
+				<div id="div-comment-157" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/594f5f398ae45a2a916377c5625df573.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Zerfani Yulias</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-157">
+			February 22, 2012 at 21:51</a>		</div>
+
+		<p>Mas Susilo, dengan sedikit perubahan bisa kok menggerakkan servo dengan 2 push button. Seperti ini:</p>
+<div class="codecolorer-container text default" style="overflow:auto;white-space:nowrap;height:600px;"><table cellpadding="0" cellspacing="0"><tbody><tr><td class="line-numbers"><div>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>28<br>29<br>30<br>31<br>32<br>33<br>34<br>35<br>36<br>37<br>38<br>39<br>40<br></div></td><td><div class="text codecolorer">#include &lt;Servo.h&gt; <br>
+&nbsp;<br>
+Servo myservo; &nbsp;// create servo object to control a servo <br>
+&nbsp;<br>
+int pos = 90; &nbsp; &nbsp;// variable to store the servo position <br>
+<br>
+const int buttonPin1 = 2; &nbsp; &nbsp; // the number of the pushbutton pin<br>
+const int buttonPin2 = 3; &nbsp; &nbsp; // the number of the pushbutton pin<br>
+const int ledPin = &nbsp;13; &nbsp; &nbsp; &nbsp;// the number of the LED pin<br>
+<br>
+// variables will change:<br>
+int buttonState = 0; &nbsp; &nbsp; &nbsp; &nbsp; // variable for reading the pushbutton status<br>
+<br>
+void setup() {<br>
+&nbsp; // initialize the LED pin as an output:<br>
+&nbsp; pinMode(ledPin, OUTPUT);<br>
+&nbsp; // initialize the pushbutton pin as an input:<br>
+&nbsp; pinMode(buttonPin1, INPUT);<br>
+&nbsp; pinMode(buttonPin2, INPUT);<br>
+&nbsp; myservo.attach(9); &nbsp;// attaches the servo on pin 9 to the servo object <br>
+&nbsp; myservo.write(pos);<br>
+}<br>
+<br>
+void loop(){<br>
+&nbsp; // read the state of the pushbutton value:<br>
+&nbsp; if (digitalRead(buttonPin1) == LOW) {<br>
+&nbsp; &nbsp; pos = pos + 5; //move servo 5 degrees to the right<br>
+&nbsp; &nbsp; if (pos &gt; 180) {<br>
+&nbsp; &nbsp; &nbsp; pos = 180; //maximum position of servo on the right<br>
+&nbsp; &nbsp; }<br>
+&nbsp; } else if (digitalRead(buttonPin2) == LOW) {<br>
+&nbsp; &nbsp; //digitalWrite(ledPin, HIGH); //turn LED on<br>
+&nbsp; &nbsp; pos = pos - 5; &nbsp;//move servo 5 degrees to the left<br>
+&nbsp; &nbsp; if (pos &lt; 0) {<br>
+&nbsp; &nbsp; &nbsp; pos = 0; //maximum position of servo on the left<br>
+&nbsp; &nbsp; }<br>
+&nbsp; }<br>
+&nbsp; myservo.write(pos); &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;// tell servo to go to position in variable 'pos' <br>
+&nbsp; delay(200);<br>
+}</div></td></tr></tbody></table></div>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=157#respond" onclick='return addComment.moveForm("div-comment-157", "157", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-172">
+				<div id="div-comment-172" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/1d5672a38f1cc5100f74de90588f34d1.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Fred</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-172">
+			February 28, 2012 at 07:37</a>		</div>
+
+		<p>Mas,  apa yang terjadi kalau saya tidak menggunakan resistor? Saya 
+hubungkan lagnsung 5v ke switch. Lalu dr switch ke pin 2. Bukankah kalau
+ di tekan jd high. Dan dilepas jd low juga?</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=172#respond" onclick='return addComment.moveForm("div-comment-172", "172", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zerfani bypostauthor odd alt depth-2" id="comment-173">
+				<div id="div-comment-173" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/594f5f398ae45a2a916377c5625df573.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Zerfani Yulias</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-173">
+			February 28, 2012 at 10:35</a>		</div>
+
+		<p>Halo Mas Fred, penggunaan resistor pullup dan pulldown untuk 
+memastikan output menjadi seperti yang diinginkan. Kalau mau menjadi 
+HIGH (5V) memakai konfigurasi pullup, dan untuk LOW memakai konfigurasi 
+pulldown. Ini untuk menghindari state dari pin yang tidak jelas atau 
+mengambang (floating) yang akan menyebabkan perilaku program kita 
+menjadi tidak seperti yang seharusnya. Menggunakan pullup atau pulldown 
+resistor hanya mengkonsumsi arus yang kecil jadi lebih aman untuk 
+mikrokontroller yang digunakan.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=173#respond" onclick='return addComment.moveForm("div-comment-173", "173", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-274">
+				<div id="div-comment-274" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/7443d3900e1de2db99c1d570197f0bf0.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">rudianto</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-274">
+			April 30, 2012 at 15:52</a>		</div>
+
+		<p>pak.saya sangat terbantu dengan adanya pebahsan arduino yang bapak 
+sajikan di web inni…tapi saya mohon bantuannya,..saya lagi belajar 
+emanfaatkan arduini untuk menggerakan servo dengan keypad 4×3,dan 1 
+servo,….saya coba membuat codingnya agar ketika saya pencet kode yang 
+udah di seting/password servo bergerak,..tp jika password salah,servo 
+tetep dia,..mohon pencerahannya pak….siapapun yg bc komentar ini dan mau
+ bantu,..tolong kiri ke email saya</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=274#respond" onclick='return addComment.moveForm("div-comment-274", "274", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-admfastwp odd alt depth-2" id="comment-281">
+				<div id="div-comment-281" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/fd626d50158e79a52517f77abeedb606.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Admin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-281">
+			May 18, 2012 at 18:46</a>		</div>
+
+		<p>Mas Rudianto, mungkin mencobanya satu persatu dulu. Pelajari 
+masing-masing alat dan pemrogramannya di Arduino, baru kemudian 
+menggabungkannya dalam satu rangkaian dan program.<br>
+Servo, bisa lihat tutorial <a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-servo/128" title="Tutorial Servo" target="_blank" rel="nofollow">ini</a>.<br>
+Keypad 4×3, bisa lihat tutorial yang <a href="http://arduino.cc/playground/Main/KeypadTutorial" title="Keypad Tutorial" target="_blank" rel="nofollow">ini</a>.<br>
+Keypad 4×3 dengan password, bisa lihat tutorial <a href="http://bildr.org/2011/05/arduino-keypad/" title="Arduino + Keypad + Password" target="_blank" rel="nofollow">ini</a>.<br>
+Contoh menggerakkan servo dengan push button dapat dilihat pada komentar diatas.</p>
+<p>Mudah-mudahan membantu.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=281#respond" onclick='return addComment.moveForm("div-comment-281", "281", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-290">
+				<div id="div-comment-290" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/a997e669304c0d0f583a0c14f46669a5.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn"><a href="http://maulanajayadi24hikaru.blogspot.com/" rel="external nofollow" class="url">maulana</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-290">
+			June 26, 2012 at 21:45</a>		</div>
+
+		<p>mas minta contoh program coin acceptor dengan kombinasi keypad dan 
+lcd  dengan arduino uno mas?? message ke email saya ya,, or sms ke 
+087887094655</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=290#respond" onclick='return addComment.moveForm("div-comment-290", "290", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-291">
+				<div id="div-comment-291" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/a997e669304c0d0f583a0c14f46669a5.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn"><a href="http://maulanajayadi24hikaru.blogspot.com/" rel="external nofollow" class="url">maulana</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-291">
+			June 26, 2012 at 21:48</a>		</div>
+
+		<p>mas minta contoh program coin acceptor dengan kombinasi keypad 3 x 4 dengan lcd ?? sms ke saya mas,,or message saya ke email <a href="mailto:jayadimaulana@gmail.com">jayadimaulana@gmail.com</a></p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=291#respond" onclick='return addComment.moveForm("div-comment-291", "291", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-292">
+				<div id="div-comment-292" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/27cbf6877c3e0ae23a4c7a1738c3aa9d.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn"><a href="http://arissurya.wordpress.com/" rel="external nofollow" class="url">aris suryadi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-292">
+			July 25, 2012 at 00:02</a>		</div>
+
+		<p>Saya pernah ngga pake resistor, saat push beberapa kali arduinonya 
+malah ngga respon, harus dicabut n colok lagi powernya baru mau.</p>
+<p>apa maksud pemasangan resistor pada kaki tombol untuk menghindari hal diatas yah pak?</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=292#respond" onclick='return addComment.moveForm("div-comment-292", "292", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-312">
+				<div id="div-comment-312" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/00c3df3775cb2c7196791edb3312b7e1.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">rendy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-312">
+			November 4, 2012 at 07:32</a>		</div>
+
+		<p>pak. klw untuk program untuk inputan sensor cahaya gmna pak. output di krm ke laptop. portnya gmna.. newbie pak</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=312#respond" onclick='return addComment.moveForm("div-comment-312", "312", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-352">
+				<div id="div-comment-352" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/3b968b919e6efebf68e228a554a27cd6.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Indra Aria Pramana</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-352">
+			April 14, 2013 at 23:13</a>		</div>
+
+		<p>Mas Zerfani Yulias, semisal saklar dihubungkan langsung ke pin 
+(Ground ke ground, positif ke pin). Terus kita cetak nilainya dengan 
+Serial.println, kok nilainya berubah-ubah ya.<br>
+Maksudnya, disaat posisi saklar itu OFF, benar nilainya 0. Tetapi pada 
+saat saklar itu ON, nilainya itu tidak konstan, kadang 0 kadang juga 1.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=352#respond" onclick='return addComment.moveForm("div-comment-352", "352", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-488">
+				<div id="div-comment-488" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/83ede099166aaa8026159d273f910cae.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">josua</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-488">
+			December 20, 2013 at 00:26</a>		</div>
+
+		<p>halo mas Zerfani Yulias,<br>
+Saya mau nanya terkait tombol nih. Kebetulan lg ada praktikum yg 
+menggunakan tombol. Jadi gini, saya menggunakan tombol untuk 
+menghidupkan lampu dan juga suara. Tetapi dengan kondisi, jika tombol 
+ditekan dan dilepaskan, maka lampu dan suara akan melakukan aksi dan 
+jika tombol ditekan dan dilepaskan lagi maka lampu dan suara akan mati. 
+Bagaimana kira2 langkah nya?<br>
+apakah harus menggunakan EEPROM?</p>
+<p>mohon bimbingan nya<br>
+siapapun yg bisa bantu, tolong di command ya<br>
+trims <img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=488#respond" onclick='return addComment.moveForm("div-comment-488", "488", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zerfani bypostauthor even depth-2 parent" id="comment-508">
+				<div id="div-comment-508" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/594f5f398ae45a2a916377c5625df573.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Zerfani Yulias</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-508">
+			January 7, 2014 at 20:32</a>		</div>
+
+		<p>Coba pelajari tutorial yang <a href="http://blog.famosastudio.com/2013/02/bengkel/menggunakan-infrared-kit-untuk-kendali-jarak-jauh-dengan-arduino/497" title="Menggunakan Infrared Kit untuk Kendali Jarak Jauh dengan Arduino" rel="nofollow">ini</a>.</p>
+<p>Di contoh program kedua, mulai baris ke 49 s/d 61, ada kode ini:<br>
+<strong>    //button 1<br>
+    if (BUTTONPRESSED == IRButton1){<br>
+      if (button1 == 0){<br>
+        button1 = 1;<br>
+      }<br>
+      else<br>
+        button1 =0;<br>
+      if (button1 == 1){<br>
+        digitalWrite(ledPin1, HIGH);<br>
+      }<br>
+      else<br>
+        digitalWrite(ledPin1, LOW);<br>
+    }</strong></p>
+<p>Silahkan dipelajari dan diterapkan pada percobaannya.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=508#respond" onclick='return addComment.moveForm("div-comment-508", "508", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3 parent" id="comment-577">
+				<div id="div-comment-577" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/8e56f856a61a603f4cf288bbfd344d4d.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">riady</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-577">
+			February 26, 2014 at 11:05</a>		</div>
+
+		<p>mas tolong berikan contoh program komunikasi serial mggunakan arduino ya mas</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=577#respond" onclick='return addComment.moveForm("div-comment-577", "577", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zerfani bypostauthor even depth-4" id="comment-614">
+				<div id="div-comment-614" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/594f5f398ae45a2a916377c5625df573.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Zerfani Yulias</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-614">
+			March 17, 2014 at 18:57</a>		</div>
+
+		<p>Sudah ada contohnya di IDE Arduino, silahkan dipelajari.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=614#respond" onclick='return addComment.moveForm("div-comment-614", "614", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-528">
+				<div id="div-comment-528" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/0b34553a499aa3947731e4a9622a74c9.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">eddy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-528">
+			January 20, 2014 at 23:24</a>		</div>
+
+		<p>mt mlm pak Zerfani…<br>
+mau tny ni…kl misalny keypad matrix yg biasa dipake itu diganti pke push
+ button ini bsa g &amp; dgunakan utk pasword dgn arduino??</p>
+<p>Tmksh pak… <img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/icon_smile.gif" alt=":)" class="wp-smiley"> </p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=528#respond" onclick='return addComment.moveForm("div-comment-528", "528", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zerfani bypostauthor even depth-2" id="comment-591">
+				<div id="div-comment-591" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/594f5f398ae45a2a916377c5625df573.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Zerfani Yulias</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-591">
+			March 17, 2014 at 17:32</a>		</div>
+
+		<p>Bisa, keypad itu kan pada dasarnya tombol juga dengan konfigurasi 
+secara matrix agar pin yang dipergunakan lebih sedikit dibandingkan 
+kalau mesti menghubungkan tiap tombol secara satu per satu.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=591#respond" onclick='return addComment.moveForm("div-comment-591", "591", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-629">
+				<div id="div-comment-629" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/f7ddfd5b79e51f606699fbcb6bb0538a.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">abizar</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-629">
+			March 20, 2014 at 01:01</a>		</div>
+
+		<p>selamat malam mas zerfani.,<br>
+bagus banget mas ilmunya, mas mau nanya saya program motor servo putar kiri dan kanan dengan sensor ultrasonik.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=629#respond" onclick='return addComment.moveForm("div-comment-629", "629", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zerfani bypostauthor even depth-2" id="comment-637">
+				<div id="div-comment-637" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/594f5f398ae45a2a916377c5625df573.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Zerfani Yulias</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-637">
+			March 23, 2014 at 12:17</a>		</div>
+
+		<p>Silahkan pelajari tutorial yang <a href="http://blog.famosastudio.com/2011/07/bengkel/memprogram-famosa-studio-robotik-kit/299" title="Memprogram Famosa Studio Robotik Kit" rel="nofollow">ini</a>. Di sana ada contoh pemakaian Sensor Ultrasonik dan servo secara bersamaan.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=637#respond" onclick='return addComment.moveForm("div-comment-637", "637", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-663">
+				<div id="div-comment-663" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/31f93cc28e0ae4b06306bbfb08ce393b.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn"><a href="http://ahmadzulfakar.wordpress.com/" rel="external nofollow" class="url">didi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-663">
+			April 15, 2014 at 09:48</a>		</div>
+
+		<p>mas kalo menghubungkan arduino ke scratch gimana caranya? minta share ilmu nih mas.. terima kasih</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=663#respond" onclick='return addComment.moveForm("div-comment-663", "663", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zerfani bypostauthor even depth-2" id="comment-734">
+				<div id="div-comment-734" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/594f5f398ae45a2a916377c5625df573.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Zerfani Yulias</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-734">
+			August 27, 2014 at 09:15</a>		</div>
+
+		<p>Silahkan pelajari tutorialnya di link berikut: <a href="http://www.instructables.com/id/A-Gentle-Introduction-to-Arduino-for-Scratch-Users/" title="A Gentle Introduction to Arduino for Scratch Users" rel="nofollow">A Gentle Introduction to Arduino for Scratch Users</a>.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=734#respond" onclick='return addComment.moveForm("div-comment-734", "734", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-665">
+				<div id="div-comment-665" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/8255387c29e9b34738670f2db6300fd7.png" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">roni</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-665">
+			April 19, 2014 at 01:57</a>		</div>
+
+		<p>Mas Zerfani, kalau saya mau membuat skalar lampu kamar dengan voice control, apa saja yang dibutuhkan ?</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=665#respond" onclick='return addComment.moveForm("div-comment-665", "665", "respond", "311")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-zerfani bypostauthor even depth-2" id="comment-735">
+				<div id="div-comment-735" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/594f5f398ae45a2a916377c5625df573.jpg" class="avatar avatar-32 photo" height="32" width="32">			<cite class="fn">Zerfani Yulias</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-735">
+			August 27, 2014 at 09:58</a>		</div>
+
+		<p>Untuk mengendalikan saklar lampu yang menggunakan listrik AC 220V menggunakan Arduino, diperlukan relay. Seperti yang <a href="http://www.famosastudio.com/relay-module-v2" title="Relay Module V2 (Arduino Compatible)" rel="nofollow">ini</a> atau yang <a href="http://www.famosastudio.com/2-ch-5v-relay-module" title="2 Channels 5V Relay Module" rel="nofollow">ini</a>.<br>
+Output digital HIGH akan mengaktifkan relay dan sebaliknya LOW akan mematikan relay.</p>
+<p>Kemudian untuk input dengan kendali suara/voice control, apakah yang 
+dimaksud seperti ilustrasi ini: misalnya kita mengucapkan perintah 
+“Lampu” dan “Hidup”, maka lampu akan hidup, lalu kalau kita mengucapkan 
+perintah “Lampu” dan “Mati”, maka lampu akan mati.<br>
+Kalau memang seperti itu, maka yang dibutuhkan adalah <a href="http://www.famosastudio.com/easyvr-module" title="EasyVR - Voice Recognition Module" rel="nofollow">EasyVR – Voice Recognition Module</a>.<br>
+Silahkan pelajari tutorial EasyVR di link berikut: <a href="http://garagelab.com/profiles/blogs/tutorial-voice-recognition-with-arduino" title="Tutorial: Voice Recognition with Arduino" rel="nofollow">Tutorial: Voice Recognition with Arduino</a>.</p>
+<p>Selamat mencoba!</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311?replytocom=735#respond" onclick='return addComment.moveForm("div-comment-735", "735", "respond", "311")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+            </ol>
+            
+                        
+                    </div><!-- #comments -->
+    
+								<div id="respond" class="comment-respond">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://famosastudio.com/fastwp303/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																			<p class="comment-notes">Your email address will not be published. Required fields are marked <span class="required">*</span></p>							<p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" size="30" aria-required="true" type="text"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" size="30" type="text"></p>
+												<p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>						<p class="form-allowed-tags">You may use these <abbr title="HyperText Markup Language">HTML</abbr> tags and attributes:  <code>&lt;a
+ href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; 
+&lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del 
+datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;strike&gt; 
+&lt;strong&gt; </code></p>						<p class="form-submit">
+							<input name="submit" id="submit" value="Post Comment" type="submit">
+							<input name="comment_post_ID" value="311" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="c5e2b46888" type="hidden"></p>					</form>
+							</div><!-- #respond -->
+			                                
+                        </div><!-- .content -->
+            
+         
+        </div><!-- #wrap-content -->
+        
+                
+        <div id="wrap-sidebar-primary">
+                
+            <div class="sidebar sidebar-primary widgetized">
+                        
+                            <style type="text/css">
+                <!--
+                                    #widget-flexi_search-3-width {
+                	   margin: 0 0 0 0;
+                    }                    #widget-flexi_search-3-width #s {
+                	   width: 200px;
+                    }                -->
+            </style>
+                   <ul class="wrap-widget"><li id="widget-flexi_search-3-width">
+             
+<div id="search" class="clerfix">
+    <form method="get" id="searchform" action="http://blog.famosastudio.com/"> 
+        <input value="Search" name="s" id="s" onblur="if (this.value == '')  {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" type="text">
+        <input src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/search.png" title="Search" class="search-image" type="image"> 
+    </form>
+</div>        </li></ul>
+             <ul class="wrap-widget"><li class="flexi-posts">
+             <h3 class="widget-title">Recent Posts</h3>             <ul>
+        	                    <li class="clearfix">
+                        <a href="http://blog.famosastudio.com/2014/03/tutorial/menggunakan-itead-bluetooth-shield-dengan-arduino-uno-r3/544"><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/ITEAD-Bluetooth-Shield-150x150.jpg" class="flexi-posts-featured-image alignleft wp-post-image" alt="ITEAD Bluetooth Shield" height="60" width="60"></a>                          <h3 class="flexi-posts-title"><a href="http://blog.famosastudio.com/2014/03/tutorial/menggunakan-itead-bluetooth-shield-dengan-arduino-uno-r3/544" rel="bookmark" title="Menggunakan ITEAD Bluetooth Shield dengan Arduino Uno – R3">Menggunakan ITEAD Bluetooth Shield dengan Arduino Uno – R3</a></h3>                        <div class="flexi-posts-meta">March 24, 2014 By Zerfani Yulias                                </div><div class="flexi-posts-entry">Posting
+ kita kali ini akan menjelaskan cara penggunaan ITEAD Bluetooth Shield 
+dengan Arduino Uno – R3. Dengan menggunakan Bluetooth Shield, <a class="flexi-posts-more" href="http://blog.famosastudio.com/2014/03/tutorial/menggunakan-itead-bluetooth-shield-dengan-arduino-uno-r3/544" rel="bookmark" title="Permalink to Menggunakan ITEAD Bluetooth Shield dengan Arduino Uno – R3">Read More »</a>                                </div>                    </li>
+                                    <li class="clearfix">
+                        <a href="http://blog.famosastudio.com/2013/09/berita/memperkenalkan-arduino-esplora/537"><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/Arduino-Esplora-1-300-150x150.jpg" class="flexi-posts-featured-image alignleft wp-post-image" alt="Arduino Esplora-1-300" height="60" width="60"></a>                          <h3 class="flexi-posts-title"><a href="http://blog.famosastudio.com/2013/09/berita/memperkenalkan-arduino-esplora/537" rel="bookmark" title="Memperkenalkan Arduino Esplora">Memperkenalkan Arduino Esplora</a></h3>                        <div class="flexi-posts-meta">September 27, 2013 By Zerfani Yulias                                </div><div class="flexi-posts-entry">Pada
+ tanggal 10 Desember 2012, Team Arduino memperkenalkan Arduino Esplora. 
+Arduino Esplora adalah Microcontroller Arduino yang sudah dilengkapi 
+dengan sensor <a class="flexi-posts-more" href="http://blog.famosastudio.com/2013/09/berita/memperkenalkan-arduino-esplora/537" rel="bookmark" title="Permalink to Memperkenalkan Arduino Esplora">Read More »</a>                                </div>                    </li>
+                                    <li class="clearfix">
+                        <a href="http://blog.famosastudio.com/2013/09/produk/arduino-mega-2560/531"><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/Arduino-Mega-2560-1-300-150x150.jpg" class="flexi-posts-featured-image alignleft wp-post-image" alt="Arduino-Mega-2560-1-300" height="60" width="60"></a>                          <h3 class="flexi-posts-title"><a href="http://blog.famosastudio.com/2013/09/produk/arduino-mega-2560/531" rel="bookmark" title="Arduino Mega 2560">Arduino Mega 2560</a></h3>                        <div class="flexi-posts-meta">September 26, 2013 By Zerfani Yulias                                </div><div class="flexi-posts-entry">Ulasan
+ kali ini adalah tentang produk Arduino Mega 2560. Arduino Mega 2560 
+adalah board Arduino yang merupakan perbaikan dari board <a class="flexi-posts-more" href="http://blog.famosastudio.com/2013/09/produk/arduino-mega-2560/531" rel="bookmark" title="Permalink to Arduino Mega 2560">Read More »</a>                                </div>                    </li>
+                                    <li class="clearfix">
+                        <a href="http://blog.famosastudio.com/2013/02/bengkel/menggunakan-infrared-kit-untuk-kendali-jarak-jauh-dengan-arduino/497"><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/IRKitMengendalikan4LEDDgnArduinoUnoR3-300-150x150.jpg" class="flexi-posts-featured-image alignleft wp-post-image" alt="IRKitMengendalikan4LEDDgnArduinoUnoR3-300" height="60" width="60"></a>                          <h3 class="flexi-posts-title"><a href="http://blog.famosastudio.com/2013/02/bengkel/menggunakan-infrared-kit-untuk-kendali-jarak-jauh-dengan-arduino/497" rel="bookmark" title="Menggunakan Infrared Kit untuk Kendali Jarak Jauh dengan Arduino">Menggunakan Infrared Kit untuk Kendali Jarak Jauh dengan Arduino</a></h3>                        <div class="flexi-posts-meta">February 14, 2013 By Zerfani Yulias                                </div><div class="flexi-posts-entry">Di
+ Toko Online Famosa Studio tersedia Infrared (IR) Kit for Arduino. IR 
+Kit ini bisa digunakan untuk mengendalikan proyek Arduino <a class="flexi-posts-more" href="http://blog.famosastudio.com/2013/02/bengkel/menggunakan-infrared-kit-untuk-kendali-jarak-jauh-dengan-arduino/497" rel="bookmark" title="Permalink to Menggunakan Infrared Kit untuk Kendali Jarak Jauh dengan Arduino">Read More »</a>                                </div>                    </li>
+                                    <li class="clearfix">
+                        <a href="http://blog.famosastudio.com/2012/11/bengkel/ultrasonic-range-sensor-hc-sr04-dengan-library-newping/488"><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/HC-SR04TerhubungdgnArduinoUnoR3-300-150x150.jpg" class="flexi-posts-featured-image alignleft wp-post-image" alt="HC-SR04TerhubungdgnArduinoUnoR3-300" height="60" width="60"></a>                          <h3 class="flexi-posts-title"><a href="http://blog.famosastudio.com/2012/11/bengkel/ultrasonic-range-sensor-hc-sr04-dengan-library-newping/488" rel="bookmark" title="Ultrasonic Range Sensor HC-SR04 dengan Library NewPing">Ultrasonic Range Sensor HC-SR04 dengan Library NewPing</a></h3>                        <div class="flexi-posts-meta">November 29, 2012 By Zerfani Yulias                                </div><div class="flexi-posts-entry">Wow,
+ posting terakhir yang saya buat sudah hampir setahun yang lalu. Mohon 
+maaf, karena kesibukan mengurus Toko Online Famosa Studio, <a class="flexi-posts-more" href="http://blog.famosastudio.com/2012/11/bengkel/ultrasonic-range-sensor-hc-sr04-dengan-library-newping/488" rel="bookmark" title="Permalink to Ultrasonic Range Sensor HC-SR04 dengan Library NewPing">Read More »</a>                                </div>                    </li>
+                            </ul>
+        </li></ul>
+        <ul class="wrap-widget"><li id="facebooklikebox-3" class="widget widget_FacebookLikeBox"><h3 class="widget-title">Find us on Facebook</h3><iframe src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/likebox.htm" scrolling="no" style="border:none; overflow:hidden; width:280px; height:587px;" allowtransparency="true" frameborder="0"></iframe></li></ul><ul class="wrap-widget"><li id="tlb_widget-2" class="widget tlb_widget"><h3 class="widget-title">Follow us on Twitter</h3>		<style type="text/css">
+			 #tlb_container {
+				 box-sizing: border-box;
+			 }
+			 #tlb_container * {
+				box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				-webkit-box-sizing: content-box;
+			}
+			#tlb_container {
+				border:1px solid AAAAAA;
+				background:FFFFFF; 
+				border-top-color:315C99;
+				padding:5px 5px 0 5px; 
+				font-family:'Lucida grande',tahoma,verdana,arial,sans-serif;
+				
+			}
+			#tlb_header {
+				color:#555;
+				border-bottom:1px solid #D8DFEA;
+				color:#555; 
+				height:60px; 
+				position:relative;
+			}
+			#tlb_profile_img{
+				position:absolute;
+				top:5px;
+				left:5px;
+			}
+			#tlb_name{
+				position:absolute;
+				top:5px;
+				left:59px;
+				font-size:14px;
+				line-height:14px;
+				font-weight:bold;
+			}
+			#tlb_name a{
+				color:3B5998;
+			}
+			#tlb_name a span{
+				font-weight:normal;
+				font-size:10px;
+			}
+			#tlb_follow{
+				position:absolute;
+				top:30px;
+				left:59px;
+			}
+			#tlb_follow_total{
+				padding:5px 5px 0px 5px;
+				font-size:11px;
+			}
+			.tlb_user_item{
+				line-height:1;
+				padding:5px 0px 3px 5px;
+				width:48px;
+				float:left;
+				text-align: center;
+			}
+			.tlb_user_item a{
+				color:gray;
+			}
+			.tlb_user_item span{
+				font-family:Arial;
+				font-size:10px;
+			}
+			#tlb_container {
+	
+}
+#tlb_header {
+
+}
+#tlb_profile_img{
+
+}
+#tlb_name{
+
+}
+#tlb_name a{
+	
+}
+#tlb_name a span{
+
+}
+#tlb_follow{
+
+}
+#tlb_follow_total{
+
+}
+.tlb_user_item{
+
+}
+.tlb_user_item a{
+
+}
+.tlb_user_item span{
+
+}
+		</style>
+
+		<div id="tlb_container" style="width: 100%">
+				
+				<div id="tlb_header">
+					<div id="tlb_profile_img">
+						<a target="_blank" href="http://twitter.com/FamosaStudio">
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/W-dnf_h-_normal.jpg" alt="FamosaStudio" height="44" width="44">
+						</a>
+					</div>
+					<div id="tlb_name">
+						<a target="_blank" href="http://twitter.com/FamosaStudio">
+							FamosaStudio<span> on Twitter</span>
+						</a>
+					</div>
+					<div id="tlb_follow">
+						<iframe style="width: 65px; height: 20px;" data-twttr-rendered="true" title="Twitter Follow Button" class="twitter-follow-button twitter-follow-button" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/follow_button.htm" allowtransparency="true" scrolling="no" id="twitter-widget-1" frameborder="0"></iframe>
+					</div>
+				</div>
+			<div style="padding:0;">
+				<div id="tlb_follow_total">
+					1758 people follow <strong>FamosaStudio</strong>	
+				</div>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/kyanom" title="kyanom" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/EGO_cO9t_normal.jpg" alt="kyanom" height="48" width="48">
+							<span>kyanom</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/7_warna" title="7_warna" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/fkyYW2FQ_normal.jpg" alt="7_warna" height="48" width="48">
+							<span>7_warna</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/recepbalca" title="recepbalca" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/533812_321668561229643_100001595052127_881085_464709187_n_no.jpg" alt="recepbalca" height="48" width="48">
+							<span>recepbal</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/Mr_Icon007" title="Mr_Icon007" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/nyexesjh_normal.jpg" alt="Mr_Icon007" height="48" width="48">
+							<span>Mr_Icon0</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/KuokCuy" title="KuokCuy" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/2muWv8Sm_normal.jpg" alt="KuokCuy" height="48" width="48">
+							<span>KuokCuy</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/anggadarkgez" title="anggadarkgez" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/xCBxjuaz_normal.jpg" alt="anggadarkgez" height="48" width="48">
+							<span>anggadar</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/rubbygrind" title="rubbygrind" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/p5l4t7iG_normal.jpg" alt="rubbygrind" height="48" width="48">
+							<span>rubbygri</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/AubuchonHrdware" title="AubuchonHrdware" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/l-AUdGcd_normal.jpg" alt="AubuchonHrdware" height="48" width="48">
+							<span>Aubuchon</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/dewiisekaar" title="dewiisekaar" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/KLf7KTSu_normal.jpg" alt="dewiisekaar" height="48" width="48">
+							<span>dewiisek</span>
+							
+						</a>
+							
+					</span>
+								
+					<span class="tlb_user_item">
+											<a target="_blank" href="http://twitter.com/Autodidacts_io" title="Autodidacts_io" rel="nofollow">
+						
+							<img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/QR8l3T7O_normal.png" alt="Autodidacts_io" height="48" width="48">
+							<span>Autodida</span>
+							
+						</a>
+							
+					</span>
+							<br style="clear:both">
+			</div>
+	
+							</div>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+		</script>
+	</li></ul><ul class="wrap-widget"><li id="reallysimpletwitterwidget-2" class="widget widget_reallysimpletwitterwidget"><h3 class="widget-title">@FamosaStudio</h3>
+			<ul class="really_simple_twitter_widget"><li><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/W-dnf_h-_normal_002.jpg">READY STOCK! Intel® Galileo Gen 2 | Famosa Studio <a href="http://t.co/dES1C75Vl5" class="twitter-link" target="_blank">http://t.co/dES1C75Vl5</a> <a href="http://twitter.com/Intel_Indonesia" class="twitter-user" target="_blank">@Intel_Indonesia</a> <a href="http://twitter.com/#%21/search/%23IntelInside" class="twitter-link" target="_blank">#IntelInside</a> <a href="http://twitter.com/#%21/search/%23IntelGalileo" class="twitter-link" target="_blank">#IntelGalileo</a> <a href="http://t.co/d7NTwBfd2M" class="twitter-link" target="_blank">http://t.co/d7NTwBfd2M</a><span class="rstw_comma">,</span> <span class="twitter-timestamp" title="2015/03/20 07:15">Mar 20</span></li><li><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/W-dnf_h-_normal_002.jpg">AYO! Dapatkan Intel Galileo Gen 2 yg sdh tersedia di Toko Online <a href="http://twitter.com/FamosaSudio" class="twitter-user" target="_blank">@FamosaSudio</a> lewat link <a href="http://t.co/dES1C6Oktx" class="twitter-link" target="_blank">http://t.co/dES1C6Oktx</a> @Intel_Indonesia<span class="rstw_comma">,</span> <span class="twitter-timestamp" title="2015/03/20 07:05">Mar 20</span></li><li><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/W-dnf_h-_normal_002.jpg">Hardware
+ Intel® Galileo Gen 2 kompatibel dgn banyak Shield dari Arduino Uno R3 
+dan dapat diprogram dgn Arduino IDE. @Intel_Indonesia<span class="rstw_comma">,</span> <span class="twitter-timestamp" title="2015/03/20 07:00">Mar 20</span></li><li><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/W-dnf_h-_normal_002.jpg">Intel® Galileo Gen 2 dilengkapi juga dengan 256MB DDR3, 512 kb embedded SRAM, 8 MB NOR Flash dan 8 kb EEPROM. @Intel_Indonesia<span class="rstw_comma">,</span> <span class="twitter-timestamp" title="2015/03/20 06:55">Mar 20</span></li><li><img src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/W-dnf_h-_normal_002.jpg">Intel®
+ Galileo Gen 2 memiliki I/O interface: Mini PCI Express, 100Mb Ethernet,
+ microSD, USB Host &amp; USB Client. @Intel_Indonesia<span class="rstw_comma">,</span> <span class="twitter-timestamp" title="2015/03/20 06:50">Mar 20</span></li></ul>
+				<iframe style="width: 152px; height: 20px;" data-twttr-rendered="true" title="Twitter Follow Button" class="twitter-follow-button twitter-follow-button" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/follow_button_002.htm" allowtransparency="true" scrolling="no" id="twitter-widget-2" frameborder="0"></iframe>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document, "script", "twitter-wjs");</script></li></ul><ul class="wrap-widget"><li id="recent-comments-3" class="widget widget_recent_comments"><h3 class="widget-title">Recent Comments</h3><ul id="recentcomments"><li class="recentcomments">susiloharjo on <a href="http://blog.famosastudio.com/2014/03/tutorial/menggunakan-itead-bluetooth-shield-dengan-arduino-uno-r3/544#comment-805">Menggunakan ITEAD Bluetooth Shield dengan Arduino Uno – R3</a></li><li class="recentcomments">Zerfani Yulias on <a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-735">Tutorial Arduino – Push Buttons</a></li><li class="recentcomments">Zerfani Yulias on <a href="http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311#comment-734">Tutorial Arduino – Push Buttons</a></li><li class="recentcomments">Zerfani Yulias on <a href="http://blog.famosastudio.com/2013/02/bengkel/menggunakan-infrared-kit-untuk-kendali-jarak-jauh-dengan-arduino/497#comment-733">Menggunakan Infrared Kit untuk Kendali Jarak Jauh dengan Arduino</a></li><li class="recentcomments">Zerfani Yulias on <a href="http://blog.famosastudio.com/2011/10/tutorial/wireless-playstation-2-controller-dengan-arduino-uno/396#comment-728">Wireless PlayStation 2 Controller dengan Arduino Uno</a></li></ul></li></ul>                
+             
+            </div><!-- #sidebar-primary -->
+            
+         
+        </div><!-- #wrap-sidebar-primary --> 
+        
+     
+    </div><!-- #main -->
+
+
+    <div id="wrap-footer">
+            
+                 
+        <div id="footer">
+                
+            <div id="copyrights">
+                 © 2015  <a href="http://blog.famosastudio.com/">Famosa Studio Blog</a>. All Rights Reserved. 
+            </div><!-- #copyrights -->
+            
+         
+        <div id="credits">
+            Powered by <a href="http://wordpress.org/">WordPress</a> &nbsp;|&nbsp;  <a href="http://flexithemes.com/themes/levels/">Levels</a> theme by <a href="http://flexithemes.com/">FlexiThemes</a>        </div><!-- #credits -->
+                
+     
+    </div><!-- #wrap-footer -->
+    
+</div><!-- #wrapper -->
+
+<div id="su-footer-links" style="text-align: center;"></div>        <script type="text/javascript">
+          var pfHeaderImgUrl = '';
+          var pfHeaderTagline = '';
+          var pfdisableClickToDel = '0';
+          var pfHideImages = '0';
+          var pfImageDisplayStyle = 'right';
+          var pfDisableEmail = '0';
+          var pfDisablePDF = '0';
+          var pfDisablePrint = '0';
+          var pfCustomCSS = '';
+
+          var e = document.createElement('script'); e.type="text/javascript";
+		  if('https:' == document.location.protocol) {
+			js='https://pf-cdn.printfriendly.com/ssl/main.js';
+		  }
+		  else{
+			js='http://cdn.printfriendly.com/printfriendly.js';
+		  }
+          e.src = js;
+          document.getElementsByTagName('head')[0].appendChild(e);
+      </script>
+<script type="text/javascript" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/hoverIntent.js"></script>
+<script type="text/javascript" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/post-targetblank.js"></script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+jQuery.noConflict();
+jQuery(function(){ 
+	jQuery('ul.menu-secondary').superfish({ 
+	animation: {height:'show'},
+autoArrows:  true,
+                dropShadows: false, 
+                speed: 200,
+                delay: 800
+                });
+            });
+
+/* ]]> */
+</script>
+<!-- Histats.com  START (hidden counter)-->
+<script type="text/javascript">document.write(unescape("%3Cscript src=%27http://s10.histats.com/js15.js%27 type=%27text/javascript%27%3E%3C/script%3E"));</script><script src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/js15.js" type="text/javascript"></script>
+<a href="http://www.histats.com/" target="_blank" title="cool hit counter"><script type="text/javascript">
+try {Histats.start(1,2622593,4,0,0,0,"");
+Histats.track_hits();} catch(err){};
+</script><script type="text/javascript" language="JavaScript" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/0.htm"><\/script>');
+</script>
+</a>
+<noscript><a href="http://www.histats.com" target="_blank"><img  src="http://sstatic1.histats.com/0.gif?2622593&101" alt="cool hit counter" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+
+
+
+
+
+</div><iframe tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;" src="Tutorial%20Arduino%20-%20Push%20Buttons%20_%20Famosa%20Studio%20Blog%20Page_files/postmessageRelay.htm" id="oauth2relay320990990" name="oauth2relay320990990"></iframe></body></html>
+<!-- Quick Cache file built for (http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311) in 1.89964 seconds, on: Mar 26th, 2015 @ 1:28 pm UTC. -->
+<!-- This Quick Cache file will auto-expire (and be rebuilt) on: Apr 2nd, 2015 @ 1:28 pm UTC (based on your configured expiration time). -->
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- Quick Cache fully functional :-) Cache file served for (http://blog.famosastudio.com/2011/07/tutorial/tutorial-arduino-push-buttons/311) in 0.00107 seconds, on: Mar 28th, 2015 @ 1:43 pm UTC. -->
